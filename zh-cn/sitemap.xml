@@ -167,6 +167,9 @@
                 href="/zh-cn/posts/shortcodes/codepen/"
                 />
   </url><url>
+    <loc>/zh-cn/tags/hugo/</loc>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/zh-cn/tags/jsfiddle/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -254,6 +257,9 @@
     <loc>/zh-cn/webgis/openlayer/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/zh-cn/categories/other/</loc>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/zh-cn/categories/shortcode/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -338,6 +344,9 @@
                 href="/zh-cn/posts/shortcodes/youku/"
                 />
   </url><url>
+    <loc>/zh-cn/other/</loc>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/zh-cn/webgis/openlayer/create-map/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
@@ -348,6 +357,9 @@
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/zh-cn/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/</loc>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/zh-cn/other/%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2hugo/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/zh-cn/posts/</loc>
@@ -485,8 +497,6 @@
     <loc>/zh-cn/webgl/cancas/</loc>
   </url><url>
     <loc>/zh-cn/webgl/</loc>
-  </url><url>
-    <loc>/zh-cn/other/</loc>
   </url><url>
     <loc>/zh-cn/tags/%E5%89%8D%E7%AB%AF/</loc>
   </url><url>

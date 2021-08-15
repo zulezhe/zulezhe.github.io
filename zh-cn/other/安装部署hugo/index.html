@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>安装部署hugo - 足乐者</title><link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/images/favicons/manifest.json">
+<link rel="icon" href="/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="安装部署hugo" /><meta itemprop="name" content="安装部署hugo">
+<meta itemprop="description" content="安装部署hugo"><meta itemprop="datePublished" content="2020-10-22T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-10-22T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1335">
+<meta itemprop="keywords" content="hugo," /><meta property="og:title" content="安装部署hugo" />
+<meta property="og:description" content="安装部署hugo" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/zh-cn/other/%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2hugo/" /><meta property="article:section" content="other" />
+<meta property="article:published_time" content="2020-10-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-10-22T00:00:00+00:00" /><meta property="og:site_name" content="足乐者" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="安装部署hugo"/>
+<meta name="twitter:description" content="安装部署hugo"/>
+<meta data-name="palette" content="blue"><link rel=stylesheet href="/css/bundle.min.58ba447d4e857a6764ecbca98479b07fb91fdcf5a735660ef5f52d35e9efbabf.css" integrity="sha256-WLpEfU6Femdk7LyphHmwf7kf3PWnNWYO9fUtNenvur8=" crossorigin="anonymous"><script src="/js/bundle.min.3866935f40e9a6918685380961e090add79c6a3717fae4bc75a9a47fa39efef3.js" integrity="sha256-OGaTX0DpppGGhTgJYeCQrdecajcX&#43;uS8damkf6Oe/vM=" crossorigin="anonymous"></script>
+</head><body><header><nav class="navbar navbar-expand-xl fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/zh-cn/">
+      <img class="logo" alt="Logo" src="/images/logo.png" loading="lazy">足乐者</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-1 mb-2 mb-lg-0"><form class="search-bar d-flex ms-1" action="/zh-cn/search">
+  <div class="input-group input-group-sm">
+    <button class="btn btn-search disabled position-absolute left-0" type="submit"><i class="fas fa-fw fa-search"></i></button>
+    <input class="form-control rounded-pill" id="searchQuery" name="q" type="search" aria-label="Search">
+  </div>
+</form></ul><ul class="navbar-nav me-1 mb-2 mb-lg-0 me-1 ms-auto"><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-front-end" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>front-end
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-front-end"><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank">
+                <i class="fab fa-fw fa-github"></i>React
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="/zh-cn/front-end/vue">
+                <i class="fab fa-fw fa-github"></i>vue
+              </a>
+            </li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-webgis" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>webgis
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-webgis"><li>
+              <a class="dropdown-item"
+                href="/zh-cn/webgis/arcgis">
+                <i class="fab fa-fw fa-github"></i>arcgis
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="/zh-cn/webgis/cesium">
+                <i class="fab fa-fw fa-github"></i>cesium
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="/zh-cn/webgis/openlayer">
+                <i class="fab fa-fw fa-github"></i>openlayer
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="/zh-cn/webgis/base">
+                <i class="fab fa-fw fa-github"></i>基本知识
+              </a>
+            </li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-webgl" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>webgl
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-webgl"><li>
+              <a class="dropdown-item"
+                href="/zh-cn/webgl/babylon">
+                <i class="fab fa-fw fa-github"></i>babylon
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="/zh-cn/webgl/cenvas">
+                <i class="fab fa-fw fa-github"></i>cenvas
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="/zh-cn/webgl/shader">
+                <i class="fab fa-fw fa-github"></i>shader
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="/zh-cn/webgl/threejs">
+                <i class="fab fa-fw fa-github"></i>threejs
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="/zh-cn/webgl/native">
+                <i class="fab fa-fw fa-github"></i>原生
+              </a>
+            </li></ul>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/zh-cn/other">
+            其他
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/zh-cn/playground">
+            演示项目
+          </a>
+        </li><li class="nav-item dropdown">
+  <a class="nav-link" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fas fa-fw fa-language"></i> 简体中文
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="languageDropdown"><li><a class="dropdown-item" href="/en/">English</a></li><li><a class="dropdown-item" href="/zh-tw/">繁體中文</a></li></ul>
+</li><li class="nav-item">
+  <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasSettings" role="button"
+    aria-controls="offcanvasSettings">
+    <i class="fas fa-fw fa-sliders-h"></i> 设置
+  </a>
+</li>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings"
+  aria-labelledby="offcanvasSettingsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" w id="offcanvasSettingsLabel"><i class="fas fa-fw fa-sliders-h"></i> 设置</h5>
+    <a role="button" data-bs-dismiss="offcanvas" aria-label="Close">
+      <span class="fas fa-2x fa-fw fa-times"></span>
+    </a>
+  </div>
+  <div class="offcanvas-body"><section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <span id="btnPalette" class="btn btn-sm"><i class="fas fa-eye-dropper"></i></span>
+    </div>
+  </form>
+  <div class="container mt-2 visually-hidden" id="palettePicker">
+    <div class="btn-group"><button type="button" id="palette-blue" title="蓝色" 
+          class="btn btn-sm palette bg-blue d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-blue-gray" title="蓝灰色" 
+          class="btn btn-sm palette bg-blue-gray d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-brown" title="棕色" 
+          class="btn btn-sm palette bg-brown d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-cyan" title="青色" 
+          class="btn btn-sm palette bg-cyan d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-green" title="绿色" 
+          class="btn btn-sm palette bg-green d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-indigo" title="靛青色" 
+          class="btn btn-sm palette bg-indigo d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-orange" title="橙色" 
+          class="btn btn-sm palette bg-orange d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-pink" title="粉色" 
+          class="btn btn-sm palette bg-pink d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-purple" title="紫色" 
+          class="btn btn-sm palette bg-purple d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-red" title="红色" 
+          class="btn btn-sm palette bg-red d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-teal" title="蓝绿色" 
+          class="btn btn-sm palette bg-teal d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-yellow" title="黄色" 
+          class="btn btn-sm palette bg-yellow d-flex align-items-center justify-content-center">
+        </button></button>
+    </div>
+  </div>
+</section></div>
+</div></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row" aria-label="breadcrumb">
+  <ol class="breadcrumb surface"><li class="breadcrumb-item"><a href="/zh-cn/">主页</a></li><li class="breadcrumb-item"><a href="/zh-cn/other/">其他</a></li><li class="breadcrumb-item active">安装部署hugo</li></ol>
+</nav><article class="post row surface"><div class="post-panel-wrapper">
+  <div class="post-panel d-flex flex-column">
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt fa-rotate-45"></i>
+</a>
+  
+    
+
+    <a class="action btn-reward" role="button" data-bs-toggle="modal" data-bs-target="#rewardModal" title="打赏">
+  <i class="fas fa-fw fa-medal"></i>
+</a>
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0"
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a id="btnTOC" class="fas fa-fw fa-list-alt" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+</a>
+  </div>
+</div>
+<h1 class="post-title my-3">安装部署hugo
+</h1><div class="post-meta mb-3"><span class="post-date me-2">
+    <i class="fas fa-fw fa-calendar-alt"></i>2020-10-22
+  </span><span class="post-reading-time me-2">
+    <i class="fas fa-fw fa-coffee"></i>3 分钟阅读
+  </span><a href="/zh-cn/categories/other/" class="post-taxonomy">#other</a><a href="/zh-cn/tags/hugo/" class="post-taxonomy">#hugo</a></div>
+<div class="offcanvas offcanvas-end surface" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+    <a role="button" data-bs-dismiss="offcanvas" aria-label="Close">
+      <span class="fas fa-2x fa-fw fa-times"></span>
+    </a>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装部署hugo">安装部署hugo</a>
+      <ul>
+        <li><a href="#折腾需求">折腾需求</a></li>
+        <li><a href="#上传-hugo-源文件">上传 Hugo 源文件</a></li>
+        <li><a href="#添加-github-actions-代码">添加 Github Actions 代码：</a></li>
+        <li><a href="#同步到服务器">同步到服务器</a></li>
+        <li><a href="#后话一点点-">后话一点点 🤏</a></li>
+        <li><a href="#感谢">感谢</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><h2 id="安装部署hugo">安装部署hugo</h2>
+<p><a href="https://immmmm.com/hugo-github-actions/" target="_blank">原文</a>
+</p>
+<p>不折腾点东西总觉得浑浑噩噩，折腾点东西搞得脑袋晕晕乎乎！</p>
+<h3 id="折腾需求">折腾需求</h3>
+<p>为更新 <a href="https://edui.fun/" target="_blank">https://edui.fun/</a>
+ 导航站能随手些，造了 <a href="https://immmmm.com/gridea-theme-webstack/" target="_blank">Gridea Theme WebStack</a>
+ 。每次得源文件切换加载，但只为加几行代码，等等等；</p>
+<p>折腾一天，已实现直接在 GitHub <code>master</code> 添加代码，<code>Github Actions</code> 自动构建 <code>Hugo</code> 静态文件到 <code>gh-pages</code> 分支，外加同步 webhook 到自己的服务器。</p>
+<p>再也不用 git 来 git 去！</p>
+<h3 id="上传-hugo-源文件">上传 Hugo 源文件</h3>
+<p>（注：如已把 Hugo 程序 push 到 GitHub 上，直接跳过看下一步。）</p>
+<p>点击下载：<a href="https://github.com/lmm214/edui/archive/master.zip" target="_blank">https://github.com/lmm214/edui/archive/master.zip</a>
+</p>
+<p>GitHub 上新建一个 repo，并只需保留以下文件上传到 <code>master</code> ，同时随手建个 <code>gh-pages</code> 分支：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>├── archetypes
+<span class="ln"> 2</span>│   └── default.md
+<span class="ln"> 3</span>├── config.toml  //Hugo 程序配置文件
+<span class="ln"> 4</span>├── content
+<span class="ln"> 5</span>│   ├── about.md
+<span class="ln"> 6</span>├── data
+<span class="ln"> 7</span>│   └── links.toml //导航数据，一个文件搞定
+<span class="ln"> 8</span>└── themes
+<span class="ln"> 9</span>    └── webstack  //Hugo 主题
+<span class="ln">10</span>        ├── layouts
+<span class="ln">11</span>        │   └── home.html  //主页
+<span class="ln">12</span>        └── theme.toml  //主题配置文件
+</code></pre></div><h3 id="添加-github-actions-代码">添加 Github Actions 代码：</h3>
+<p>实现效果，直接网页上修改 <code>data/links.toml</code> 或任意文件，触发 Actions 自动化运行 Hugo 程序生成静态文件并推送到 <code>gh-pages</code> 分支上，等待几十秒可看到更新 <a href="https://lmm214.github.io/edui/" target="_blank">https://lmm214.github.io/edui/</a>
+</p>
+<p>具体操作：</p>
+<p><a href="https://lmm.elizen.me/images/2020/03/tokens-1.png" target="_blank"><img class="img-fluid" src="https://lmm.elizen.me/images/2020/03/tokens-1.png" alt="tokens-1"  loading="lazy" />
+</a>
+</p>
+<p><a href="https://lmm.elizen.me/images/2020/03/tokens-2.png" target="_blank"><img class="img-fluid" src="https://lmm.elizen.me/images/2020/03/tokens-2.png" alt="tokens-2"  loading="lazy" />
+</a>
+</p>
+<ul>
+<li>点 <a href="https://github.com/settings/tokens" target="_blank">https://github.com/settings/tokens</a>
+ 新建一个，勾选 <code>repo</code> 和 <code>workflow</code> ,暂存；</li>
+</ul>
+<p><a href="https://lmm.elizen.me/images/2020/03/secrets.jpeg" target="_blank"><img class="img-fluid" src="https://lmm.elizen.me/images/2020/03/secrets.jpeg" alt="secrets"  loading="lazy" />
+</a>
+</p>
+<ul>
+<li>进项目 <code>settings/secrets</code> 新建标题为 <code>personal_token</code> ，内容是刚创建的 <code>tokens</code> ;</li>
+<li>回项目，点 <code>Actions -- New wordflow -- Set up a workflow yourself</code> ，添加如下代码：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>name: Deploy Hugo # 任君喜欢
+<span class="ln"> 2</span>
+<span class="ln"> 3</span>on:
+<span class="ln"> 4</span>  push:
+<span class="ln"> 5</span>    branches:
+<span class="ln"> 6</span>      - master   # master 更新触发
+<span class="ln"> 7</span>
+<span class="ln"> 8</span>jobs:
+<span class="ln"> 9</span>  build-deploy:
+<span class="ln">10</span>    runs-on: ubuntu-18.04
+<span class="ln">11</span>    steps:
+<span class="ln">12</span>      - uses: actions/checkout@v1
+<span class="ln">13</span>
+<span class="ln">14</span>      - name: Setup Hugo
+<span class="ln">15</span>        uses: peaceiris/actions-hugo@v2
+<span class="ln">16</span>        with:
+<span class="ln">17</span>          hugo-version: latest
+<span class="ln">18</span>
+<span class="ln">19</span>      - name: Build
+<span class="ln">20</span>        run: hugo
+<span class="ln">21</span>
+<span class="ln">22</span>      - name: Deploy
+<span class="ln">23</span>        uses: peaceiris/actions-gh-pages@v3
+<span class="ln">24</span>        with:
+<span class="ln">25</span>          personal_token: ${{ secrets.personal_token }} # personal_token 这里新建一个 https://github.com/settings/tokens
+<span class="ln">26</span>          PUBLISH_BRANCH: gh-pages  # 推送到当前 gh-pages 分支
+<span class="ln">27</span>          PUBLISH_DIR: ./public  # hugo 生成到 public 作为跟目录
+<span class="ln">28</span>          commit_message: ${{ github.event.head_commit.message }}
+</code></pre></div><p>👌 等，3、2、1，看看 <code>Actions</code> 顺利不，再看看 <code>gh-pages</code> 静态文件更新了不，最终打开 Pages ，祝贺！</p>
+<p>日志？主题？统统 GitHub 网页端搞定！当然，调试主题什么的还是建议本地进行。</p>
+<h3 id="同步到服务器">同步到服务器</h3>
+<p>完整源文件 <a href="https://github.com/lmm214/edui/blob/master/.github/workflows/main.yml" target="_blank">【这里】</a>
+ ，还有一段代码，实现同步推送到自己的服务器。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>      - name: Webhook
+<span class="ln">2</span>        uses: distributhor/workflow-webhook@v1
+<span class="ln">3</span>        env:
+<span class="ln">4</span>          webhook_url: ${{ secrets.WEBHOOK_URL }}
+<span class="ln">5</span>          webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
+</code></pre></div><p><code>WEBHOOK_URL</code> 和 <code>WEBHOOK_SECRET</code> 是进项目 <code>settings/secrets</code> 新建添加，构建成宝塔面板的 webhook 链接（进面板-软件商店-装“webhook”），如：</p>
+<p><code>WEBHOOK_URL</code> 设为：<code>http://1.1.1.1/hook?access_key=密钥</code>;</p>
+<p><code>WEBHOOK_SECRET</code> 设为 <code>&amp;param=immmmm.com</code>;这样合并成：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>http://1.1.1.1/hook?access_key=密钥&amp;param=immmmm.com
+</code></pre></div><p>ip 和域名需需改，同时宝塔后台的 webhooks 添加同步代码，需修改本地路径、github 项目路径，代码如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="cp">#!/bin/bash
+</span><span class="ln"> 2</span><span class="cp"></span><span class="nb">echo</span> <span class="s2">&#34;&#34;</span>
+<span class="ln"> 3</span>date --date<span class="o">=</span><span class="s1">&#39;0 days ago&#39;</span> <span class="s2">&#34;+%Y-%m-%d %H:%M:%S&#34;</span>
+<span class="ln"> 4</span><span class="nb">echo</span> <span class="s2">&#34;Start&#34;</span>
+<span class="ln"> 5</span>
+<span class="ln"> 6</span><span class="c1">#修改本地路径、github 项目路径</span>
+<span class="ln"> 7</span><span class="nv">gitPath</span><span class="o">=</span><span class="s2">&#34;/www/wwwroot/immmmm.com&#34;</span>
+<span class="ln"> 8</span><span class="nv">gitHttp</span><span class="o">=</span><span class="s2">&#34;https://github.com/lmm214/immmmm.git&#34;</span>
+<span class="ln"> 9</span>
+<span class="ln">10</span><span class="nb">echo</span> <span class="s2">&#34;Web站点路径：</span><span class="nv">$gitPath</span><span class="s2">&#34;</span>
+<span class="ln">11</span><span class="k">if</span> <span class="o">[</span> -d <span class="s2">&#34;</span><span class="nv">$gitPath</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln">12</span>        <span class="nb">cd</span> <span class="nv">$gitPath</span>
+<span class="ln">13</span>        <span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&#34;.git&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="ln">14</span>                <span class="nb">echo</span> <span class="s2">&#34;在该目录下克隆 git&#34;</span>
+<span class="ln">15</span>                git clone -b gh-pages <span class="nv">$gitHttp</span> gittemp
+<span class="ln">16</span>                mv gittemp/.git .
+<span class="ln">17</span>                rm -rf gittemp
+<span class="ln">18</span>        <span class="k">fi</span>
+<span class="ln">19</span>        git reset --hard gh-pages
+<span class="ln">20</span>        git pull
+<span class="ln">21</span>        chown -R www:www <span class="nv">$gitPath</span>
+<span class="ln">22</span>        <span class="nb">echo</span> <span class="s2">&#34;End&#34;</span>
+<span class="ln">23</span>        <span class="nb">exit</span>
+<span class="ln">24</span><span class="k">else</span>
+<span class="ln">25</span>        <span class="nb">echo</span> <span class="s2">&#34;该项目路径不存在&#34;</span>
+<span class="ln">26</span>        <span class="nb">echo</span> <span class="s2">&#34;End&#34;</span>
+<span class="ln">27</span>        <span class="nb">exit</span>
+<span class="ln">28</span><span class="k">fi</span>
+</code></pre></div><h3 id="后话一点点-">后话一点点 🤏</h3>
+<p>听闻 Hugo 大名也有好几个月，一直没尝试，之后也沉浸在 Gridea 中，不得不夸夸 Gridea 客户端体检真是优雅！</p>
+<p>但一直有一点点遗憾，更新只能启动客户端，点击【同步】。</p>
+<p>而 Hugo 生成静态文件摔 Hexo 几光年，部署安装无依赖，试用门槛较低。看着官方文档，程序、主题自定义也比较强悍。</p>
+<p>搜遍全网教程，要不就是太详细，一长串代码加注释，供大于求，要不略过。幸好，也算折腾成功！ ✌️</p>
+<h3 id="感谢">感谢</h3>
+<ul>
+<li>官方 Hugo Templates： <a href="https://gohugo.io/templates/" target="_blank">https://gohugo.io/templates/</a>
+</li>
+<li>中文系列教程翻译： <a href="https://www.rectcircle.cn/series/hugo/" target="_blank">https://www.rectcircle.cn/series/hugo/</a>
+</li>
+<li>Hugo 中文帮助文档：<a href="https://hugo.aiaide.com/" target="_blank">https://hugo.aiaide.com/</a>
+</li>
+</ul>
+</div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content surface">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-medal"></i>打赏</h5>
+        <a href="#" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-fw fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3" role="tablist"><li class="nav-item" role="presentation">
+            <a class="nav-link active" id="reward-alipay-tab" data-bs-toggle="tab" href="#reward-alipay" role="tab" aria-controls="reward-alipay" aria-selected="true">
+              <i class="fab fa-fw fa-alipay"></i>支付宝
+            </a>
+          </li><li class="nav-item" role="presentation">
+            <a class="nav-link" id="reward-wechat-tab" data-bs-toggle="tab" href="#reward-wechat" role="tab" aria-controls="reward-wechat" aria-selected="true">
+              <i class="fab fa-fw fa-weixin"></i>微信
+            </a>
+          </li></ul>
+        <div class="tab-content" id="rewardTabContent"><div class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel" aria-labelledby="reward-alipay-tab">
+            <img class="img-fluid post-reward-img" src="/images/reward/alipay.png" loading="lazy" />
+          </div><div class="tab-pane fade post-reward-content show" id="reward-wechat" role="tabpanel" aria-labelledby="reward-wechat-tab">
+            <img class="img-fluid post-reward-img" src="/images/reward/wechat.png" loading="lazy" />
+          </div></div>
+      </div>
+    </div>
+  </div>
+</div><hr /><div class="post-navs d-flex mb-3 justify-content-between">
+  <div class="post-nav w-50"><div class="prev-post btn btn-sm">
+      <a href="/zh-cn/front-end/vue/iqiyi/">爱奇艺 Shortcode
+</a>
+    </div></div>
+  <div class="post-nav flex-row-reverse"><div class="next-post btn btn-sm">
+      <a href="/zh-cn/webgis/openlayer/%E5%8A%A0%E8%BD%BD%E5%A4%A9%E5%9C%B0%E5%9B%BE/">加载天地图
+</a>
+    </div></div>
+</div><section class="related-posts">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="/zh-cn/front-end/vue/alert/">Alert Shortcode
+</a></li><li><a href="/zh-cn/posts/shortcodes/alert/">Alert Shortcode
+</a></li><li><a href="/zh-cn/posts/shortcodes/bilibili/">Bilibili Shortcode
+</a></li><li><a href="/zh-cn/front-end/vue/bilibili/">Bilibili Shortcode
+</a></li><li><a href="/zh-cn/front-end/vue/codepen/">CodePen Shortcode
+</a></li></ul>
+  </section></article>
+
+
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script type="text/javascript">
+  new Valine({
+    el: '#vcomments',
+    appId: 'hOzqWVJ8ymtgbmDpremuy6gR-gzGzoHsz',
+    appKey: 'Omy6PlvzoBKJ2X4coPF10Gda',
+    notify: 'false',
+    verify: 'true',
+    avatar: 'mm',
+    placeholder: '说点什么吧...',
+    
+    visitor: 'true',
+    
+    meta: '',
+    
+    pageSize: '10',
+    
+    highlight: '',
+  });
+</script></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container"><section class="profile surface row text-center">
+  <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" src="/images/profile.webp" alt="zulezhe" loading="lazy"></div>
+  <div class="col-12 profile-meta"><div class="profile-name">zulezhe</div><div class="profile-bio">Java, 前端,webgl,webgis</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>河南数慧</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>ZhengZhou</div></div>
+</section>
+  <section class="recent-posts row surface">
+  <h4>最近文章</h4>
+  <ul><li><a href="/zh-cn/front-end/vue/alert/">Alert Shortcode
+</a></li><li><a href="/zh-cn/front-end/vue/bilibili/">Bilibili Shortcode
+</a></li><li><a href="/zh-cn/front-end/vue/codepen/">CodePen Shortcode
+</a></li><li><a href="/zh-cn/front-end/vue/jsfiddle/">JSFiddle Shortcode
+</a></li><li><a href="/zh-cn/front-end/vue/jsrun/">JSRun Shortcode
+</a></li></ul>
+</section><section class="taxonomy-categories row surface">
+      <h4>
+        <a href="/zh-cn/categories">分类</a>
+      </h4>
+      <div><a href="/zh-cn/categories/shortcode/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="Shortcode">
+          Shortcode <span class="badge rounded-pill">18</span>
+        </a><a href="/zh-cn/categories/openlayer/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="openlayer">
+          openlayer <span class="badge rounded-pill">2</span>
+        </a><a href="/zh-cn/categories/arcgis/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="arcgis">
+          arcgis <span class="badge rounded-pill">1</span>
+        </a><a href="/zh-cn/categories/other/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="other">
+          other <span class="badge rounded-pill">1</span>
+        </a><a href="/zh-cn/categories/%E5%89%8D%E7%AB%AF/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="前端">
+          前端 <span class="badge rounded-pill">1</span>
+        </a></div>
+    </section><section class="taxonomy-series row surface">
+      <h4>
+        <a href="/zh-cn/series">专栏</a>
+      </h4>
+      <div><a href="/zh-cn/series/%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="用户手册">
+          用户手册 <span class="badge rounded-pill">2</span>
+        </a><a href="/zh-cn/series/%E5%89%8D%E7%AB%AF/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="前端">
+          前端 <span class="badge rounded-pill">1</span>
+        </a></div>
+    </section><section class="taxonomy-tags row surface">
+      <h4>
+        <a href="/zh-cn/tags">标签</a>
+      </h4>
+      <div><a href="/zh-cn/tags/alert/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="Alert">
+          Alert <span class="badge rounded-pill">2</span>
+        </a><a href="/zh-cn/tags/codepen/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="CodePen">
+          CodePen <span class="badge rounded-pill">2</span>
+        </a><a href="/zh-cn/tags/jsfiddle/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="JSFiddle">
+          JSFiddle <span class="badge rounded-pill">2</span>
+        </a><a href="/zh-cn/tags/jsrun/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="JSRun">
+          JSRun <span class="badge rounded-pill">2</span>
+        </a><a href="/zh-cn/tags/openlayer/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="openlayer">
+          openlayer <span class="badge rounded-pill">2</span>
+        </a><a href="/zh-cn/tags/youku/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="Youku">
+          Youku <span class="badge rounded-pill">2</span>
+        </a><a href="/zh-cn/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="哔哩哔哩">
+          哔哩哔哩 <span class="badge rounded-pill">2</span>
+        </a><a href="/zh-cn/tags/%E7%88%B1%E5%A5%87%E8%89%BA/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="爱奇艺">
+          爱奇艺 <span class="badge rounded-pill">2</span>
+        </a><a href="/zh-cn/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="网易云音乐">
+          网易云音乐 <span class="badge rounded-pill">2</span>
+        </a><a href="/zh-cn/tags/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="腾讯视频">
+          腾讯视频 <span class="badge rounded-pill">2</span>
+        </a></div>
+    </section></div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><li class="nav-item">
+    <a class="nav-link social-link" href="mailto:wang59651@gmail.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a>
+  </li><li class="nav-item">
+      <a class="nav-link social-link" target="_blank" href="https://github.com/https://www..github.com/zulezhe" title="GitHub">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a>
+    </li></nav>
+<div class="copyright mb-2">
+  Copyright © 2017-2021 zulezhe. All Rights Reserved.
+</div>
+<div class="powered-by mb-2">
+  Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> and the <a href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank">Bootstrap</a> theme.
+</div></footer>
+<a id="btnScrollToTop" class="btn-scroll-to-top">
+  <i class="fas fa-fw fa-chevron-circle-up fa-2x"></i>
+</a>
+</body>
+</html>
