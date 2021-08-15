@@ -2,517 +2,517 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/zh-cn/categories/</loc>
+    <loc>./zh-cn/categories/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/categories/"
+                href="./en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/categories/"
+                href="./zh-tw/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/categories/"
+                href="./zh-cn/categories/"
                 />
   </url><url>
-    <loc>/zh-cn/series/</loc>
+    <loc>./zh-cn/series/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/series/"
+                href="./en/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/series/"
+                href="./zh-tw/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/series/"
+                href="./zh-cn/series/"
                 />
   </url><url>
-    <loc>/zh-cn/tags/</loc>
+    <loc>./zh-cn/tags/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/"
+                href="./en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/tags/"
+                href="./zh-tw/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/"
+                href="./zh-cn/tags/"
                 />
   </url><url>
-    <loc>/zh-cn/tags/alert/</loc>
+    <loc>./zh-cn/tags/alert/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/alert/"
+                href="./en/tags/alert/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/tags/alert/"
+                href="./zh-tw/tags/alert/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/alert/"
+                href="./zh-cn/tags/alert/"
                 />
   </url><url>
-    <loc>/zh-cn/front-end/vue/alert/</loc>
+    <loc>./zh-cn/front-end/vue/alert/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/posts/shortcodes/alert/</loc>
+    <loc>./zh-cn/posts/shortcodes/alert/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/shortcodes/alert/"
+                href="./en/posts/shortcodes/alert/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/posts/shortcodes/alert/"
+                href="./zh-tw/posts/shortcodes/alert/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/posts/shortcodes/alert/"
+                href="./zh-cn/posts/shortcodes/alert/"
                 />
   </url><url>
-    <loc>/zh-cn/tags/arcgis/</loc>
+    <loc>./zh-cn/tags/arcgis/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/categories/arcgis/</loc>
+    <loc>./zh-cn/categories/arcgis/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/webgis/arcgis/</loc>
+    <loc>./zh-cn/webgis/arcgis/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/front-end/vue/bilibili/</loc>
+    <loc>./zh-cn/front-end/vue/bilibili/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/posts/shortcodes/bilibili/</loc>
+    <loc>./zh-cn/posts/shortcodes/bilibili/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/shortcodes/bilibili/"
+                href="./en/posts/shortcodes/bilibili/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/posts/shortcodes/bilibili/"
+                href="./zh-tw/posts/shortcodes/bilibili/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/posts/shortcodes/bilibili/"
+                href="./zh-cn/posts/shortcodes/bilibili/"
                 />
   </url><url>
-    <loc>/zh-cn/tags/codepen/</loc>
+    <loc>./zh-cn/tags/codepen/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/codepen/"
+                href="./en/tags/codepen/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/tags/codepen/"
+                href="./zh-tw/tags/codepen/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/codepen/"
+                href="./zh-cn/tags/codepen/"
                 />
   </url><url>
-    <loc>/zh-cn/front-end/vue/codepen/</loc>
+    <loc>./zh-cn/front-end/vue/codepen/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/posts/shortcodes/codepen/</loc>
+    <loc>./zh-cn/posts/shortcodes/codepen/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/shortcodes/codepen/"
+                href="./en/posts/shortcodes/codepen/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/posts/shortcodes/codepen/"
+                href="./zh-tw/posts/shortcodes/codepen/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/posts/shortcodes/codepen/"
+                href="./zh-cn/posts/shortcodes/codepen/"
                 />
   </url><url>
-    <loc>/zh-cn/tags/jsfiddle/</loc>
+    <loc>./zh-cn/tags/jsfiddle/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/jsfiddle/"
+                href="./en/tags/jsfiddle/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/tags/jsfiddle/"
+                href="./zh-tw/tags/jsfiddle/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/jsfiddle/"
+                href="./zh-cn/tags/jsfiddle/"
                 />
   </url><url>
-    <loc>/zh-cn/front-end/vue/jsfiddle/</loc>
+    <loc>./zh-cn/front-end/vue/jsfiddle/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/posts/shortcodes/jsfiddle/</loc>
+    <loc>./zh-cn/posts/shortcodes/jsfiddle/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/shortcodes/jsfiddle/"
+                href="./en/posts/shortcodes/jsfiddle/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/posts/shortcodes/jsfiddle/"
+                href="./zh-tw/posts/shortcodes/jsfiddle/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/posts/shortcodes/jsfiddle/"
+                href="./zh-cn/posts/shortcodes/jsfiddle/"
                 />
   </url><url>
-    <loc>/zh-cn/tags/jsrun/</loc>
+    <loc>./zh-cn/tags/jsrun/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/jsrun/"
+                href="./en/tags/jsrun/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/tags/jsrun/"
+                href="./zh-tw/tags/jsrun/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/jsrun/"
+                href="./zh-cn/tags/jsrun/"
                 />
   </url><url>
-    <loc>/zh-cn/front-end/vue/jsrun/</loc>
+    <loc>./zh-cn/front-end/vue/jsrun/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/posts/shortcodes/jsrun/</loc>
+    <loc>./zh-cn/posts/shortcodes/jsrun/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/shortcodes/jsrun/"
+                href="./en/posts/shortcodes/jsrun/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/posts/shortcodes/jsrun/"
+                href="./zh-tw/posts/shortcodes/jsrun/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/posts/shortcodes/jsrun/"
+                href="./zh-cn/posts/shortcodes/jsrun/"
                 />
   </url><url>
-    <loc>/zh-cn/tags/openlayer/</loc>
+    <loc>./zh-cn/tags/openlayer/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/categories/openlayer/</loc>
+    <loc>./zh-cn/categories/openlayer/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/webgis/openlayer/</loc>
+    <loc>./zh-cn/webgis/openlayer/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/categories/shortcode/</loc>
+    <loc>./zh-cn/categories/shortcode/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/categories/shortcode/"
+                href="./en/categories/shortcode/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/categories/shortcode/"
+                href="./zh-tw/categories/shortcode/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/categories/shortcode/"
+                href="./zh-cn/categories/shortcode/"
                 />
   </url><url>
-    <loc>/zh-cn/posts/shortcodes/</loc>
+    <loc>./zh-cn/posts/shortcodes/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/shortcodes/"
+                href="./en/posts/shortcodes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/posts/shortcodes/"
+                href="./zh-tw/posts/shortcodes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/posts/shortcodes/"
+                href="./zh-cn/posts/shortcodes/"
                 />
   </url><url>
-    <loc>/zh-cn/front-end/vue/</loc>
+    <loc>./zh-cn/front-end/vue/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/webgis/</loc>
+    <loc>./zh-cn/webgis/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/tags/youku/</loc>
+    <loc>./zh-cn/tags/youku/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/youku/"
+                href="./en/tags/youku/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/tags/youku/"
+                href="./zh-tw/tags/youku/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/tags/youku/"
+                href="./zh-cn/tags/youku/"
                 />
   </url><url>
-    <loc>/zh-cn/webgis/arcgis/%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2/</loc>
+    <loc>./zh-cn/webgis/arcgis/%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/front-end/vue/youku/</loc>
+    <loc>./zh-cn/front-end/vue/youku/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/posts/shortcodes/youku/</loc>
+    <loc>./zh-cn/posts/shortcodes/youku/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/shortcodes/youku/"
+                href="./en/posts/shortcodes/youku/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/posts/shortcodes/youku/"
+                href="./zh-tw/posts/shortcodes/youku/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/posts/shortcodes/youku/"
+                href="./zh-cn/posts/shortcodes/youku/"
                 />
   </url><url>
-    <loc>/zh-cn/webgis/openlayer/create-map/</loc>
+    <loc>./zh-cn/webgis/openlayer/create-map/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/front-end/</loc>
+    <loc>./zh-cn/front-end/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/webgis/openlayer/%E5%8A%A0%E8%BD%BD%E5%A4%A9%E5%9C%B0%E5%9B%BE/</loc>
+    <loc>./zh-cn/webgis/openlayer/%E5%8A%A0%E8%BD%BD%E5%A4%A9%E5%9C%B0%E5%9B%BE/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/</loc>
+    <loc>./zh-cn/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/posts/</loc>
+    <loc>./zh-cn/posts/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/"
+                href="./en/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/posts/"
+                href="./zh-tw/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/posts/"
+                href="./zh-cn/posts/"
                 />
   </url><url>
-    <loc>/zh-cn/tags/%E7%88%B1%E5%A5%87%E8%89%BA/</loc>
+    <loc>./zh-cn/tags/%E7%88%B1%E5%A5%87%E8%89%BA/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/front-end/vue/iqiyi/</loc>
+    <loc>./zh-cn/front-end/vue/iqiyi/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/posts/shortcodes/iqiyi/</loc>
+    <loc>./zh-cn/posts/shortcodes/iqiyi/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/shortcodes/iqiyi/"
+                href="./en/posts/shortcodes/iqiyi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/posts/shortcodes/iqiyi/"
+                href="./zh-tw/posts/shortcodes/iqiyi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/posts/shortcodes/iqiyi/"
+                href="./zh-cn/posts/shortcodes/iqiyi/"
                 />
   </url><url>
-    <loc>/zh-cn/series/%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C/</loc>
+    <loc>./zh-cn/series/%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</loc>
+    <loc>./zh-cn/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/front-end/vue/neteasemusic/</loc>
+    <loc>./zh-cn/front-end/vue/neteasemusic/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/posts/shortcodes/neteasemusic/</loc>
+    <loc>./zh-cn/posts/shortcodes/neteasemusic/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/shortcodes/neteasemusic/"
+                href="./en/posts/shortcodes/neteasemusic/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/posts/shortcodes/neteasemusic/"
+                href="./zh-tw/posts/shortcodes/neteasemusic/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/posts/shortcodes/neteasemusic/"
+                href="./zh-cn/posts/shortcodes/neteasemusic/"
                 />
   </url><url>
-    <loc>/zh-cn/tags/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91/</loc>
+    <loc>./zh-cn/tags/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/front-end/vue/tencentvideo/</loc>
+    <loc>./zh-cn/front-end/vue/tencentvideo/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/posts/shortcodes/tencentvideo/</loc>
+    <loc>./zh-cn/posts/shortcodes/tencentvideo/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/posts/shortcodes/tencentvideo/"
+                href="./en/posts/shortcodes/tencentvideo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/posts/shortcodes/tencentvideo/"
+                href="./zh-tw/posts/shortcodes/tencentvideo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/posts/shortcodes/tencentvideo/"
+                href="./zh-cn/posts/shortcodes/tencentvideo/"
                 />
   </url><url>
-    <loc>/zh-cn/</loc>
+    <loc>./zh-cn/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/"
+                href="./en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/"
+                href="./zh-tw/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/"
+                href="./zh-cn/"
                 />
   </url><url>
-    <loc>/zh-cn/archives/</loc>
+    <loc>./zh-cn/archives/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/archives/"
+                href="./en/archives/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/archives/"
+                href="./zh-tw/archives/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/archives/"
+                href="./zh-cn/archives/"
                 />
   </url><url>
-    <loc>/zh-cn/playground/</loc>
+    <loc>./zh-cn/playground/</loc>
     <priority>0</priority>
   </url><url>
-    <loc>/zh-cn/webgl/cancas/</loc>
+    <loc>./zh-cn/webgl/cancas/</loc>
   </url><url>
-    <loc>/zh-cn/webgl/</loc>
+    <loc>./zh-cn/webgl/</loc>
   </url><url>
-    <loc>/zh-cn/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>./zh-cn/tags/%E5%89%8D%E7%AB%AF/</loc>
   </url><url>
-    <loc>/zh-cn/series/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>./zh-cn/series/%E5%89%8D%E7%AB%AF/</loc>
   </url><url>
-    <loc>/zh-cn/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>./zh-cn/categories/%E5%89%8D%E7%AB%AF/</loc>
   </url><url>
-    <loc>/zh-cn/front-end/vue/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>./zh-cn/front-end/vue/%E5%89%8D%E7%AB%AF/</loc>
   </url><url>
-    <loc>/zh-cn/webgis/base/</loc>
+    <loc>./zh-cn/webgis/base/</loc>
   </url><url>
-    <loc>/zh-cn/search/</loc>
+    <loc>./zh-cn/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/search/"
+                href="./en/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="/zh-tw/search/"
+                href="./zh-tw/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="/zh-cn/search/"
+                href="./zh-cn/search/"
                 />
   </url><url>
-    <loc>/zh-cn/playground/</loc>
+    <loc>./zh-cn/playground/</loc>
   </url>
 </urlset>
