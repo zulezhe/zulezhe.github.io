@@ -1,9 +1,11 @@
 ################### 我的demo #######################
 
 [[main]]
-  name = "playground"
+  name = "演示项目"
   identifier = "playground"
   url = "./playground"
+  # pre = '<i class="fas fa-fw fa-chevron-circle-down"></i>'
+
 ######################### 前端 ###############################  
 [[main]]
   name = "前端"
@@ -86,3 +88,5 @@
     name = "原生"
     url = "./webgl/native"
     pre = '<i class="fab fa-fw fa-github"></i>'
+
+  
