@@ -6,9 +6,16 @@
   url = "./playground"
   # pre = '<i class="fas fa-fw fa-chevron-circle-down"></i>'
 
+[[main]]
+  name = "其他"
+  identifier = "other"
+  id = 4
+  url = "./other"
+  # pre = '<i class="fas fa-fw fa-chevron-circle-down"></i>'
+
 ######################### 前端 ###############################  
 [[main]]
-  name = "前端"
+  name = "front-end"
   identifier = "front-end"
   pre = '<i class="fas fa-fw fa-chevron-circle-down"></i>'
 [[main]]

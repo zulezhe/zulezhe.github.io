@@ -26,3 +26,16 @@ jobs:
           PUBLISH_BRANCH: gh-pages # 推送到当前 gh-pages 分支
           PUBLISH_DIR: ./public # hugo 生成到 public 作为跟目录
           commit_message: ${{ github.event.head_commit.message }}
+       # 部署到腾宝塔服务器
+      - name: Webhook
+        uses: distributhor/workflow-webhook@v1
+        env:
+          webhook_url: ${{ secrets.WEBHOOK_URL }}
+          webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
+      
+      - name: Sending message
+        uses: yakumioto/serverchan-action@v1
+        with:
+          key: ${{ secrets.sckey }}
+          text: 'edui.fun'
+          desp: '构建完成'
