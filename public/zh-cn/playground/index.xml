@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>案例展示 on 足乐者</title>
-    <link>./zh-cn/playground/</link>
+    <link>/zh-cn/playground/</link>
     <description>Recent content in 案例展示 on 足乐者</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>Copyright © 2017-{year} zulezhe. All Rights Reserved.</copyright><atom:link href="./zh-cn/playground/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2017-{year} zulezhe. All Rights Reserved.</copyright><atom:link href="/zh-cn/playground/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

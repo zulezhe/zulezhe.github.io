@@ -1,0 +1,88 @@
+################### 我的demo #######################
+
+[[main]]
+  name = "playground"
+  identifier = "playground"
+  url = "./playground"
+######################### 前端 ###############################  
+[[main]]
+  name = "前端"
+  identifier = "front-end"
+  pre = '<i class="fas fa-fw fa-chevron-circle-down"></i>'
+[[main]]
+  parent = "front-end"
+  name = "vue"
+  id="vue"
+  url = "./front-end/vue"
+  pre = '<i class="fab fa-fw fa-github"></i>'
+
+[[main]]
+  parent = "front-end"
+  name = "React"
+  id="React"
+  url = "https://github.com/razonyang/hugo-theme-bootstrap"
+  pre = '<i class="fab fa-fw fa-github"></i>'
+
+
+  ######################## WebGIS ###################################
+
+[[main]]
+  name = "webgis"
+  identifier = "webgis"
+  pre = '<i class="fas fa-fw fa-chevron-circle-down"></i>'
+  [[main]]
+    parent = "webgis"
+    name = "openlayer"
+    url = "./webgis/openlayer"
+    pre = '<i class="fab fa-fw fa-github"></i>'
+
+  [[main]]
+    parent = "webgis"
+    name = "cesium"
+    url = "./webgis/cesium"
+    pre = '<i class="fab fa-fw fa-github"></i>'
+
+  [[main]]
+    parent = "webgis"
+    name = "arcgis"
+    url = "./webgis/arcgis"
+    pre = '<i class="fab fa-fw fa-github"></i>'
+   [[main]]
+    parent = "webgis"
+    name = "基本知识"
+    url = "./webgis/base"
+    pre = '<i class="fab fa-fw fa-github"></i>'
+
+#######################  WebGL   ################################
+[[main]]
+  name = "webgl"
+  identifier = "webgl"
+  pre = '<i class="fas fa-fw fa-chevron-circle-down"></i>'
+  [[main]]
+    parent = "webgl"
+    name = "threejs"
+    url = "./webgl/threejs"
+    pre = '<i class="fab fa-fw fa-github"></i>'
+
+  [[main]]
+    parent = "webgl"
+    name = "cenvas"
+    url = "./webgl/cenvas"
+    pre = '<i class="fab fa-fw fa-github"></i>'
+
+  [[main]]
+    parent = "webgl"
+    name = "babylon"
+    url = "./webgl/babylon"
+    pre = '<i class="fab fa-fw fa-github"></i>'
+
+  [[main]]
+    parent = "webgl"
+    name = "shader"
+    url = "./webgl/shader"
+    pre = '<i class="fab fa-fw fa-github"></i>'
+  [[main]]
+    parent = "webgl"
+    name = "原生"
+    url = "./webgl/native"
+    pre = '<i class="fab fa-fw fa-github"></i>'

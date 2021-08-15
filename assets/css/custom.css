@@ -1,0 +1,36 @@
+.palette-blue {
+  /*header导航颜色  */
+  --hbs-primary: #000;
+  /* --hbs-primary: #000; */
+  --hbs-primary-light: #5e91f2;
+  --hbs-accent: var(--hbs-primary);
+}
+
+/* 网站name */
+.navbar-brand {
+  line-height: 26px;
+  font-size: 21px;
+  font-weight: 600;
+}
+.navbar-nav .nav-item .nav-link {
+  color: #fff;
+}
+.dropdown-menu.show {
+  transition: all 1s ease-in;
+}
+
+/* 评论样式 */
+#vcomments .vpanel {
+  outline: 1px dashed #000;
+}
+
+/* #vcomments .vpanel .vheader{
+  border-bottom: 1px dashed #000;
+} */
+#vcomments .vpanel .vedit .veditor {
+  outline: 1px dashed #000;
+}
+#vcomments .vpanel .vsubmit {
+  background-color: #000;
+  color: #fff;
+}

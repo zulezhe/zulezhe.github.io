@@ -1,0 +1,11 @@
+name = "zulezhe"
+# avatar = "./images/profile.png" # Avatar image. Default to "images/profile.webp".
+bio = "Java, 前端,webgl,webgis"
+# 公司
+company = "河南数慧"
+# 关于 外部关于页面。如果未设置，将使用内部关于页面。
+# about = "https://domain.tld" 
+# 地点
+location = "ZhengZhou"
+[params]
+  #layout = "compact"

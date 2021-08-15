@@ -1,0 +1,37 @@
+<!-- {{- if and (default true .Site.Params.comment) (default true .Params.comment) -}}
+{{- partial "hooks/comments-begin" . -}}
+<div class="post-comments surface row">
+{{- partial "post/comments/disqus.html" . -}}
+{{- partial "post/comments/utterances" . -}}
+</div>
+{{- partial "hooks/comments-end" . -}}
+{{- end -}} -->
+
+<!-- valine -->
+{{- if .Site.Params.valine.enable -}}
+<!-- id 将作为查询条件 -->
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script type="text/javascript">
+  new Valine({
+    el: '#vcomments',
+    appId: '{{ .Site.Params.valine.appId }}',
+    appKey: '{{ .Site.Params.valine.appKey }}',
+    notify: '{{ .Site.Params.valine.notify }}',
+    verify: '{{ .Site.Params.valine.verify }}',
+    avatar: '{{ .Site.Params.valine.avatar }}',
+    placeholder: '{{ .Site.Params.valine.placeholder }}',
+    //文章访问量统计 默认值:false
+    visitor: '{{ .Site.Params.valine.visitor }}',
+    // 评论者相关属性 默认值:['nick','mail','link']
+    meta: '{{.Site.Params.valine.meta}}',
+    // 评论列表分页，每页条数。 默认值:10
+    pageSize: '{{.Site.Params.valine.pageSize}}',
+    //代码高亮，默认开启，若不需要，请手动关闭 默认值: true
+    highlight: '{{.Site.Params.valine.highlight}}',
+  });
+</script>
+{{- end -}}

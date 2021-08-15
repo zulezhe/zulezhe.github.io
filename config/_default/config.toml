@@ -1,0 +1,53 @@
+baseURL = "https://zulezhe.com"
+title = "足乐者"
+theme = "hugo-theme-bootstrap"
+copyright = "Copyright © 2017-{year} zulezhe. All Rights Reserved."
+
+# 多语言模式
+defaultContentLanguage = "zh-cn" # 默认语言
+defaultContentLanguageInSubdir = true # 如果您只使用一种语言，请注释此选项
+disableLanguages = ["fr", ] # 禁用一种或多种语言 "zh-cn" ,"zh-tw"
+
+# 页码
+paginate = 5
+# paginatePath = "page"
+
+# Disqus 评论 
+# disqusShortname = "yourdiscussshortname"
+
+# Google 分析
+# googleAnalytics = "UA-123-45"
+
+enableRobotsTXT = true
+
+enableEmoji = true
+
+# hasCJKLanguage = true # Turn on it if your content contains Chinese/Japanese/Korean Languages.
+
+pygmentsUseClasses = true
+
+[blackfriday]
+  hrefTargetBlank = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# Valine.评论配置
+# You can get your appid and appkey from https://leancloud.cn
+# more info please open https://valine.js.org
+[params.valine]
+  enable = true
+  appId = 'hOzqWVJ8ymtgbmDpremuy6gR-gzGzoHsz'
+  appKey = 'Omy6PlvzoBKJ2X4coPF10Gda'
+  notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
+  verify = true # Verification code
+  avatar = 'mm'
+  placeholder = '说点什么吧...'
+  visitor = true
+  pageSize =10
+
+# 头部菜单栏的一些功能
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
