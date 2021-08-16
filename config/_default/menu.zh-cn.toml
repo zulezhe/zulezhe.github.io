@@ -27,9 +27,21 @@
 
 [[main]]
   parent = "front-end"
-  name = "React"
-  id="React"
-  url = "https://github.com/razonyang/hugo-theme-bootstrap"
+  name = "react"
+  id="react"
+  url = "./front-end/react"
+  pre = '<i class="fab fa-fw fa-github"></i>'
+[[main]]
+  parent = "front-end"
+  name = "js"
+  id="react"
+  url = "./front-end/js"
+  pre = '<i class="fab fa-fw fa-github"></i>'
+[[main]]
+  parent = "front-end"
+  name = "css"
+  id="css"
+  url = "./front-end/css"
   pre = '<i class="fab fa-fw fa-github"></i>'
 
 

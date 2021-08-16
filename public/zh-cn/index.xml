@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>足乐者</title>
+    <link>/zh-cn/</link>
+    <description>Recent content on 足乐者</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyright © 2017-{year} zulezhe. All Rights Reserved.</copyright>
+    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/zh-cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alert Shortcode</title>
+      <link>/zh-cn/front-end/vue/alert/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/front-end/vue/alert/</guid>
+      <description>&lt;p&gt;本文展示了如果使用 &lt;code&gt;alert&lt;/code&gt; shortcode。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Alert Shortcode</title>
+      <link>/zh-cn/posts/shortcodes/alert/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/posts/shortcodes/alert/</guid>
+      <description>&lt;p&gt;本文展示了如果使用 &lt;code&gt;alert&lt;/code&gt; shortcode。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bilibili Shortcode</title>
+      <link>/zh-cn/front-end/vue/bilibili/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/front-end/vue/bilibili/</guid>
+      <description>&lt;p&gt;关于哔哩哔哩 shortcode 的详细使用说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bilibili Shortcode</title>
+      <link>/zh-cn/posts/shortcodes/bilibili/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/posts/shortcodes/bilibili/</guid>
+      <description>&lt;p&gt;关于哔哩哔哩 shortcode 的详细使用说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CodePen Shortcode</title>
+      <link>/zh-cn/front-end/vue/codepen/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/front-end/vue/codepen/</guid>
+      <description>&lt;p&gt;关于 CodePen shortcode 的详细说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CodePen Shortcode</title>
+      <link>/zh-cn/posts/shortcodes/codepen/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/posts/shortcodes/codepen/</guid>
+      <description>&lt;p&gt;关于 CodePen shortcode 的详细说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JSFiddle Shortcode</title>
+      <link>/zh-cn/front-end/vue/jsfiddle/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/front-end/vue/jsfiddle/</guid>
+      <description>&lt;p&gt;关于 JSFiddle shortcode 的详细说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JSFiddle Shortcode</title>
+      <link>/zh-cn/posts/shortcodes/jsfiddle/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/posts/shortcodes/jsfiddle/</guid>
+      <description>&lt;p&gt;关于 JSFiddle shortcode 的详细说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JSRun Shortcode</title>
+      <link>/zh-cn/front-end/vue/jsrun/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/front-end/vue/jsrun/</guid>
+      <description>&lt;p&gt;关于 JSRun shortcode 的详细说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JSRun Shortcode</title>
+      <link>/zh-cn/posts/shortcodes/jsrun/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/posts/shortcodes/jsrun/</guid>
+      <description>&lt;p&gt;关于 JSRun shortcode 的详细说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>下载部署</title>
+      <link>/zh-cn/webgis/arcgis/%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/webgis/arcgis/%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2/</guid>
+      <description>&lt;p&gt;arcgis for js下载部署&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;img-fluid&#34; src=&#34;https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2640471829,4270483104&amp;amp;fm=26&amp;amp;gp=0.jpg&#34; alt=&#34;u=2640471829,4270483104&amp;amp;amp;fm=26&amp;amp;amp;gp=0.jpg&#34;  loading=&#34;lazy&#34; /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>优酷 Shortcode</title>
+      <link>/zh-cn/front-end/vue/youku/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/front-end/vue/youku/</guid>
+      <description>&lt;p&gt;关于优酷 shortcode 的详细说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>优酷 Shortcode</title>
+      <link>/zh-cn/posts/shortcodes/youku/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/posts/shortcodes/youku/</guid>
+      <description>&lt;p&gt;关于优酷 shortcode 的详细说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>创建地图</title>
+      <link>/zh-cn/webgis/openlayer/create-map/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/webgis/openlayer/create-map/</guid>
+      <description>&lt;p&gt;openlayer 加载天地图创建地图&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;img-fluid&#34; src=&#34;https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2640471829,4270483104&amp;amp;fm=26&amp;amp;gp=0.jpg&#34; alt=&#34;u=2640471829,4270483104&amp;amp;amp;fm=26&amp;amp;amp;gp=0.jpg&#34;  loading=&#34;lazy&#34; /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>加载天地图</title>
+      <link>/zh-cn/webgis/openlayer/%E5%8A%A0%E8%BD%BD%E5%A4%A9%E5%9C%B0%E5%9B%BE/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/webgis/openlayer/%E5%8A%A0%E8%BD%BD%E5%A4%A9%E5%9C%B0%E5%9B%BE/</guid>
+      <description>&lt;p&gt;openlayer 加载天地图&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;img-fluid&#34; src=&#34;https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2640471829,4270483104&amp;amp;fm=26&amp;amp;gp=0.jpg&#34; alt=&#34;u=2640471829,4270483104&amp;amp;amp;fm=26&amp;amp;amp;gp=0.jpg&#34;  loading=&#34;lazy&#34; /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>安装部署hugo</title>
+      <link>/zh-cn/other/%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2hugo/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/other/%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2hugo/</guid>
+      <description>安装部署hugo 原文 不折腾点东西总觉得浑浑噩噩，折腾点东西搞得脑袋晕晕乎乎！ 折腾需求 为更新 https://edui.fun/ 导航站能随手些，造了 Gridea Theme WebStack 。每次得源文件切换加载</description>
+    </item>
+    
+    <item>
+      <title>爱奇艺 Shortcode</title>
+      <link>/zh-cn/front-end/vue/iqiyi/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/front-end/vue/iqiyi/</guid>
+      <description>&lt;p&gt;关于爱奇艺 shortcode 的详细说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>爱奇艺 Shortcode</title>
+      <link>/zh-cn/posts/shortcodes/iqiyi/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/posts/shortcodes/iqiyi/</guid>
+      <description>&lt;p&gt;关于爱奇艺 shortcode 的详细说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>网易云音乐 Shortcode</title>
+      <link>/zh-cn/front-end/vue/neteasemusic/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/front-end/vue/neteasemusic/</guid>
+      <description>&lt;p&gt;关于网易云音乐 Shortcode 的详细使用说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>网易云音乐 Shortcode</title>
+      <link>/zh-cn/posts/shortcodes/neteasemusic/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/posts/shortcodes/neteasemusic/</guid>
+      <description>&lt;p&gt;关于网易云音乐 Shortcode 的详细使用说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>腾讯视频 Shortcode</title>
+      <link>/zh-cn/front-end/vue/tencentvideo/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/front-end/vue/tencentvideo/</guid>
+      <description>&lt;p&gt;关于腾讯视频 shortcode 的详细说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>腾讯视频 Shortcode</title>
+      <link>/zh-cn/posts/shortcodes/tencentvideo/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/posts/shortcodes/tencentvideo/</guid>
+      <description>&lt;p&gt;关于腾讯视频 shortcode 的详细说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/zh-cn/playground/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/playground/</guid>
+      <description>Document测试</description>
+    </item>
+    
+    <item>
+      <title>前端</title>
+      <link>/zh-cn/front-end/vue/%E5%89%8D%E7%AB%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/front-end/vue/%E5%89%8D%E7%AB%AF/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
