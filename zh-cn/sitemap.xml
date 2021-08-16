@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/zh-cn/categories/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -20,6 +20,61 @@
                 hreflang="zh-cn"
                 href="/zh-cn/categories/"
                 />
+  </url><url>
+    <loc>/zh-cn/tags/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="/zh-tw/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/zh-cn/tags/"
+                />
+  </url><url>
+    <loc>/zh-cn/tags/cesium/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/zh-cn/categories/cesium/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/zh-cn/webgis/cesium/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/zh-cn/webgis/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/zh-cn/webgis/cesium/%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/zh-cn/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="/zh-tw/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/zh-cn/"
+                />
+  </url><url>
+    <loc>/zh-cn/webgis/cesium/%E5%89%8D%E8%A8%80/</loc>
+    <lastmod>2021-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/zh-cn/series/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
@@ -38,25 +93,6 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="/zh-cn/series/"
-                />
-  </url><url>
-    <loc>/zh-cn/tags/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="/zh-tw/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/zh-cn/tags/"
                 />
   </url><url>
     <loc>/zh-cn/tags/alert/</loc>
@@ -299,9 +335,6 @@
     <loc>/zh-cn/front-end/vue/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/zh-cn/webgis/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/zh-cn/tags/youku/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -453,24 +486,6 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="/zh-cn/posts/shortcodes/tencentvideo/"
-                />
-  </url><url>
-    <loc>/zh-cn/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-tw"
-                href="/zh-tw/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/zh-cn/"
                 />
   </url><url>
     <loc>/zh-cn/archives/</loc>
