@@ -1,28 +1,28 @@
 # Hugo Bootstrap 主题
 
-[English](https://github.com/razonyang/hugo-theme-bootstrap/blob/master/README.md) · 
-[简体中文](https://github.com/razonyang/hugo-theme-bootstrap/blob/master/README.zh-CN.md) · 
-[繁體中文](https://github.com/razonyang/hugo-theme-bootstrap/blob/master/README.zh-TW.md)
+[English](https://github.com/razonyang/bootstrap/blob/master/README.md) · 
+[简体中文](https://github.com/razonyang/bootstrap/blob/master/README.zh-CN.md) · 
+[繁體中文](https://github.com/razonyang/bootstrap/blob/master/README.zh-TW.md)
 
 一个极快、响应式和功能丰富的 Hugo 博客主题。
 
 ## 截图
 
-![截图](https://raw.githubusercontent.com/razonyang/hugo-theme-bootstrap/master/images/screenshot.png)
+![截图](https://raw.githubusercontent.com/razonyang/bootstrap/master/images/screenshot.png)
 
 **Dark Mode**
 
-![深色模式下的截图](https://raw.githubusercontent.com/razonyang/hugo-theme-bootstrap/master/images/screenshot-dark.png)
+![深色模式下的截图](https://raw.githubusercontent.com/razonyang/bootstrap/master/images/screenshot-dark.png)
 
 ## 线上预览
 
 - https://hbs.razonyang.com/ - 部署于 Netlify。
 
-这还有个[使用这个主题的网站列表](https://github.com/razonyang/hugo-theme-bootstrap/blob/master/USERS.md)。
+这还有个[使用这个主题的网站列表](https://github.com/razonyang/bootstrap/blob/master/USERS.md)。
 
 ## 功能特性
 
-- 极快：[Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https://hugo-theme-bootstrap.netlify.app/en/) 分数在 `95-100` 之间
+- 极快：[Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https://bootstrap.netlify.app/en/) 分数在 `95-100` 之间
 - 基于 [Bootstrap 5](https://getbootstrap.com/)
 - 响应式
 - 多种配色：`blue`, `blue-gray`, `brown`, `cyan`, `green`, `indigo`, `orange`, `pink`, `purple`, `red`, `teal`, `yellow`
@@ -53,20 +53,20 @@
 $ hugo new site myblog
 $ cd myblog
 $ git init
-$ git submodule add https://github.com/razonyang/hugo-theme-bootstrap themes/hugo-theme-bootstrap
-$ cp -a themes/hugo-theme-bootstrap/exampleSite/* .
+$ git submodule add https://github.com/razonyang/bootstrap themes/bootstrap
+$ cp -a themes/bootstrap/exampleSite/* .
 $ hugo server
 ```
 
-> 如果你使用的是 Windows，请改用 `xcopy .\themes\hugo-theme-bootstrap\exampleSite /E`。
+> 如果你使用的是 Windows，请改用 `xcopy .\themes\bootstrap\exampleSite /E`。
 
 ### 应用于现有站点
 
 ```shell
 $ cd myblog
-$ git submodule add https://github.com/razonyang/hugo-theme-bootstrap themes/hugo-theme-bootstrap
+$ git submodule add https://github.com/razonyang/bootstrap themes/bootstrap
 $ mkdir config
-$ cp -a themes/hugo-theme-bootstrap/exampleSite/config/* ./config
+$ cp -a themes/bootstrap/exampleSite/config/* ./config
 ```
 
 这种情况下，你还需要复制一些文件夹到 **content** 目录下，比如 **archives** 和 **search**。
@@ -89,11 +89,11 @@ $ git clone --recursive <your-repo>
 ## 升级
 
 ```shell
-$ cd themes/hugo-theme-bootstrap
+$ cd themes/bootstrap
 $ git fetch
 $ git checkout [version]
 $ cd ../../
-$ git add themes/hugo-theme-bootstrap
+$ git add themes/bootstrap
 $ git commit -m 'Upgrade the theme'
 ```
 
@@ -405,7 +405,7 @@ github = "githubusername"
 ## 贡献
 
 - 如果感兴趣，可以给颗 :star:。
-- [新建 Issue](https://github.com/razonyang/hugo-theme-bootstrap/issues/new)
+- [新建 Issue](https://github.com/razonyang/bootstrap/issues/new)
   - 提问
   - Bugs
   - 新功能

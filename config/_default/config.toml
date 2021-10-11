@@ -1,6 +1,6 @@
 baseURL = "https://zulezhe.com"
 title = "足乐者"
-theme = "hugo-theme-bootstrap"
+theme = "bootstrap"
 copyright = "Copyright © 2017-{year} zulezhe. All Rights Reserved."
 
 # 多语言模式

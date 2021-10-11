@@ -1,28 +1,28 @@
 # Hugo Bootstrap Theme
 
-[English](https://github.com/razonyang/hugo-theme-bootstrap/blob/master/README.md) · 
-[简体中文](https://github.com/razonyang/hugo-theme-bootstrap/blob/master/README.zh-CN.md) · 
-[繁體中文](https://github.com/razonyang/hugo-theme-bootstrap/blob/master/README.zh-TW.md)
+[English](https://github.com/razonyang/bootstrap/blob/master/README.md) · 
+[简体中文](https://github.com/razonyang/bootstrap/blob/master/README.zh-CN.md) · 
+[繁體中文](https://github.com/razonyang/bootstrap/blob/master/README.zh-TW.md)
 
 An extreme fast, responsive and feature-rich blog theme for Hugo.
 
 ## Screenshots
 
-![Screenshot](https://raw.githubusercontent.com/razonyang/hugo-theme-bootstrap/master/images/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/razonyang/bootstrap/master/images/screenshot.png)
 
 **Dark Mode**
 
-![Screenshot in Dark Mode](https://raw.githubusercontent.com/razonyang/hugo-theme-bootstrap/master/images/screenshot-dark.png)
+![Screenshot in Dark Mode](https://raw.githubusercontent.com/razonyang/bootstrap/master/images/screenshot-dark.png)
 
 ## Live Preview
 
 - https://hbs.razonyang.com/ - Deploy on Netlify.
 
-There is also a [list of websites that use this theme](https://github.com/razonyang/hugo-theme-bootstrap/blob/master/USERS.md).
+There is also a [list of websites that use this theme](https://github.com/razonyang/bootstrap/blob/master/USERS.md).
 
 ## Features
 
-- Extreme Fast: [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https://hugo-theme-bootstrap.netlify.app/en/)'s score `95-100`.
+- Extreme Fast: [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/?url=https://bootstrap.netlify.app/en/)'s score `95-100`.
 - Built on top of [Bootstrap 5](https://getbootstrap.com/).
 - Responsive.
 - Various Palettes: `blue`, `blue-gray`, `brown`, `cyan`, `green`, `indigo`, `orange`, `pink`, `purple`, `red`, `teal`, `yellow`.
@@ -54,20 +54,20 @@ There is also a [list of websites that use this theme](https://github.com/razony
 $ hugo new site myblog
 $ cd myblog
 $ git init
-$ git submodule add https://github.com/razonyang/hugo-theme-bootstrap themes/hugo-theme-bootstrap
-$ cp -a themes/hugo-theme-bootstrap/exampleSite/* .
+$ git submodule add https://github.com/razonyang/bootstrap themes/bootstrap
+$ cp -a themes/bootstrap/exampleSite/* .
 $ hugo server
 ```
 
-> If you're using Windows, use `xcopy .\themes\hugo-theme-bootstrap\exampleSite /E` instead.
+> If you're using Windows, use `xcopy .\themes\bootstrap\exampleSite /E` instead.
 
 ### Apply to the existing site
 
 ```shell
 $ cd myblog
-$ git submodule add https://github.com/razonyang/hugo-theme-bootstrap themes/hugo-theme-bootstrap
+$ git submodule add https://github.com/razonyang/bootstrap themes/bootstrap
 $ mkdir config
-$ cp -a themes/hugo-theme-bootstrap/exampleSite/config/* ./config
+$ cp -a themes/bootstrap/exampleSite/config/* ./config
 ```
 
 In this case, you will need to copy some directories into the **content**, such as the **archives** and **search** directory.
@@ -90,11 +90,11 @@ $ git clone --recursive <your-repo>
 ## Upgrade
 
 ```shell
-$ cd themes/hugo-theme-bootstrap
+$ cd themes/bootstrap
 $ git fetch
 $ git checkout [version]
 $ cd ../../
-$ git add themes/hugo-theme-bootstrap
+$ git add themes/bootstrap
 $ git commit -m 'Upgrade the theme'
 ```
 
@@ -408,7 +408,7 @@ github = "githubusername"
 **Any contributions are welcome.**
 
 - :star: if you are interested in this theme.
-- [File an issue](https://github.com/razonyang/hugo-theme-bootstrap/issues/new)
+- [File an issue](https://github.com/razonyang/bootstrap/issues/new)
   - Ask questions.
   - Report bugs.
   - Request features.

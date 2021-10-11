@@ -9,7 +9,7 @@ RUN apt-get install -y git
 WORKDIR /src
 COPY . /src
 RUN hugo version
-RUN cd /src/exampleSite && hugo --themesDir=../../ --theme=src -b https://hugo-theme-bootstrap.razonyang.com/
+RUN cd /src/exampleSite && hugo --themesDir=../../ --theme=src -b https://bootstrap.razonyang.com/
 
 # Final stage
 FROM nginx

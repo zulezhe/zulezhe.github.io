@@ -1,8 +1,8 @@
 name = "Bootstrap Blog Theme"
 license = "MIT"
-licenselink = "https://github.com/razonyang/hugo-theme-bootstrap/blob/master/LICENSE"
+licenselink = "https://github.com/razonyang/bootstrap/blob/master/LICENSE"
 description = "An extreme fast, responsive and feature-rich blog theme for Hugo"
-homepage = "https://github.com/razonyang/hugo-theme-bootstrap"
+homepage = "https://github.com/razonyang/bootstrap"
 demosite = "https://hbs.razonyang.com"
 tags = [
   "bootstrap",

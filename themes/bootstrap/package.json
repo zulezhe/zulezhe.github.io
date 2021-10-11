@@ -1,5 +1,5 @@
 {
-  "name": "hugo-theme-bootstrap",
+  "name": "bootstrap",
   "description": "Hugo bootstrap theme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
@@ -64,7 +64,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/razonyang/hugo-theme-bootstrap.git"
+    "url": "git+https://github.com/razonyang/bootstrap.git"
   },
   "keywords": [
     "hugo",
@@ -76,7 +76,7 @@
   "author": "Razon Yang <razonyang@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/razonyang/hugo-theme-bootstrap/issues"
+    "url": "https://github.com/razonyang/bootstrap/issues"
   },
-  "homepage": "https://github.com/razonyang/hugo-theme-bootstrap#readme"
+  "homepage": "https://github.com/razonyang/bootstrap#readme"
 }

@@ -13,9 +13,7 @@ tags = [
 
 ## 安装部署hugo
 
-[原文](https://immmmm.com/hugo-github-actions/)
-
-不折腾点东西总觉得浑浑噩噩，折腾点东西搞得脑袋晕晕乎乎！
+使用hugo搭建博客的最主要原因之一就是它快
 
 ### 折腾需求
 

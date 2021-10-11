@@ -6,5 +6,5 @@
   id = "github"
   parent = "dropdown"
   name = "Github"
-  url = "https://github.com/razonyang/hugo-theme-bootstrap"
+  url = "https://github.com/razonyang/bootstrap"
   pre = '<i class="fab fa-fw fa-github"></i>'
