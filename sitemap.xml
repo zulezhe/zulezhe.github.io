@@ -10,9 +10,6 @@
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>/webgis/</loc>
-    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/cesium/</loc>
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
   </url><url>
@@ -20,6 +17,9 @@
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/webgis/cesium/</loc>
+    <lastmod>2021-01-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/webgis/</loc>
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/webgis/cesium/%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2/</loc>
@@ -31,19 +31,6 @@
     <loc>/webgis/cesium/%E5%89%8D%E8%A8%80/</loc>
     <lastmod>2021-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/series/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url><url>
-    <loc>/tags/alert/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/front-end/vue/alert/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/shortcodes/alert/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/arcgis/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
@@ -51,42 +38,6 @@
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/webgis/arcgis/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/front-end/vue/bilibili/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/shortcodes/bilibili/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/codepen/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/front-end/vue/codepen/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/shortcodes/codepen/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/hugo/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/jsfiddle/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/front-end/vue/jsfiddle/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/shortcodes/jsfiddle/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/jsrun/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/front-end/vue/jsrun/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/shortcodes/jsrun/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/openlayer/</loc>
@@ -98,79 +49,13 @@
     <loc>/webgis/openlayer/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/other/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/categories/shortcode/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/shortcodes/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/front-end/vue/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/youku/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/webgis/arcgis/%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/front-end/vue/youku/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/shortcodes/youku/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/other/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/webgis/openlayer/create-map/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/front-end/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/webgis/openlayer/%E5%8A%A0%E8%BD%BD%E5%A4%A9%E5%9C%B0%E5%9B%BE/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/other/%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2hugo/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/%E7%88%B1%E5%A5%87%E8%89%BA/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/front-end/vue/iqiyi/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/shortcodes/iqiyi/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/series/%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/front-end/vue/neteasemusic/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/shortcodes/neteasemusic/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/front-end/vue/tencentvideo/</loc>
-    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/shortcodes/tencentvideo/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/archives/</loc>
@@ -179,15 +64,24 @@
     <loc>/playground/</loc>
     <priority>0</priority>
   </url><url>
+    <loc>/series/</loc>
+    <priority>0</priority>
+  </url><url>
     <loc>/webgl/cancas/</loc>
   </url><url>
+    <loc>/front-end/vue/</loc>
+  </url><url>
     <loc>/webgl/</loc>
+  </url><url>
+    <loc>/other/</loc>
   </url><url>
     <loc>/tags/%E5%89%8D%E7%AB%AF/</loc>
   </url><url>
     <loc>/series/%E5%89%8D%E7%AB%AF/</loc>
   </url><url>
     <loc>/categories/%E5%89%8D%E7%AB%AF/</loc>
+  </url><url>
+    <loc>/front-end/</loc>
   </url><url>
     <loc>/front-end/vue/%E5%89%8D%E7%AB%AF/</loc>
   </url><url>
