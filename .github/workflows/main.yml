@@ -1,0 +1,31 @@
+name: Deploy Hugo
+
+on:
+  push:
+    branches:
+      - master # master 更新触发
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.hugo }} # personal_token 这里新建一个 https://github.com/settings/tokens
+          PUBLISH_BRANCH: gh-pages # 推送到当前 gh-pages 分支
+          PUBLISH_DIR: / # hugo 生成到当前目录
+          commit_message: ${{ github.event.head_commit.message }}
+        # 部署到服务器
+      - name: Webhook
+        uses: distributhor/workflow-webhook@v1
+        env:
+          webhook_url: ${{ secrets.WEBHOOK_URL }}
+          webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
+
+      - name: Sending message
+        uses: yakumioto/serverchan-action@v1
+        with:
+          key: ${{ secrets.sckey }}
+          text: "success"
+          desp: "构建完成"
