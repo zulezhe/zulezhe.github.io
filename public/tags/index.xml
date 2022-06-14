@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>足乐者</title>
+    <link>/tags/</link>
+    <description>Recent content on 足乐者</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyright © 2017-{year} zulezhe. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cesium</title>
+      <link>/tags/cesium/</link>
+      <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cesium/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Alert</title>
+      <link>/tags/alert/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/alert/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arcgis</title>
+      <link>/tags/arcgis/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/arcgis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CodePen</title>
+      <link>/tags/codepen/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/codepen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>geoserver</title>
+      <link>/tags/geoserver/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/geoserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gis</title>
+      <link>/tags/gis/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/gis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>/tags/hugo/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JSFiddle</title>
+      <link>/tags/jsfiddle/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/jsfiddle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JSRun</title>
+      <link>/tags/jsrun/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/jsrun/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openlayer</title>
+      <link>/tags/openlayer/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/openlayer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Youku</title>
+      <link>/tags/youku/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/youku/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>哔哩哔哩</title>
+      <link>/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>爱奇艺</title>
+      <link>/tags/%E7%88%B1%E5%A5%87%E8%89%BA/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E7%88%B1%E5%A5%87%E8%89%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>网易云音乐</title>
+      <link>/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>腾讯视频</title>
+      <link>/tags/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>前端</title>
+      <link>/tags/%E5%89%8D%E7%AB%AF/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E5%89%8D%E7%AB%AF/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

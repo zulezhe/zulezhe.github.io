@@ -56,7 +56,11 @@
     name = "openlayer"
     url = "./webgis/openlayer"
     pre = '<i class="fab fa-fw fa-github"></i>'
-
+  [[main]]
+    parent = "webgis"
+    name = "mapbox"
+    url = "./webgis/mapbox"
+    pre = '<i class="fab fa-fw fa-github"></i>'
   [[main]]
     parent = "webgis"
     name = "cesium"
@@ -67,6 +71,11 @@
     parent = "webgis"
     name = "arcgis"
     url = "./webgis/arcgis"
+    pre = '<i class="fab fa-fw fa-github"></i>'
+  [[main]]
+    parent = "webgis"
+    name = "geoserver"
+    url = "./webgis/geoserver"
     pre = '<i class="fab fa-fw fa-github"></i>'
    [[main]]
     parent = "webgis"
