@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Alert on 足乐者</title>
-    <link>/tags/alert/</link>
+    <link>d:///dev/git/Git/tags/alert/</link>
     <description>Recent content in Alert on 足乐者</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyright © 2017-{year} zulezhe. All Rights Reserved.</copyright>
-    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/alert/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="d:///dev/git/Git/tags/alert/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Alert Shortcode</title>
-      <link>/front-end/vue/alert/</link>
+      <link>d:///dev/git/Git/front-end/vue/alert/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/front-end/vue/alert/</guid>
+      <guid>d:///dev/git/Git/front-end/vue/alert/</guid>
       <description>&lt;p&gt;本文展示了如果使用 &lt;code&gt;alert&lt;/code&gt; shortcode。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Alert Shortcode</title>
-      <link>/posts/shortcodes/alert/</link>
+      <link>d:///dev/git/Git/posts/shortcodes/alert/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/posts/shortcodes/alert/</guid>
+      <guid>d:///dev/git/Git/posts/shortcodes/alert/</guid>
       <description>&lt;p&gt;本文展示了如果使用 &lt;code&gt;alert&lt;/code&gt; shortcode。&lt;/p&gt;</description>
     </item>
     
