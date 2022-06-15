@@ -37,5 +37,5 @@ jobs:
         uses: yakumioto/serverchan-action@v1
         with:
           key: ${{ secrets.sckey }}
-          text: 'zuzhele'
+          text: 'zuzhele.com'
           desp: '构建完成'
