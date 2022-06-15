@@ -2,144 +2,144 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>足乐者</title>
-    <link>d:///dev/git/Git/tags/</link>
+    <link>/tags/</link>
     <description>Recent content on 足乐者</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyright © 2017-{year} zulezhe. All Rights Reserved.</copyright>
-    <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="d:///dev/git/Git/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>cesium</title>
-      <link>d:///dev/git/Git/tags/cesium/</link>
+      <link>/tags/cesium/</link>
       <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/cesium/</guid>
+      <guid>/tags/cesium/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Alert</title>
-      <link>d:///dev/git/Git/tags/alert/</link>
+      <link>/tags/alert/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/alert/</guid>
+      <guid>/tags/alert/</guid>
       <description></description>
     </item>
     
     <item>
       <title>arcgis</title>
-      <link>d:///dev/git/Git/tags/arcgis/</link>
+      <link>/tags/arcgis/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/arcgis/</guid>
+      <guid>/tags/arcgis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CodePen</title>
-      <link>d:///dev/git/Git/tags/codepen/</link>
+      <link>/tags/codepen/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/codepen/</guid>
+      <guid>/tags/codepen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>geoserver</title>
-      <link>d:///dev/git/Git/tags/geoserver/</link>
+      <link>/tags/geoserver/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/geoserver/</guid>
+      <guid>/tags/geoserver/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gis</title>
-      <link>d:///dev/git/Git/tags/gis/</link>
+      <link>/tags/gis/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/gis/</guid>
+      <guid>/tags/gis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JSFiddle</title>
-      <link>d:///dev/git/Git/tags/jsfiddle/</link>
+      <link>/tags/jsfiddle/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/jsfiddle/</guid>
+      <guid>/tags/jsfiddle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JSRun</title>
-      <link>d:///dev/git/Git/tags/jsrun/</link>
+      <link>/tags/jsrun/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/jsrun/</guid>
+      <guid>/tags/jsrun/</guid>
       <description></description>
     </item>
     
     <item>
       <title>openlayer</title>
-      <link>d:///dev/git/Git/tags/openlayer/</link>
+      <link>/tags/openlayer/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/openlayer/</guid>
+      <guid>/tags/openlayer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Youku</title>
-      <link>d:///dev/git/Git/tags/youku/</link>
+      <link>/tags/youku/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/youku/</guid>
+      <guid>/tags/youku/</guid>
       <description></description>
     </item>
     
     <item>
       <title>哔哩哔哩</title>
-      <link>d:///dev/git/Git/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/</link>
+      <link>/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/</guid>
+      <guid>/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/</guid>
       <description></description>
     </item>
     
     <item>
       <title>爱奇艺</title>
-      <link>d:///dev/git/Git/tags/%E7%88%B1%E5%A5%87%E8%89%BA/</link>
+      <link>/tags/%E7%88%B1%E5%A5%87%E8%89%BA/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/%E7%88%B1%E5%A5%87%E8%89%BA/</guid>
+      <guid>/tags/%E7%88%B1%E5%A5%87%E8%89%BA/</guid>
       <description></description>
     </item>
     
     <item>
       <title>网易云音乐</title>
-      <link>d:///dev/git/Git/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</link>
+      <link>/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</guid>
+      <guid>/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</guid>
       <description></description>
     </item>
     
     <item>
       <title>腾讯视频</title>
-      <link>d:///dev/git/Git/tags/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91/</link>
+      <link>/tags/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91/</guid>
+      <guid>/tags/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>前端</title>
-      <link>d:///dev/git/Git/tags/%E5%89%8D%E7%AB%AF/</link>
+      <link>/tags/%E5%89%8D%E7%AB%AF/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/tags/%E5%89%8D%E7%AB%AF/</guid>
+      <guid>/tags/%E5%89%8D%E7%AB%AF/</guid>
       <description></description>
     </item>
     

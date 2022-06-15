@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>geoserver on 足乐者</title>
-    <link>d:///dev/git/Git/tags/geoserver/</link>
+    <link>/tags/geoserver/</link>
     <description>Recent content in geoserver on 足乐者</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyright © 2017-{year} zulezhe. All Rights Reserved.</copyright>
-    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="d:///dev/git/Git/tags/geoserver/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/geoserver/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>01-下载安装geoserver</title>
-      <link>d:///dev/git/Git/webgis/geoserver/01-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</link>
+      <link>/webgis/geoserver/01-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/webgis/geoserver/01-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</guid>
+      <guid>/webgis/geoserver/01-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</guid>
       <description></description>
     </item>
     

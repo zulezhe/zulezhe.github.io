@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>哔哩哔哩 on 足乐者</title>
-    <link>d:///dev/git/Git/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/</link>
+    <link>/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/</link>
     <description>Recent content in 哔哩哔哩 on 足乐者</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyright © 2017-{year} zulezhe. All Rights Reserved.</copyright>
-    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="d:///dev/git/Git/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bilibili Shortcode</title>
-      <link>d:///dev/git/Git/front-end/vue/bilibili/</link>
+      <link>/front-end/vue/bilibili/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/front-end/vue/bilibili/</guid>
+      <guid>/front-end/vue/bilibili/</guid>
       <description>&lt;p&gt;关于哔哩哔哩 shortcode 的详细使用说明。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Bilibili Shortcode</title>
-      <link>d:///dev/git/Git/posts/shortcodes/bilibili/</link>
+      <link>/posts/shortcodes/bilibili/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/posts/shortcodes/bilibili/</guid>
+      <guid>/posts/shortcodes/bilibili/</guid>
       <description>&lt;p&gt;关于哔哩哔哩 shortcode 的详细使用说明。&lt;/p&gt;</description>
     </item>
     

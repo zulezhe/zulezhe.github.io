@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: d:///dev/git/Git/sitemap.xml
+Sitemap: /sitemap.xml

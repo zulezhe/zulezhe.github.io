@@ -2,72 +2,72 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>足乐者</title>
-    <link>d:///dev/git/Git/categories/</link>
+    <link>/categories/</link>
     <description>Recent content on 足乐者</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyright © 2017-{year} zulezhe. All Rights Reserved.</copyright>
-    <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="d:///dev/git/Git/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>cesium</title>
-      <link>d:///dev/git/Git/categories/cesium/</link>
+      <link>/categories/cesium/</link>
       <pubDate>Sat, 23 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/categories/cesium/</guid>
+      <guid>/categories/cesium/</guid>
       <description></description>
     </item>
     
     <item>
       <title>arcgis</title>
-      <link>d:///dev/git/Git/categories/arcgis/</link>
+      <link>/categories/arcgis/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/categories/arcgis/</guid>
+      <guid>/categories/arcgis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>base</title>
-      <link>d:///dev/git/Git/categories/base/</link>
+      <link>/categories/base/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/categories/base/</guid>
+      <guid>/categories/base/</guid>
       <description></description>
     </item>
     
     <item>
       <title>geoserver</title>
-      <link>d:///dev/git/Git/categories/geoserver/</link>
+      <link>/categories/geoserver/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/categories/geoserver/</guid>
+      <guid>/categories/geoserver/</guid>
       <description></description>
     </item>
     
     <item>
       <title>openlayer</title>
-      <link>d:///dev/git/Git/categories/openlayer/</link>
+      <link>/categories/openlayer/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/categories/openlayer/</guid>
+      <guid>/categories/openlayer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shortcode</title>
-      <link>d:///dev/git/Git/categories/shortcode/</link>
+      <link>/categories/shortcode/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/categories/shortcode/</guid>
+      <guid>/categories/shortcode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>前端</title>
-      <link>d:///dev/git/Git/categories/%E5%89%8D%E7%AB%AF/</link>
+      <link>/categories/%E5%89%8D%E7%AB%AF/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/categories/%E5%89%8D%E7%AB%AF/</guid>
+      <guid>/categories/%E5%89%8D%E7%AB%AF/</guid>
       <description></description>
     </item>
     

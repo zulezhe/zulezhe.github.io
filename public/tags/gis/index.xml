@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gis on 足乐者</title>
-    <link>d:///dev/git/Git/tags/gis/</link>
+    <link>/tags/gis/</link>
     <description>Recent content in gis on 足乐者</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyright © 2017-{year} zulezhe. All Rights Reserved.</copyright>
-    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="d:///dev/git/Git/tags/gis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/gis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>地图坐标系统</title>
-      <link>d:///dev/git/Git/webgis/base/%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F/</link>
+      <link>/webgis/base/%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>d:///dev/git/Git/webgis/base/%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>/webgis/base/%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F/</guid>
       <description>坐标系统是描述现实世界中物体存在的空间位置（坐标）的参照系，通过定义特定基准及其参数形式来实现。 由于地球的自然表面不是平整的，需要想办法用数</description>
     </item>
     

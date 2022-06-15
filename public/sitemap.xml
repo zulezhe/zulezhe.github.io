@@ -2,211 +2,211 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>d:///dev/git/Git/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>d:///dev/git/Git/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>d:///dev/git/Git/tags/cesium/</loc>
+    <loc>/tags/cesium/</loc>
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/categories/cesium/</loc>
+    <loc>/categories/cesium/</loc>
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/webgis/cesium/</loc>
+    <loc>/webgis/cesium/</loc>
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/webgis/</loc>
+    <loc>/webgis/</loc>
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/webgis/cesium/%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2/</loc>
+    <loc>/webgis/cesium/%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/</loc>
+    <loc>/</loc>
     <lastmod>2021-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/webgis/cesium/%E5%89%8D%E8%A8%80/</loc>
+    <loc>/webgis/cesium/%E5%89%8D%E8%A8%80/</loc>
     <lastmod>2021-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/series/</loc>
+    <loc>/series/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>d:///dev/git/Git/webgis/geoserver/01-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</loc>
+    <loc>/webgis/geoserver/01-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/tags/alert/</loc>
+    <loc>/tags/alert/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/front-end/vue/alert/</loc>
+    <loc>/front-end/vue/alert/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/posts/shortcodes/alert/</loc>
+    <loc>/posts/shortcodes/alert/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/tags/arcgis/</loc>
+    <loc>/tags/arcgis/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/categories/arcgis/</loc>
+    <loc>/categories/arcgis/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/webgis/arcgis/</loc>
+    <loc>/webgis/arcgis/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/categories/base/</loc>
+    <loc>/categories/base/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/front-end/vue/bilibili/</loc>
+    <loc>/front-end/vue/bilibili/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/posts/shortcodes/bilibili/</loc>
+    <loc>/posts/shortcodes/bilibili/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/tags/codepen/</loc>
+    <loc>/tags/codepen/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/front-end/vue/codepen/</loc>
+    <loc>/front-end/vue/codepen/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/posts/shortcodes/codepen/</loc>
+    <loc>/posts/shortcodes/codepen/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/tags/geoserver/</loc>
+    <loc>/tags/geoserver/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/categories/geoserver/</loc>
+    <loc>/categories/geoserver/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/webgis/geoserver/</loc>
+    <loc>/webgis/geoserver/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/tags/gis/</loc>
+    <loc>/tags/gis/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/tags/jsfiddle/</loc>
+    <loc>/tags/jsfiddle/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/front-end/vue/jsfiddle/</loc>
+    <loc>/front-end/vue/jsfiddle/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/posts/shortcodes/jsfiddle/</loc>
+    <loc>/posts/shortcodes/jsfiddle/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/tags/jsrun/</loc>
+    <loc>/tags/jsrun/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/front-end/vue/jsrun/</loc>
+    <loc>/front-end/vue/jsrun/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/posts/shortcodes/jsrun/</loc>
+    <loc>/posts/shortcodes/jsrun/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/tags/openlayer/</loc>
+    <loc>/tags/openlayer/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/categories/openlayer/</loc>
+    <loc>/categories/openlayer/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/webgis/openlayer/</loc>
+    <loc>/webgis/openlayer/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/categories/shortcode/</loc>
+    <loc>/categories/shortcode/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/posts/shortcodes/</loc>
+    <loc>/posts/shortcodes/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/front-end/vue/</loc>
+    <loc>/front-end/vue/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/tags/youku/</loc>
+    <loc>/tags/youku/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/webgis/arcgis/%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2/</loc>
+    <loc>/webgis/arcgis/%E4%B8%8B%E8%BD%BD%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/front-end/vue/youku/</loc>
+    <loc>/front-end/vue/youku/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/posts/shortcodes/youku/</loc>
+    <loc>/posts/shortcodes/youku/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/webgis/openlayer/create-map/</loc>
+    <loc>/webgis/openlayer/create-map/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/front-end/</loc>
+    <loc>/front-end/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/webgis/openlayer/%E5%8A%A0%E8%BD%BD%E5%A4%A9%E5%9C%B0%E5%9B%BE/</loc>
+    <loc>/webgis/openlayer/%E5%8A%A0%E8%BD%BD%E5%A4%A9%E5%9C%B0%E5%9B%BE/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/</loc>
+    <loc>/tags/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/webgis/base/%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>/webgis/base/%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/webgis/base/</loc>
+    <loc>/webgis/base/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/tags/%E7%88%B1%E5%A5%87%E8%89%BA/</loc>
+    <loc>/tags/%E7%88%B1%E5%A5%87%E8%89%BA/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/front-end/vue/iqiyi/</loc>
+    <loc>/front-end/vue/iqiyi/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/posts/shortcodes/iqiyi/</loc>
+    <loc>/posts/shortcodes/iqiyi/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/series/%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C/</loc>
+    <loc>/series/%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</loc>
+    <loc>/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/front-end/vue/neteasemusic/</loc>
+    <loc>/front-end/vue/neteasemusic/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/posts/shortcodes/neteasemusic/</loc>
+    <loc>/posts/shortcodes/neteasemusic/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/tags/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91/</loc>
+    <loc>/tags/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/front-end/vue/tencentvideo/</loc>
+    <loc>/front-end/vue/tencentvideo/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/posts/shortcodes/tencentvideo/</loc>
+    <loc>/posts/shortcodes/tencentvideo/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>d:///dev/git/Git/archives/</loc>
+    <loc>/archives/</loc>
     <priority>0</priority>
   </url><url>
-    <loc>d:///dev/git/Git/playground/</loc>
+    <loc>/playground/</loc>
     <priority>0</priority>
   </url><url>
-    <loc>d:///dev/git/Git/webgis/geoserver/02.%E9%85%8D%E7%BD%AE/</loc>
+    <loc>/webgis/geoserver/02.%E9%85%8D%E7%BD%AE/</loc>
   </url><url>
-    <loc>d:///dev/git/Git/webgl/canvas/</loc>
+    <loc>/webgl/canvas/</loc>
   </url><url>
-    <loc>d:///dev/git/Git/webgl/</loc>
+    <loc>/webgl/</loc>
   </url><url>
-    <loc>d:///dev/git/Git/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>/tags/%E5%89%8D%E7%AB%AF/</loc>
   </url><url>
-    <loc>d:///dev/git/Git/series/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>/series/%E5%89%8D%E7%AB%AF/</loc>
   </url><url>
-    <loc>d:///dev/git/Git/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>/categories/%E5%89%8D%E7%AB%AF/</loc>
   </url><url>
-    <loc>d:///dev/git/Git/front-end/vue/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>/front-end/vue/%E5%89%8D%E7%AB%AF/</loc>
   </url><url>
-    <loc>d:///dev/git/Git/search/</loc>
+    <loc>/search/</loc>
   </url><url>
-    <loc>d:///dev/git/Git/playground/</loc>
+    <loc>/playground/</loc>
   </url>
 </urlset>
