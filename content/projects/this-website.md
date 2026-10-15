@@ -7,7 +7,7 @@ tech: ["Next.js", "TypeScript", "Tailwind CSS", "Shiki", "Markdown"]
 links:
   repo: "https://github.com/oliver/blog"
 featured: true
-order: 1
+order: 2
 ---
 
 ## What it is
