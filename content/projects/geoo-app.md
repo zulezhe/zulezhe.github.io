@@ -14,6 +14,8 @@ order: 1
 
 [geoo.app](https://geoo.app) is a free, browser-based geospatial toolbox — 600+ tools covering the jobs GIS data actually needs done, with zero installs and zero accounts.
 
+![geoo.app homepage: 600+ free online GIS tools, processed locally in the browser](/images/geoo-app/home.png)
+
 ## The problem
 
 Every "online GIS converter" asks you to upload your data to somebody's server. Desktop GIS asks for a license and a 2 GB install for a 5 MB job. geoo.app refuses both trade-offs: the conversion engine ships to *you*, and your files never leave your device.

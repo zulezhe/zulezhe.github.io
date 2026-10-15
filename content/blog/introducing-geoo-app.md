@@ -35,6 +35,10 @@ That question became [geoo.app](https://geoo.app).
 
 At its core it's a suite of 600+ tools organized around the jobs GIS data actually needs done:
 
+![geoo.app homepage: 600+ free online GIS tools with local, no-upload processing](/images/geoo-app/home.png)
+
+*The geoo.app landing page — the whole value proposition in one screen: free, unlimited, and 100% local processing.*
+
 - **Format conversion** — over 500 conversion combinations across 30+ formats: GeoJSON, Shapefile, KML/KMZ, GPX, CSV, TopoJSON, DXF, DWG, GeoPackage, GeoTIFF, WKT and friends. Batch conversion included.
 - **Coordinate transformation** — WGS84, Web Mercator, all UTM zones, thousands of CRSs searchable by EPSG code, plus the Chinese GCJ-02 and BD-09 systems, with batch processing.
 - **Raster processing** — format conversion, clipping, reprojection and band operations, including direct GeoTIFF work.
@@ -42,6 +46,10 @@ At its core it's a suite of 600+ tools organized around the jobs GIS data actual
 - **Workflow** — chain multiple operations together, so "convert → reproject → clip" is one flow instead of three round-trips.
 - **Georeferencer** — bring un-referenced imagery onto real-world coordinates.
 - **Geocoding** — forward and reverse, including batch geocoding of CSV address lists (via OpenStreetMap's Nominatim).
+
+![geoo.app format converter: drag-and-drop panel with GPX, KML, SHP, DWG, DXF, GeoJSON format chips](/images/geoo-app/converter.png)
+
+*The universal converter — drop a file, pick a target format, and it's processed on your machine. The format chips read like a GIS conference attendee list.*
 
 The whole thing is free: no sign-up, no watermarks, no daily limits, no "large files are a paid feature." The interface ships in 11 languages.
 
