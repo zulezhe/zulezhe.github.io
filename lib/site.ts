@@ -68,7 +68,7 @@ export const siteConfig = {
    */
   analytics: {
     cloudflareBeacon: "",
-    googleAnalyticsId: process.env.NEXT_PUBLIC_GA_ID ?? "",
+    googleAnalyticsId: process.env.NEXT_PUBLIC_GA_ID ?? "G-Z8XEE5MVPC",
   },
 
   /** Google Search Console verification code (optional). */
