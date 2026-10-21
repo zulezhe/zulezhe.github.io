@@ -62,11 +62,13 @@ export const siteConfig = {
   giscus: null as GiscusConfig | null,
 
   /**
-   * Cloudflare Web Analytics beacon token (free, cookieless).
-   * Paste the token from your Cloudflare dashboard to enable.
+   * Google Analytics 4 — paste your Measurement ID (e.g. "G-ABCDEF1234")
+   * from analytics.google.com, or set NEXT_PUBLIC_GA_ID at build time.
+   * Empty = the tracking script is not rendered at all.
    */
   analytics: {
     cloudflareBeacon: "",
+    googleAnalyticsId: process.env.NEXT_PUBLIC_GA_ID ?? "",
   },
 
   /** Google Search Console verification code (optional). */

@@ -90,7 +90,9 @@ About 页正文在 `app/about/page.tsx`（搜 `EDIT ME`）。
 ## 可选增强（都免费）
 
 - **评论**：[giscus.app](https://giscus.app)（基于 GitHub Discussions）——把生成的 4 个参数填进 `lib/site.ts` 的 `giscus` 字段即开启
-- **统计**：Cloudflare Web Analytics（免费无 Cookie）——把 token 填进 `lib/site.ts` 的 `analytics.cloudflareBeacon`
+- **统计**（二选一或都用）：
+  - Google Analytics 4：在 [analytics.google.com](https://analytics.google.com) 建媒体资源，把 Measurement ID（`G-XXXXXXX`）填进 `lib/site.ts` 的 `analytics.googleAnalyticsId`，或在 GitHub 仓库 Settings → Secrets and variables → Actions 添加 `NEXT_PUBLIC_GA_ID` 并在 workflow 的 build 步骤加 `env: NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}`（不想把 ID 提交进仓库时用这种方式）
+  - Cloudflare Web Analytics（免费无 Cookie）：把 token 填进 `lib/site.ts` 的 `analytics.cloudflareBeacon`
 - **搜索收录**：[Google Search Console](https://search.google.com/search-console) 验证码填进 `lib/site.ts` 的 `verification.google`，提交 `https://你的域名/sitemap.xml`
 - **AI 收录**：无需操作，`llms.txt` 已就位；可在 Search Console 观察 GPTBot 等爬虫的抓取
 
