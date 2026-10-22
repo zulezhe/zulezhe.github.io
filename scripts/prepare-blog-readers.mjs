@@ -1,5 +1,5 @@
 /** Blog-only reader derivatives. The supplied report bundles stay unchanged. */
-import { readFile, writeFile } from "node:fs/promises"
+import { readFile, writeFile, readdir } from "node:fs/promises"
 import { fileURLToPath } from "node:url"
 import { join } from "node:path"
 
@@ -26,13 +26,31 @@ const readerHead = `<meta name="robots" content="noindex,follow">
 [class*="chart-pinned-actions"] { display: none !important; }
 </style>`
 
+// The owner also asked to drop the attribution to the non-open-source article
+// that inspired the report's narrative (text paragraph + reference links).
+const referenceParagraph = /\*\*Reference and independent calculations\.\*\*[\s\S]*?prevent direct comparison of totals\.\n\n/g
+const referenceUrl = /https:\/\/mapular\.com\/blog\/ev-charging-deserts-europe/g
+
 const directory = join(root, language, "analysis-report")
 const original = await readFile(join(directory, "dist/index.html"), "utf8")
-await writeFile(join(directory, "dist/reader.html"), original.replace(/<head([^>]*)>/i, `<head$1>${readerHead}`))
+const cleaned = original
+  .replace(referenceParagraph, "")
+  .replace(/Mapular article/g, "article")
+  .replace(referenceUrl, "")
+  .replace(/Mapular/g, "")
+await writeFile(join(directory, "dist/reader.html"), cleaned.replace(/<head([^>]*)>/i, `<head$1>${readerHead}`))
 
 const wrapper = await readFile(join(directory, "index.html"), "utf8")
 await writeFile(join(directory, "index.html"), wrapper
   .replace('src="dist/index.html"', 'src="dist/reader.html"')
   .replace(/<head>(?!<meta name="robots")/i, '<head><meta name="robots" content="noindex,follow">'))
 
-console.log("English reader prepared: authoring, ask, publish and handoff UI hidden.")
+// Blank the reference URL inside the data snapshot (idempotent).
+for (const file of (await readdir(join(directory, "dist"))).filter(f => f.startsWith("snapshot.") && f.endsWith(".json"))) {
+  const snapshotPath = join(directory, "dist", file)
+  const snapshot = await readFile(snapshotPath, "utf8")
+  const patched = snapshot.replace(referenceUrl, "")
+  if (patched !== snapshot) await writeFile(snapshotPath, patched)
+}
+
+console.log("English reader prepared: authoring, ask, publish and handoff UI hidden; external reference removed.")
