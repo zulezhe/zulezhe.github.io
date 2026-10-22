@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>European EV charging station explorer · EV Charging Europe</title>
+<link rel="stylesheet" href="../assets/vendor/maplibre-gl.css">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-left">
+    <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14 2 5 14h6l-1 8 9-12h-6l1-8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><div><h1>Europe’s charging network</h1><span class="subtitle">EV Charging Infrastructure · Europe</span></div>
+  </div>
+  <div class="header-links"><a class="report-link" href="analysis-report/">Analysis report ↗</a><div class="topbar-right" id="sourceBadges"></div></div>
+</header>
+
+<div class="layout">
+
+  <!-- ============ 左侧筛选面板 ============ -->
+  <aside class="panel filters" id="filterPanel">
+    <div class="panel-head">
+      <h2>Filters</h2>
+      <button class="btn-reset" id="btnReset">Reset</button>
+    </div>
+
+    <section class="filter-block">
+      <div class="filter-title-row">
+        <h3>Country / territory</h3>
+        <span class="mini-actions">
+          <button id="btnCCAll">Select all</button><button id="btnCCNone">Clear</button>
+        </span>
+      </div>
+      <input type="search" id="ccSearch" aria-label="Search countries" placeholder="Search countries…" class="search-input">
+      <div class="cc-list" id="ccList"></div>
+    </section>
+
+    <section class="filter-block">
+      <h3>Power class</h3>
+      <div id="powerFilter" class="check-list"></div>
+    </section>
+
+    <section class="filter-block">
+      <h3>AC / DC type</h3>
+      <div id="typeFilter" class="check-list"></div>
+    </section>
+
+    <section class="filter-block">
+      <h3>Connector type</h3>
+      <div id="connFilter" class="check-list"></div>
+    </section>
+
+    <section class="filter-block">
+      <h3>Operating status</h3>
+      <div id="statusFilter" class="check-list"></div>
+    </section>
+
+    <section class="filter-block">
+      <h3>Access</h3>
+      <div id="publicFilter" class="check-list"></div>
+    </section>
+
+    <section class="filter-block">
+      <h3>Operator <span class="chart-note" id="opTotalWrap">(total <b id="opTotal">0</b> names)</span></h3>
+      <input type="search" id="opSearch" aria-label="Search operators" placeholder="Search operator names…" class="search-input">
+      <div class="op-chips" id="opSelected"></div>
+      <div class="op-results" id="opResults"></div>
+    </section>
+
+    <section class="filter-block">
+      <h3>Layers & basemap</h3>
+      <div class="check-list" id="layerToggles">
+        <label><input type="checkbox" id="lyHeatmap"><span class="dot" style="background:#f03b20"></span>Heatmap (density)</label>
+        <label><input type="checkbox" id="lyGrid"><span class="dot" style="background:#6366f1"></span>0.5° density grid</label>
+        <label><input type="checkbox" id="lyCities" checked><span class="dot" style="background:#7c3aed"></span>Major city labels</label>
+      </div>
+      <div class="basemap-row" id="basemapRow">
+        <button data-bm="positron">Light</button>
+        <button data-bm="dark" class="active">Dark</button>
+        <button data-bm="voyager">Color</button>
+        <button data-bm="local">Offline outline</button>
+      </div>
+    </section>
+  </aside>
+
+  <!-- ============ 中间地图 ============ -->
+  <section class="map-wrap" aria-label="European charging station map">
+    <div class="map-heading"><h2>Europe’s charging network, mapped.</h2><p>Explore stations · Compare regions · Understand coverage</p></div>
+    <div class="map-tools"><span class="view-status">Station distribution</span><button id="btnOverview" type="button">Europe overview <span aria-hidden="true">↗</span></button></div>
+    <div class="map-caption">Drag to explore <span>·</span> Click a cluster to zoom</div>
+    <div id="map"></div>
+    <div class="map-legend" id="mapLegend">
+      <div class="legend-title">Power classes</div>
+      <div class="legend-item"><span class="dot" style="background:#94a3b8"></span>≤11 kW slow charging</div>
+      <div class="legend-item"><span class="dot" style="background:#0ea5e9"></span>11–22 kW AC</div>
+      <div class="legend-item"><span class="dot" style="background:#f59e0b"></span>22–50 kW power class</div>
+      <div class="legend-item"><span class="dot" style="background:#ef4444"></span>&gt;50 kW power class</div>
+      <div class="legend-item"><span class="dot" style="background:#cbd5e1"></span>Unknown power</div>
+    </div>
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="spinner"></div>
+      <div class="loading-text" id="loadingText">Loading data…</div>
+    </div>
+    <div class="toast" id="toast"></div>
+  </section>
+
+  <!-- ============ 右侧图表 ============ -->
+  <aside class="panel charts">
+    <div class="insight-heading"><h2>Network insights</h2><span>Updates with filters</span></div>
+    <div class="stat-cards" id="statCards"></div>
+
+    <div class="chart-block">
+      <div class="chart-title-row">
+        <h3>Country / territory rankings</h3>
+        <div class="metric-toggle" id="countryMetric">
+          <button data-m="stations" class="active">Stations</button>
+          <button data-m="per_million">Per million</button>
+          <button data-m="per_1000km2">Per 1,000 km²</button>
+        </div>
+      </div>
+      <div class="chart" id="chartCountries"></div>
+    </div>
+
+    <div class="chart-block">
+      <h3>Stations by power class</h3>
+      <div class="chart" id="chartPower"></div>
+    </div>
+
+    <div class="chart-block">
+      <h3>Major clusters · Top 15 City</h3>
+      <div class="chart" id="chartCities"></div>
+    </div>
+
+    <div class="chart-block">
+      <h3>Top 15 Operator</h3>
+      <div class="chart" id="chartOperators"></div>
+    </div>
+
+    <div class="chart-block">
+      <h3>Connector distribution</h3>
+      <div class="chart" id="chartConnectors"></div>
+    </div>
+
+    <div class="chart-block">
+      <h3>Commissioning years <span class="chart-note">（German / French official registers）</span></h3>
+      <div class="chart" id="chartTimeline"></div>
+    </div>
+
+    <div class="chart-block data-notes">
+      <h3>Data notes</h3>
+      <div id="dataNotes"></div>
+    </div>
+  </aside>
+</div>
+
+<script src="../assets/vendor/maplibre-gl.js"></script>
+<script src="../assets/vendor/echarts.min.js"></script>
+<script src="assets/app.js?v=3"></script>
+</body>
+</html>

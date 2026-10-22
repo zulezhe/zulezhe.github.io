@@ -4,8 +4,10 @@ import { notFound } from "next/navigation"
 import { getAllPosts, getPostBySlug, getAdjacentPosts, formatDate } from "@/lib/posts"
 import { renderMarkdown } from "@/lib/markdown"
 import { siteConfig, absUrl } from "@/lib/site"
+import ChargingEurope from "@/components/ChargingEurope"
 import TableOfContents from "@/components/TableOfContents"
 import TagList from "@/components/TagList"
+import ReadingTools from "@/components/ReadingTools"
 import CopyCode from "@/components/CopyCode"
 import Giscus from "@/components/Giscus"
 import JsonLd from "@/components/JsonLd"
@@ -13,7 +15,7 @@ import JsonLd from "@/components/JsonLd"
 export const dynamicParams = false
 
 export function generateStaticParams() {
-  return getAllPosts({ includeDrafts: true }).map((post) => ({ slug: post.slug }))
+  return getAllPosts({ includeDrafts: true, includeTranslations: true }).map((post) => ({ slug: post.slug }))
 }
 
 type Props = { params: Promise<{ slug: string }> }
@@ -26,7 +28,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.description,
-    alternates: { canonical: `/blog/${post.slug}/` },
+    alternates: {
+      canonical: `/blog/${post.slug}/`,
+      ...(post.translations ? { languages: { en: `/blog/${post.translations.en}/`, "zh-CN": `/blog/${post.translations.zh}/`, "x-default": `/blog/${post.translations.en}/` } } : {}),
+    },
     openGraph: {
       type: "article",
       url: `/blog/${post.slug}/`,
@@ -50,7 +55,13 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(slug)
   if (!post) notFound()
 
-  const { html, headings } = await renderMarkdown(post.content)
+  const interactive = post.interactive === "ev-charging-europe"
+  const [introduction, ...remaining] = interactive
+    ? post.content.split("<!-- interactive:ev-charging-europe -->")
+    : [post.content]
+  const { html, headings: introHeadings } = await renderMarkdown(introduction)
+  const { html: afterHtml, headings: afterHeadings } = await renderMarkdown(remaining.join("\n"))
+  const headings = [...introHeadings, ...(interactive ? [{ id: "explore-network", text: post.language === "zh-CN" ? "交互地图与报告" : "Interactive map and report", depth: 2 as const }] : []), ...afterHeadings]
   const { prev, next } = getAdjacentPosts(post.slug)
   const postUrl = absUrl(`/blog/${post.slug}/`)
 
@@ -62,7 +73,7 @@ export default async function BlogPostPage({ params }: Props) {
     datePublished: post.date,
     dateModified: post.updated ?? post.date,
     keywords: post.tags.join(", "),
-    inLanguage: "en",
+    inLanguage: post.language ?? "en",
     wordCount: post.content.split(/\s+/).length,
     url: postUrl,
     mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
@@ -109,8 +120,8 @@ export default async function BlogPostPage({ params }: Props) {
       {faqJsonLd ? <JsonLd data={faqJsonLd} /> : null}
 
       <div className="mx-auto max-w-6xl px-6 py-14 sm:py-20">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_220px]">
-          <article className="mx-auto w-full max-w-2xl">
+        <div className={`grid grid-cols-1 gap-12 ${interactive ? "" : "lg:grid-cols-[minmax(0,1fr)_220px]"}`}>
+          <article lang={post.language} className={`mx-auto w-full min-w-0 ${interactive ? "interactive-post" : "max-w-2xl"}`}>
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="mb-8 text-sm text-zinc-500 dark:text-zinc-500">
               <ol className="flex items-center gap-2">
@@ -125,6 +136,10 @@ export default async function BlogPostPage({ params }: Props) {
             </nav>
 
             <header>
+              {post.translations && <nav aria-label="Article language" className="mb-6 flex items-center gap-2 text-sm">
+                <Link href={`/blog/${post.translations.en}`} hrefLang="en" lang="en" aria-current={post.language !== "zh-CN" ? "page" : undefined} className={`language-choice ${post.language !== "zh-CN" ? "is-current" : ""}`}>English</Link>
+                <Link href={`/blog/${post.translations.zh}`} hrefLang="zh-CN" lang="zh-CN" aria-current={post.language === "zh-CN" ? "page" : undefined} className={`language-choice ${post.language === "zh-CN" ? "is-current" : ""}`}>中文</Link>
+              </nav>}
               <h1 className="text-3xl font-bold leading-tight tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
                 {post.title}
               </h1>
@@ -156,22 +171,25 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
             </header>
 
-            <hr className="my-8 border-zinc-200/70 dark:border-zinc-800/70" />
+            <div className="my-8"><ReadingTools /></div>
 
             {/* Mobile TOC */}
-            <div className="mb-10 lg:hidden">
+            <div className={interactive ? "mb-10" : "mb-10 lg:hidden"}>
               <TableOfContents headings={headings} />
             </div>
 
             <div
-              className="prose prose-zinc dark:prose-invert
+              className="article-content prose prose-zinc dark:prose-invert
                 prose-headings:tracking-tight
                 prose-a:font-medium prose-a:text-accent prose-a:no-underline hover:prose-a:underline
                 prose-blockquote:border-l-accent/50
                 prose-code:before:content-none prose-code:after:content-none
                 prose-hr:border-zinc-200 dark:prose-hr:border-zinc-800"
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
+            >
+              <div dangerouslySetInnerHTML={{ __html: html }} />
+              {interactive && <ChargingEurope basePath={siteConfig.basePath} language={post.language === "zh-CN" ? "zh" : "en"} />}
+              {afterHtml && <div dangerouslySetInnerHTML={{ __html: afterHtml }} />}
+            </div>
 
             {/* FAQ (renders structured data too — see FAQPage JSON-LD above) */}
             {post.faq.length > 0 ? (
@@ -230,7 +248,7 @@ export default async function BlogPostPage({ params }: Props) {
           </article>
 
           {/* Desktop TOC */}
-          <aside className="hidden lg:block">
+          <aside className={interactive ? "hidden" : "hidden lg:block"}>
             <div className="sticky top-24">
               <TableOfContents headings={headings} />
             </div>

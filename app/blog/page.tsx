@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { getAllPosts, getAllTags } from "@/lib/posts"
-import PostCard from "@/components/PostCard"
-import TagList from "@/components/TagList"
+import PostExplorer from "@/components/PostExplorer"
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -22,18 +21,9 @@ export default function BlogIndexPage() {
           {posts.length} {posts.length === 1 ? "article" : "articles"} about building for the web —
           engineering notes, practical guides, and the occasional opinion.
         </p>
-        {tags.length > 0 ? (
-          <div className="mt-6">
-            <TagList tags={tags} />
-          </div>
-        ) : null}
       </header>
 
-      <div>
-        {posts.map((post) => (
-          <PostCard key={post.slug} post={post} />
-        ))}
-      </div>
+      <PostExplorer posts={posts.map(({ slug, title, description, date, tags, readingTime }) => ({ slug, title, description, date, tags, readingTime }))} tags={tags} />
     </div>
   )
 }

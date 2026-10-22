@@ -127,8 +127,9 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col bg-white font-sans text-zinc-800 antialiased dark:bg-zinc-950 dark:text-zinc-200">
         <JsonLd data={websiteJsonLd} />
         <JsonLd data={personJsonLd} />
+        <a className="skip-link" href="#main-content">Skip to content</a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

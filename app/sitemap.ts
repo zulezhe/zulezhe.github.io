@@ -6,7 +6,7 @@ import { getAllProjects } from "@/lib/projects"
 export const dynamic = "force-static"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = getAllPosts()
+  const posts = getAllPosts({ includeTranslations: true })
   const projects = getAllProjects()
   const tags = getAllTags()
 
@@ -39,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: post.updated ?? post.date,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+      ...(post.translations ? { alternates: { languages: { en: absUrl(`/blog/${post.translations.en}/`), "zh-CN": absUrl(`/blog/${post.translations.zh}/`) } } } : {}),
     })),
     ...projects.map((project) => ({
       url: absUrl(`/projects/${project.slug}/`),

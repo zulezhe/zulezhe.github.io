@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="robots" content="noindex,follow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Europe’s charging network · spatial analysis</title><style>html,body{margin:0;height:100%;background:#fff}iframe{display:block;width:100%;height:100%;border:0}</style></head>
+<body><iframe title="European charging network: full spatial analysis report" src="dist/reader.html"></iframe><script>
+const frame = document.querySelector('iframe');
+frame.addEventListener('load', () => {
+  const doc = frame.contentDocument;
+  doc.addEventListener('click', event => {
+    const anchor = event.target.closest?.('a');
+    if (!anchor) return;
+    const href = anchor.getAttribute('href');
+    if (href === '/') { event.preventDefault(); window.location.href = '../index.html'; }
+    else if (href?.startsWith('/data/')) {
+      event.preventDefault();
+      const link = doc.createElement('a');
+      link.href = new URL('../..' + (href === '/data/stations.csv' ? '/data/stations.csv.gz' : href), window.location.href).href;
+      link.download = href.endsWith('.csv') ? 'stations.csv.gz' : href.split('/').pop();
+      link.click();
+    } else if (/^https?:\/\//.test(href || '')) { anchor.target = '_blank'; anchor.rel = 'noopener noreferrer'; }
+  });
+});
+</script></body></html>

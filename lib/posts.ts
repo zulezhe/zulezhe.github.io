@@ -23,6 +23,10 @@ export interface Post {
   faq: FaqItem[]
   /** Raw markdown source */
   content: string
+  translationOf?: string
+  translations?: { en: string; zh: string }
+  language?: string
+  interactive?: "ev-charging-europe"
   readingTime: number
 }
 
@@ -32,12 +36,13 @@ function normalizeDate(value: unknown): string {
 }
 
 function computeReadingTime(markdown: string): number {
-  const words = markdown
+  const text = markdown
     .replace(/```[\s\S]*?```/g, " ")
     .replace(/[#>*_`\-]/g, " ")
-    .split(/\s+/)
-    .filter(Boolean).length
-  return Math.max(1, Math.round(words / 220))
+  const cjk = text.match(/[\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af]/g)?.length ?? 0
+  const words = text.replace(/[\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af]/g, " ")
+    .split(/\s+/).filter(Boolean).length
+  return Math.max(1, Math.round(words / 220 + cjk / 400))
 }
 
 function parseFile(fileName: string): Post {
@@ -61,24 +66,28 @@ function parseFile(fileName: string): Post {
       .filter((f): f is { q: string; a: string } => Boolean(f) && typeof f === "object" && "q" in f && "a" in f)
       .map((f) => ({ q: String(f.q), a: String(f.a) })),
     content,
+    translationOf: typeof data.translationOf === "string" ? data.translationOf : undefined,
+    translations: data.translations?.en && data.translations?.zh ? { en: String(data.translations.en), zh: String(data.translations.zh) } : undefined,
+    language: typeof data.language === "string" ? data.language : undefined,
+    interactive: data.interactive === "ev-charging-europe" ? data.interactive : undefined,
     readingTime: computeReadingTime(content),
   }
 }
 
 /** All published posts, newest first. */
-export function getAllPosts(options?: { includeDrafts?: boolean }): Post[] {
+export function getAllPosts(options?: { includeDrafts?: boolean; includeTranslations?: boolean }): Post[] {
   if (!fs.existsSync(POSTS_DIR)) return []
   const files = fs
     .readdirSync(POSTS_DIR)
     .filter((f) => f.toLowerCase().endsWith(".md") && !f.startsWith("_"))
   return files
     .map(parseFile)
-    .filter((p) => options?.includeDrafts || !p.draft)
+    .filter((p) => (options?.includeDrafts || !p.draft) && (options?.includeTranslations || !p.translationOf))
     .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
 }
 
 export function getPostBySlug(slug: string, includeDrafts = false): Post | undefined {
-  return getAllPosts({ includeDrafts }).find((p) => p.slug === slug)
+  return getAllPosts({ includeDrafts, includeTranslations: true }).find((p) => p.slug === slug)
 }
 
 /** Unique sorted tag list across all published posts. */
@@ -97,7 +106,8 @@ export function getPostsByTag(tag: string): Post[] {
 /** Previous (older) and next (newer) post around `slug`, for post navigation. */
 export function getAdjacentPosts(slug: string): { prev?: Post; next?: Post } {
   const posts = getAllPosts()
-  const index = posts.findIndex((p) => p.slug === slug)
+  const canonical = getPostBySlug(slug)?.translationOf ?? slug
+  const index = posts.findIndex((p) => p.slug === canonical)
   if (index === -1) return {}
   return {
     prev: index < posts.length - 1 ? posts[index + 1] : undefined,

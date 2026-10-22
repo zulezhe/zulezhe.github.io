@@ -9,7 +9,7 @@ export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
 export function generateStaticParams() {
-  return getAllPosts({ includeDrafts: true }).map((post) => ({ slug: post.slug }))
+  return getAllPosts({ includeDrafts: true, includeTranslations: true }).map((post) => ({ slug: post.slug }))
 }
 
 export default async function PostOgImage({
