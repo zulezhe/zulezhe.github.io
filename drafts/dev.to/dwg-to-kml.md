@@ -9,8 +9,8 @@ dev.to 发布说明（发完可删本注释块）：
    5 转换器 public/images/dwg-to-kml/05-converter.png
    6 结果图 public/images/dwg-to-kml/06-conversion-result.png
 3. published 保持 false，预览确认无误后改为 true（或直接用编辑器发布）
-4. canonical_url 让谷歌把权重归给你的博客（文末"Originally published at"是平台自动加的，
-   属正常转载署名，不算你贴链接；介意可删掉这一行，但你的博客会失去原创归属）
+4. canonical_url 指向 geoo.app 的主发布版本（先在 geoo.app 发布，确认 URL 为
+   https://geoo.app/blog/dwg-to-kml-in-the-browser 后再发这里；slug 不同就同步改）
 5. 本版本已按"新号首帖零推广链接"处理：无任何 geoo.app 链接，产品仅以文字名称出现；
    保留的 3 个外链是开源库/官方文档，属正常技术引用
 -->
@@ -20,7 +20,7 @@ title: DWG to KML in the Browser: From CAD Entities to Geographic Coordinates
 published: false
 description: Parsing AutoCAD DWG with WebAssembly, deciding which geometry survives, reprojecting to WGS84, and writing KML — all client-side, with working TypeScript.
 tags: javascript, typescript, webassembly, tutorial
-canonical_url: https://zulezhe.github.io/blog/dwg-to-kml-in-the-browser/
+canonical_url: https://geoo.app/blog/dwg-to-kml-in-the-browser/
 ---
 
 You have a DWG drawing and want to see its parcel boundaries in Google Earth. Getting a useful KML out of it takes a few distinct steps. Read the CAD entities, work out what their coordinates mean, and write the geometry in a format the map can use.

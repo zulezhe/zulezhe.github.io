@@ -3,6 +3,7 @@ title: "DWG to KML in the Browser: From CAD Entities to Geographic Coordinates"
 description: "How a browser converts AutoCAD DWG drawings into Google Earth KML — parsing entities with WebAssembly, deciding which geometry survives, handling coordinate systems, and writing the export. With working TypeScript adapted from the geoo.app implementation."
 date: "2026-10-23"
 tags: ["gis", "tutorial", "webassembly", "cad"]
+canonical: "https://geoo.app/blog/dwg-to-kml-in-the-browser"
 faq:
   - q: "Can a DWG file be converted to KML entirely in the browser?"
     a: "Yes. A WebAssembly build of LibreDWG parses the DWG on the client, proj4 handles reprojection to WGS84, and JavaScript assembles the KML — so the drawing never has to leave the device."

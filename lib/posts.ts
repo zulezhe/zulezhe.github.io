@@ -27,6 +27,8 @@ export interface Post {
   translations?: { en: string; zh: string }
   language?: string
   interactive?: "ev-charging-europe"
+  /** Absolute URL of the canonical home when this post is a mirror (e.g. syndicated). */
+  canonical?: string
   readingTime: number
 }
 
@@ -70,6 +72,7 @@ function parseFile(fileName: string): Post {
     translations: data.translations?.en && data.translations?.zh ? { en: String(data.translations.en), zh: String(data.translations.zh) } : undefined,
     language: typeof data.language === "string" ? data.language : undefined,
     interactive: data.interactive === "ev-charging-europe" ? data.interactive : undefined,
+    canonical: typeof data.canonical === "string" ? data.canonical : undefined,
     readingTime: computeReadingTime(content),
   }
 }
