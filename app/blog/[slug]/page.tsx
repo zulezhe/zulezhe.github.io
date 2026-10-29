@@ -3,7 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getAllPosts, getPostBySlug, getAdjacentPosts, formatDate } from "@/lib/posts"
 import { renderMarkdown } from "@/lib/markdown"
-import { siteConfig, absUrl } from "@/lib/site"
+import { siteConfig, absUrl, pageMetadata } from "@/lib/site"
 import ChargingEurope from "@/components/ChargingEurope"
 import TableOfContents from "@/components/TableOfContents"
 import TagList from "@/components/TagList"
@@ -25,29 +25,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(slug, true)
   if (!post) return {}
 
-  return {
+  const path = post.canonical ?? `/blog/${post.slug}/`
+
+  return pageMetadata({
     title: post.title,
     description: post.description,
-    alternates: {
-      canonical: post.canonical ?? `/blog/${post.slug}/`,
-      ...(post.translations ? { languages: { en: `/blog/${post.translations.en}/`, "zh-CN": `/blog/${post.translations.zh}/`, "x-default": `/blog/${post.translations.en}/` } } : {}),
+    path,
+    type: "article",
+    publishedTime: post.date,
+    modifiedTime: post.updated ?? post.date,
+    tags: post.tags,
+    ogImage: {
+      url: absUrl(`/blog/${post.slug}/opengraph-image`),
+      alt: post.title,
     },
-    openGraph: {
-      type: "article",
-      url: post.canonical ?? `/blog/${post.slug}/`,
-      title: post.title,
-      description: post.description,
-      publishedTime: post.date,
-      modifiedTime: post.updated ?? post.date,
-      authors: [siteConfig.name],
-      tags: post.tags,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.description,
-    },
-  }
+    ...(post.translations
+      ? {
+          languages: {
+            en: absUrl(`/blog/${post.translations.en}/`),
+            "zh-CN": absUrl(`/blog/${post.translations.zh}/`),
+            "x-default": absUrl(`/blog/${post.translations.en}/`),
+          },
+        }
+      : {}),
+  })
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -68,22 +69,27 @@ export default async function BlogPostPage({ params }: Props) {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${postUrl}#article`,
     headline: post.title,
     description: post.description,
     datePublished: post.date,
     dateModified: post.updated ?? post.date,
     keywords: post.tags.join(", "),
+    articleSection: post.tags[0],
     inLanguage: post.language ?? "en",
     wordCount: post.content.split(/\s+/).length,
     url: postUrl,
     mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+    image: [absUrl(`/blog/${post.slug}/opengraph-image`)],
     author: {
       "@type": "Person",
+      "@id": `${absUrl("/")}#person`,
       name: siteConfig.name,
       url: absUrl("/about/"),
     },
     publisher: {
       "@type": "Person",
+      "@id": absUrl("/#person"),
       name: siteConfig.name,
       url: absUrl("/"),
     },

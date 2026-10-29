@@ -1,17 +1,17 @@
 import type { Metadata } from "next"
 import { getAllProjects } from "@/lib/projects"
-import { siteConfig, absUrl } from "@/lib/site"
+import { siteConfig, absUrl, pageMetadata } from "@/lib/site"
 import ProjectCard from "@/components/ProjectCard"
 import JsonLd from "@/components/JsonLd"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Projects",
   description:
     "Selected projects and side builds by " +
     siteConfig.name +
     " — web apps, developer tools and open-source experiments, with live demos and source code.",
-  alternates: { canonical: "/projects/" },
-}
+  path: "/projects/",
+})
 
 export default function ProjectsPage() {
   const projects = getAllProjects()

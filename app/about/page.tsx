@@ -1,14 +1,14 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { siteConfig, absUrl } from "@/lib/site"
+import { siteConfig, absUrl, pageMetadata } from "@/lib/site"
 import JsonLd from "@/components/JsonLd"
 import { GitHubIcon, MailIcon, XIcon } from "@/components/Icons"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About",
   description: `Who ${siteConfig.name} is — a software engineer building for the web. Background, skills, and how to get in touch.`,
-  alternates: { canonical: "/about/" },
-}
+  path: "/about/",
+})
 
 const aboutJsonLd = {
   "@context": "https://schema.org",

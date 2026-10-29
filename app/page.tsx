@@ -1,6 +1,6 @@
 import Link from "next/link"
 import type { Metadata } from "next"
-import { siteConfig, absUrl } from "@/lib/site"
+import { siteConfig, absUrl, pageMetadata } from "@/lib/site"
 import { getAllPosts, formatDate } from "@/lib/posts"
 import { getAllProjects } from "@/lib/projects"
 import PostCard from "@/components/PostCard"
@@ -8,9 +8,11 @@ import ProjectCard from "@/components/ProjectCard"
 import JsonLd from "@/components/JsonLd"
 import { ArrowIcon, GitHubIcon, MailIcon, RssIcon, XIcon } from "@/components/Icons"
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/" },
-}
+export const metadata: Metadata = pageMetadata({
+  title: siteConfig.title,
+  description: siteConfig.description,
+  path: "/",
+})
 
 export default function HomePage() {
   const posts = getAllPosts().slice(0, 4)

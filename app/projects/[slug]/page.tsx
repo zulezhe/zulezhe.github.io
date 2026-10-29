@@ -3,7 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getAllProjects, getProjectBySlug } from "@/lib/projects"
 import { renderMarkdown } from "@/lib/markdown"
-import { siteConfig, absUrl } from "@/lib/site"
+import { siteConfig, absUrl, pageMetadata } from "@/lib/site"
 import JsonLd from "@/components/JsonLd"
 import CopyCode from "@/components/CopyCode"
 
@@ -20,22 +20,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProjectBySlug(slug, true)
   if (!project) return {}
 
-  return {
+  return pageMetadata({
     title: project.title,
     description: project.description,
-    alternates: { canonical: `/projects/${project.slug}/` },
-    openGraph: {
-      type: "article",
-      url: `/projects/${project.slug}/`,
-      title: project.title,
-      description: project.description,
+    path: `/projects/${project.slug}/`,
+    type: "article",
+    publishedTime: project.date,
+    tags: project.tech,
+    ogImage: {
+      url: absUrl(`/projects/${project.slug}/opengraph-image`),
+      alt: project.title,
     },
-    twitter: {
-      card: "summary_large_image",
-      title: project.title,
-      description: project.description,
-    },
-  }
+  })
 }
 
 export default async function ProjectPage({ params }: Props) {

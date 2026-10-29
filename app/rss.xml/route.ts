@@ -14,15 +14,21 @@ function escapeXml(value: string): string {
 
 export async function GET() {
   const posts = getAllPosts()
+  const latest = posts.reduce<string>(
+    (max, p) => ((p.updated ?? p.date) > max ? (p.updated ?? p.date) : max),
+    "",
+  )
+  const lastBuildDate = latest ? new Date(`${latest}T00:00:00Z`).toUTCString() : new Date(0).toUTCString()
 
   const items = posts
     .map((post) => {
       const url = absUrl(`/blog/${post.slug}/`)
       return `    <item>
       <title>${escapeXml(post.title)}</title>
-      <link>${url}</link>
-      <guid isPermaLink="true">${url}</guid>
+      <link>${escapeXml(url)}</link>
+      <guid isPermaLink="true">${escapeXml(url)}</guid>
       <description>${escapeXml(post.description)}</description>
+      <dc:creator>${escapeXml(siteConfig.name)}</dc:creator>
       <pubDate>${new Date(`${post.date}T00:00:00Z`).toUTCString()}</pubDate>
       ${post.tags.map((tag) => `<category>${escapeXml(tag)}</category>`).join("\n      ")}
     </item>`
@@ -30,14 +36,14 @@ export async function GET() {
     .join("\n")
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>${escapeXml(siteConfig.name)}</title>
-    <link>${absUrl("/")}</link>
+    <title>${escapeXml(siteConfig.title)}</title>
+    <link>${escapeXml(absUrl("/"))}</link>
     <description>${escapeXml(siteConfig.description)}</description>
     <language>${siteConfig.locale}</language>
-    <lastBuildDate>${(posts[0] ? new Date(`${posts[0].date}T00:00:00Z`) : new Date()).toUTCString()}</lastBuildDate>
-    <atom:link href="${absUrl("/rss.xml")}" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>${lastBuildDate}</lastBuildDate>
+    <atom:link href="${escapeXml(absUrl("/rss.xml"))}" rel="self" type="application/rss+xml"/>
 ${items}
   </channel>
 </rss>`

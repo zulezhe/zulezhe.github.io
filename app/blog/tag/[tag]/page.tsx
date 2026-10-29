@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { getAllTags, getPostsByTag } from "@/lib/posts"
+import { pageMetadata } from "@/lib/site"
 import PostCard from "@/components/PostCard"
 
 export const dynamicParams = false
@@ -21,11 +22,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const posts = getPostsByTag(decoded)
   if (posts.length === 0) return {}
 
-  return {
+  return pageMetadata({
     title: `#${decoded}`,
     description: `All ${posts.length} ${posts.length === 1 ? "article" : "articles"} tagged “${decoded}” — ${SITE_DESCRIPTION_TAIL}`,
-    alternates: { canonical: `/blog/tag/${decoded}/` },
-  }
+    path: `/blog/tag/${encodeURIComponent(decoded)}/`,
+  })
 }
 
 export default async function TagPage({ params }: Props) {

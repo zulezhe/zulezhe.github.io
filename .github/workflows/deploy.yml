@@ -27,13 +27,19 @@ jobs:
           node-version: 22
           cache: npm
 
-      # username.github.io repos serve from the domain root; project repos
-      # serve from /repo-name — Next.js needs to know at build time.
+      # A custom domain (public/CNAME, e.g. dyzyzj.top) is always served from
+      # the domain root — even for a project repo — so canonical URLs must use
+      # it and basePath stays empty. Without a CNAME, fall back to GitHub Pages
+      # defaults: <owner>.github.io repos are root, others serve under /<repo>.
       - name: Compute base path and site URL
         run: |
           OWNER="${GITHUB_REPOSITORY%/*}"
           REPO="${GITHUB_REPOSITORY#*/}"
-          if [[ "$REPO" == *.github.io ]]; then
+          CNAME_FILE="public/CNAME"
+          if [ -f "$CNAME_FILE" ] && [ -n "$(tr -d '[:space:]' < "$CNAME_FILE")" ]; then
+            echo "NEXT_PUBLIC_BASE_PATH=" >> "$GITHUB_ENV"
+            echo "NEXT_PUBLIC_SITE_URL=https://$(tr -d '[:space:]' < "$CNAME_FILE")" >> "$GITHUB_ENV"
+          elif [[ "$REPO" == *.github.io ]]; then
             echo "NEXT_PUBLIC_BASE_PATH=" >> "$GITHUB_ENV"
             echo "NEXT_PUBLIC_SITE_URL=https://$OWNER.github.io" >> "$GITHUB_ENV"
           else

@@ -76,16 +76,18 @@ export const viewport: Viewport = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${absUrl("/")}#website`,
   name: siteConfig.name,
   url: absUrl("/"),
   description: siteConfig.description,
   inLanguage: "en",
-  publisher: { "@type": "Person", name: siteConfig.name },
+  publisher: { "@id": `${absUrl("/")}#person` },
 }
 
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${absUrl("/")}#person`,
   name: siteConfig.name,
   url: absUrl("/"),
   description: siteConfig.tagline,
