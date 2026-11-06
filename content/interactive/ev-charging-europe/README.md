@@ -4,6 +4,20 @@ The primary article is `content/blog/ev-charging-europe.md` (English). The Chine
 
 `translations.json` contains reviewed English display strings for the supplied project. `report-en/` contains the English authored report modules. The original Chinese report bundle remains unchanged under `public/interactive/ev-charging-europe/analysis-report/dist/`.
 
+## Progressive data bundle
+
+The explorer no longer ships per-country point GeoJSON at load time. `scripts/build-ev-data.mjs` reads the lossless `data/stations.csv.gz` and writes three layers:
+
+- `data/overview.geojson`: 1° cells for the first paint.
+- `data/stats/{CC}.json`: compact 0.01° aggregate rows used for filters and charts. Countries load progressively as they are selected.
+- `data/detail/{lat}_{lon}.json`: individual stations split into 1° viewport tiles, requested only above zoom 11. `data/detail/index.json` lists the available tiles.
+
+Rebuild after changing the source CSV:
+
+```sh
+npm run build:ev-data
+```
+
 To regenerate English map assets from the checked-in Chinese copy:
 
 ```sh

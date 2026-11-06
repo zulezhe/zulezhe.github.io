@@ -2,7 +2,8 @@
 
 此目录保存 2026-10-20 项目的固定快照，供博客中的交互地图和报告使用。
 
-- `index.html`、`assets/` 与 `data/geojson/` 为交互地图及 48 个国家的数据层。
+- `en/index.html` 与 `assets/` 为交互地图入口。
+- `data/overview.geojson`、`data/stats/` 与 `data/detail/` 为渐进式数据层：首屏只加载 1° 聚合格，筛选与图表按国家加载 0.01° 聚合行，放大到 11 级后按视口加载 1° 单个站点分块。
 - `analysis-report/dist/` 为原报告完整构建产物，HTML、数据 sidecar 和构建清单保持原样。
 - `analysis-report/index.html` 为独立阅读包装页，适配返回地图及数据下载路径。
 - `data/stations.csv.gz` 为原始站点 CSV 的无损 gzip 版本。解压后与项目原文件逐字节一致。

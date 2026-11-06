@@ -34,7 +34,6 @@ export default function ChargingEurope({ basePath, language = "en" }: { basePath
   const copy = COPY[language]
   const views = copy.views
   const [view, setView] = useState<"map" | "report">("map")
-  const [visited, setVisited] = useState<string[]>(["map"])
   const container = useRef<HTMLDivElement>(null)
   const tabs = useRef<(HTMLButtonElement | null)[]>([])
   const [notice, setNotice] = useState("")
@@ -50,7 +49,6 @@ export default function ChargingEurope({ basePath, language = "en" }: { basePath
 
   function select(id: "map" | "report") {
     setView(id)
-    setVisited(previous => previous.includes(id) ? previous : [...previous, id])
   }
 
   function connect(frame: HTMLIFrameElement) {
@@ -113,7 +111,8 @@ export default function ChargingEurope({ basePath, language = "en" }: { basePath
       <p className="charging-hint">{current.hint}</p>
       {notice && <p role="status" className="px-4 py-2 text-sm">{notice}</p>}
       {views.map(item => <div key={item.id} id={`charging-panel-${item.id}`} role="tabpanel" aria-labelledby={`charging-tab-${item.id}`} hidden={view !== item.id} className="charging-panel">
-        {visited.includes(item.id) && <iframe title={item.title} src={`${root}${item.id === "report" ? "/analysis-report/dist/reader.html" : PATHS[item.id]}`} onLoad={event => connect(event.currentTarget)} allow="fullscreen" loading="lazy" className="charging-frame" />}
+        {/* Both views stay mounted so their content and links are present for crawlers; tabs switch focus. */}
+        <iframe title={item.title} src={`${root}${item.id === "report" ? "/analysis-report/dist/reader.html" : PATHS[item.id]}`} onLoad={event => connect(event.currentTarget)} allow="fullscreen" loading="lazy" className="charging-frame" />
       </div>)}
     </div>
     <p className="mt-3 text-xs leading-6 text-zinc-500 dark:text-zinc-400">{copy.note}</p>
