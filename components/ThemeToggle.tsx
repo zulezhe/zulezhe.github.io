@@ -1,8 +1,9 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import type { Dictionary } from "@/lib/i18n/dictionaries/en"
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ copy }: { copy: Dictionary["themeToggle"] }) {
   const [dark, setDark] = useState(false)
   const [mounted, setMounted] = useState(false)
 
@@ -26,7 +27,7 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-label={mounted && dark ? copy.toLight : copy.toDark}
       className="flex h-9 w-9 items-center justify-center rounded-full text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
     >
       {mounted && dark ? (

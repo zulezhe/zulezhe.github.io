@@ -6,6 +6,8 @@
  * ─────────────────────────────────────────────────────────────────
  */
 
+import { ogLocales, type Locale } from "@/lib/i18n/config"
+
 export interface GiscusConfig {
   /** e.g. "oliver/oliver.github.io" */
   repo: `${string}/${string}`
@@ -94,6 +96,7 @@ export function pageMetadata({
   modifiedTime,
   tags,
   languages,
+  locale,
 }: {
   title: string
   description: string
@@ -104,12 +107,15 @@ export function pageMetadata({
   modifiedTime?: string
   tags?: string[]
   languages?: Record<string, string>
+  locale?: Locale
 }) {
   const canonical = absolutePageUrl(path)
   const image = ogImage ?? {
     url: absUrl("/opengraph-image"),
     alt: `${siteConfig.name} — ${siteConfig.tagline}`,
   }
+  // Locale follows the URL prefix so zh-TW pages never need to pass it explicitly.
+  const resolvedLocale: Locale = locale ?? (path.startsWith("/zh-TW") ? "zh-TW" : "en")
 
   return {
     title,
@@ -121,7 +127,7 @@ export function pageMetadata({
     openGraph: {
       type,
       siteName: siteConfig.name,
-      locale: "en_US",
+      locale: ogLocales[resolvedLocale],
       url: canonical,
       title,
       description,

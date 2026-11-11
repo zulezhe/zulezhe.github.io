@@ -1,0 +1,142 @@
+import type { Metadata, Viewport } from "next"
+import { Inter, JetBrains_Mono } from "next/font/google"
+import "../globals.css"
+import { siteConfig, absUrl } from "@/lib/site"
+import { getDictionary, localizedPath, languageAlternates } from "@/lib/i18n"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
+import JsonLd from "@/components/JsonLd"
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" })
+const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" })
+
+const themeInitScript = `(function(){try{var t=localStorage.getItem("theme");var d=t?t==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches;if(d)document.documentElement.classList.add("dark")}catch(e){}})()`
+
+export const metadata: Metadata = {
+  metadataBase: new URL(`${siteConfig.url}${siteConfig.basePath}`),
+  title: {
+    default: siteConfig.title,
+    template: `%s · ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: absUrl(localizedPath("zh-TW", "/about/")) }],
+  creator: siteConfig.name,
+  keywords: [
+    siteConfig.name,
+    "軟體工程師",
+    "網頁開發",
+    "部落格",
+    "side project",
+    "繁體中文",
+  ],
+  alternates: {
+    canonical: localizedPath("zh-TW", "/"),
+    languages: languageAlternates("/"),
+    types: {
+      "application/rss+xml": [{ url: absUrl("/rss.xml"), title: `${siteConfig.name} — RSS feed` }],
+    },
+  },
+  openGraph: {
+    type: "website",
+    siteName: siteConfig.name,
+    locale: "zh_TW",
+    url: localizedPath("zh-TW", "/"),
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  ...(siteConfig.verification.google
+    ? { verification: { google: siteConfig.verification.google } }
+    : {}),
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+  ],
+}
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${absUrl("/")}#website`,
+  name: siteConfig.name,
+  url: absUrl("/"),
+  description: siteConfig.description,
+  inLanguage: "zh-TW",
+  publisher: { "@id": `${absUrl("/")}#person` },
+}
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${absUrl("/")}#person`,
+  name: siteConfig.name,
+  url: absUrl("/"),
+  description: siteConfig.tagline,
+  jobTitle: "Software Engineer",
+  sameAs: [siteConfig.links.github, siteConfig.links.twitter].filter(Boolean),
+  knowsLanguage: ["en", "zh-TW"],
+}
+
+export default function ZhtwRootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  const t = getDictionary("zh-TW")
+  return (
+    <html lang="zh-TW" suppressHydrationWarning className={`${inter.variable} ${jetbrains.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        {siteConfig.analytics.cloudflareBeacon ? (
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={JSON.stringify({
+              token: siteConfig.analytics.cloudflareBeacon,
+            })}
+          />
+        ) : null}
+        {siteConfig.analytics.googleAnalyticsId ? (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analytics.googleAnalyticsId}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${siteConfig.analytics.googleAnalyticsId}');`,
+              }}
+            />
+          </>
+        ) : null}
+      </head>
+      <body className="flex min-h-screen flex-col bg-white font-sans text-zinc-800 antialiased dark:bg-zinc-950 dark:text-zinc-200">
+        <JsonLd data={websiteJsonLd} />
+        <JsonLd data={personJsonLd} />
+        <a className="skip-link" href="#main-content">{t.nav.skipToContent}</a>
+        <Header locale="zh-TW" copy={t.nav} themeCopy={t.themeToggle} localeSwitcherCopy={t.localeSwitcher} />
+        <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
+        <Footer copy={t.footer} />
+      </body>
+    </html>
+  )
+}

@@ -1,8 +1,13 @@
 import fs from "node:fs"
 import path from "node:path"
 import matter from "gray-matter"
+import type { Locale } from "@/lib/i18n/config"
 
 const POSTS_DIR = path.join(process.cwd(), "content", "blog")
+/** Sub-directory per non-English locale, e.g. content/blog/zh-TW/ */
+const LOCALE_DIRS: Record<Exclude<Locale, "en">, string> = {
+  "zh-TW": "zh-TW",
+}
 
 export interface FaqItem {
   q: string
@@ -23,10 +28,12 @@ export interface Post {
   faq: FaqItem[]
   /** Raw markdown source */
   content: string
+  /** Slug of the English original when this file is a translation. */
   translationOf?: string
-  translations?: { en: string; zh: string }
+  /** Slugs of the sibling translations, derived from the files on disk. */
+  translations?: { en: string; "zh-TW": string }
   language?: string
-  interactive?: "ev-charging-europe"
+  interactive?: "ev-charging-europe" | "europe-earthquakes-ten-years"
   /** Absolute URL of the canonical home when this post is a mirror (e.g. syndicated). */
   canonical?: string
   readingTime: number
@@ -47,13 +54,33 @@ function computeReadingTime(markdown: string): number {
   return Math.max(1, Math.round(words / 220 + cjk / 400))
 }
 
-function parseFile(fileName: string): Post {
+function countWords(markdown: string): number {
+  const text = markdown
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/[#>*_`\-]/g, " ")
+  const cjk = text.match(/[\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af]/g)?.length ?? 0
+  return text.replace(/[\u3400-\u9fff\u3040-\u30ff\uac00-\ud7af]/g, " ")
+    .split(/\s+/).filter(Boolean).length + cjk
+}
+
+function parseFile(fileName: string, dir: string, locale: Locale): Post {
   const slug = fileName.replace(/\.md$/i, "")
-  const raw = fs.readFileSync(path.join(POSTS_DIR, fileName), "utf8")
+  const raw = fs.readFileSync(path.join(dir, fileName), "utf8")
   const { data, content } = matter(raw)
 
   const tagsRaw = Array.isArray(data.tags) ? data.tags : []
   const faqRaw = Array.isArray(data.faq) ? data.faq : []
+
+  const translationOf = typeof data.translationOf === "string"
+    ? data.translationOf
+    : locale !== "en" ? slug : undefined
+
+  const enSlug = translationOf ?? slug
+  const translations =
+    fs.existsSync(path.join(POSTS_DIR, `${enSlug}.md`)) &&
+    fs.existsSync(path.join(POSTS_DIR, "zh-TW", `${slug}.md`))
+      ? { en: enSlug, "zh-TW": slug }
+      : undefined
 
   return {
     slug,
@@ -68,49 +95,59 @@ function parseFile(fileName: string): Post {
       .filter((f): f is { q: string; a: string } => Boolean(f) && typeof f === "object" && "q" in f && "a" in f)
       .map((f) => ({ q: String(f.q), a: String(f.a) })),
     content,
-    translationOf: typeof data.translationOf === "string" ? data.translationOf : undefined,
-    translations: data.translations?.en && data.translations?.zh ? { en: String(data.translations.en), zh: String(data.translations.zh) } : undefined,
-    language: typeof data.language === "string" ? data.language : undefined,
-    interactive: data.interactive === "ev-charging-europe" ? data.interactive : undefined,
+    translationOf,
+    translations,
+    language: typeof data.language === "string" ? data.language : locale === "en" ? undefined : locale,
+    interactive:
+      data.interactive === "ev-charging-europe" || data.interactive === "europe-earthquakes-ten-years"
+        ? data.interactive
+        : undefined,
     canonical: typeof data.canonical === "string" ? data.canonical : undefined,
     readingTime: computeReadingTime(content),
   }
 }
 
-/** All published posts, newest first. */
-export function getAllPosts(options?: { includeDrafts?: boolean; includeTranslations?: boolean }): Post[] {
-  if (!fs.existsSync(POSTS_DIR)) return []
-  const files = fs
-    .readdirSync(POSTS_DIR)
+function postDir(locale: Locale): string {
+  return locale === "en" ? POSTS_DIR : path.join(POSTS_DIR, LOCALE_DIRS[locale])
+}
+
+function readPosts(locale: Locale): Post[] {
+  const dir = postDir(locale)
+  if (!fs.existsSync(dir)) return []
+  return fs
+    .readdirSync(dir)
     .filter((f) => f.toLowerCase().endsWith(".md") && !f.startsWith("_"))
-  return files
-    .map(parseFile)
-    .filter((p) => (options?.includeDrafts || !p.draft) && (options?.includeTranslations || !p.translationOf))
+    .map((f) => parseFile(f, dir, locale))
     .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
 }
 
-export function getPostBySlug(slug: string, includeDrafts = false): Post | undefined {
-  return getAllPosts({ includeDrafts, includeTranslations: true }).find((p) => p.slug === slug)
+/** All published posts for a locale, newest first. */
+export function getAllPosts(options?: { includeDrafts?: boolean; locale?: Locale }): Post[] {
+  const locale = options?.locale ?? "en"
+  return readPosts(locale).filter((p) => (options?.includeDrafts || !p.draft) && !(locale === "en" && p.translationOf))
 }
 
-/** Unique sorted tag list across all published posts. */
-export function getAllTags(): string[] {
+export function getPostBySlug(slug: string, locale: Locale = "en", includeDrafts = false): Post | undefined {
+  return readPosts(locale).find((p) => p.slug === slug && (includeDrafts || !p.draft))
+}
+
+/** Unique sorted tag list across all published posts of a locale. */
+export function getAllTags(locale: Locale = "en"): string[] {
   const tags = new Set<string>()
-  for (const post of getAllPosts()) {
+  for (const post of getAllPosts({ locale })) {
     for (const tag of post.tags) tags.add(tag)
   }
   return [...tags].sort((a, b) => a.localeCompare(b))
 }
 
-export function getPostsByTag(tag: string): Post[] {
-  return getAllPosts().filter((p) => p.tags.includes(tag.toLowerCase()))
+export function getPostsByTag(tag: string, locale: Locale = "en"): Post[] {
+  return getAllPosts({ locale }).filter((p) => p.tags.includes(tag.toLowerCase()))
 }
 
 /** Previous (older) and next (newer) post around `slug`, for post navigation. */
-export function getAdjacentPosts(slug: string): { prev?: Post; next?: Post } {
-  const posts = getAllPosts()
-  const canonical = getPostBySlug(slug)?.translationOf ?? slug
-  const index = posts.findIndex((p) => p.slug === canonical)
+export function getAdjacentPosts(slug: string, locale: Locale = "en"): { prev?: Post; next?: Post } {
+  const posts = getAllPosts({ locale })
+  const index = posts.findIndex((p) => p.slug === slug)
   if (index === -1) return {}
   return {
     prev: index < posts.length - 1 ? posts[index + 1] : undefined,
@@ -118,8 +155,12 @@ export function getAdjacentPosts(slug: string): { prev?: Post; next?: Post } {
   }
 }
 
-export function formatDate(iso: string): string {
-  return new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-US", {
+export function wordCount(markdown: string): number {
+  return countWords(markdown)
+}
+
+export function formatDate(iso: string, localeTag = "en-US"): string {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString(localeTag, {
     year: "numeric",
     month: "long",
     day: "numeric",

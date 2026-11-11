@@ -21,3 +21,6 @@ next-env.d.ts
 
 # Reproducible localized report build workspace
 /.content-build/
+
+# session artifacts
+.zcode/

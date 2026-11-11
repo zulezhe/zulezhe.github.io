@@ -15,20 +15,22 @@ const COPY = {
       { id: "report", label: "Spatial analysis & report", hint: "Switch hexagon metrics, drag Germany’s year slider, or expand the report’s detailed evidence gallery of 23 charts.", title: "European charging network: spatial analysis and interactive report" },
     ],
   },
-  zh: {
-    heading: "在地图上探索欧洲充电网络",
-    description: "地图与报告保留各自的筛选状态，切换视图后可以接着探索。",
-    group: "充电网络视图", fullscreen: "全屏查看", open: "独立打开 ↗",
-    unavailable: "暂时无法进入全屏，可使用「独立打开」查看。",
-    note: "站点与报告使用项目固定快照。在线底图需要网络；不可用时地图支持国界底图回退。地图最高功率档已按原始数据边界更正为 >50 kW。",
+  "zh-TW": {
+    heading: "探索歐洲充電網路",
+    description: "地圖與報告各自保留篩選狀態，切換檢視後可以繼續探索。",
+    group: "充電網路檢視", fullscreen: "全螢幕檢視", open: "獨立開啟 ↗",
+    unavailable: "暫時無法進入全螢幕，可使用「獨立開啟」。",
+    note: "站點與報告使用專案固定快照。線上底圖需要網路；無法連線時地圖可退回離線國界底圖。最高功率等級標籤已依原始資料界線更正為 >50 kW。",
     views: [
-      { id: "map", label: "交互地图", hint: "按国家、功率和运营商筛选，点击地图聚类或站点查看详情。统计与图表会随筛选更新。", title: "欧洲充电站交互地图与筛选统计" },
-      { id: "report", label: "空间分析与报告", hint: "切换六边形地图指标、拖动德国年份时间轴，或展开报告末尾的 23 张详细证据图表。", title: "欧洲充电网络空间分析与交互报告" },
+      { id: "map", label: "互動地圖", hint: "按國家、功率與營運商篩選。點擊聚類或站點查看詳情；統計與圖表會隨篩選更新。", title: "歐洲充電站互動地圖與篩選統計" },
+      { id: "report", label: "空間分析與報告", hint: "切換六邊形指標、拖動德國年份軸，或展開報告末尾的 23 張詳細證據圖表。", title: "歐洲充電網路空間分析與互動報告" },
     ],
   },
 } as const
 
-export default function ChargingEurope({ basePath, language = "en" }: { basePath: string; language?: "en" | "zh" }) {
+type ChargingLanguage = "en" | "zh-TW"
+
+export default function ChargingEurope({ basePath, language = "en" }: { basePath: string; language?: ChargingLanguage }) {
   const dataRoot = `${basePath}/interactive/ev-charging-europe`
   const root = `${dataRoot}${language === "en" ? "/en" : ""}`
   const copy = COPY[language]
@@ -89,7 +91,7 @@ export default function ChargingEurope({ basePath, language = "en" }: { basePath
     } catch { setNotice(copy.unavailable) }
   }
 
-  return <section id="explore-network" aria-labelledby="charging-explorer-heading" className="charging-explorer not-prose" lang={language === "zh" ? "zh-CN" : "en"}>
+  return <section id="explore-network" aria-labelledby="charging-explorer-heading" className="charging-explorer not-prose" lang={language === "zh-TW" ? "zh-TW" : "en"}>
     <div className="mb-5">
       <h2 id="charging-explorer-heading" className="text-2xl font-semibold tracking-tight">{copy.heading}</h2>
       <p className="mt-2 text-sm leading-7 text-zinc-600 dark:text-zinc-400">{copy.description}</p>

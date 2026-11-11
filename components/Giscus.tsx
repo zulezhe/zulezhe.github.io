@@ -2,14 +2,17 @@
 
 import { useEffect, useRef } from "react"
 import { siteConfig } from "@/lib/site"
+import { localeTags, type Locale } from "@/lib/i18n/config"
+import { getDictionary } from "@/lib/i18n"
 
 /**
  * Comments via giscus (GitHub Discussions). Free, no server needed.
  * Enable by filling in `giscus` in lib/site.ts — https://giscus.app
  */
-export default function Giscus() {
+export default function Giscus({ locale = "en" }: { locale?: Locale }) {
   const ref = useRef<HTMLDivElement>(null)
   const config = siteConfig.giscus
+  const t = getDictionary(locale)
 
   useEffect(() => {
     if (!config || !ref.current || ref.current.childElementCount > 0) return
@@ -28,15 +31,15 @@ export default function Giscus() {
     script.setAttribute("data-emit-metadata", "0")
     script.setAttribute("data-input-position", "top")
     script.setAttribute("data-theme", "preferred_color_scheme")
-    script.setAttribute("data-lang", "en")
+    script.setAttribute("data-lang", localeTags[locale])
     ref.current.appendChild(script)
-  }, [config])
+  }, [config, locale])
 
   if (!config) return null
 
   return (
-    <section aria-label="Comments" className="mt-16 border-t border-zinc-200 pt-10 dark:border-zinc-800">
-      <h2 className="mb-6 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">Comments</h2>
+    <section aria-label={t.comments.aria} className="mt-16 border-t border-zinc-200 pt-10 dark:border-zinc-800">
+      <h2 className="mb-6 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">{t.comments.heading}</h2>
       <div ref={ref} />
     </section>
   )

@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   basePath: basePath || undefined,
+  // Generates a root 404.html from app/global-not-found.tsx, which works with
+  // multiple root layouts ((en) / (zh-TW) route groups).
+  experimental: {
+    globalNotFound: true,
+  },
   images: {
     // No image optimization server in static hosting — serve originals.
     unoptimized: true,

@@ -1,23 +1,35 @@
 import Link from "next/link"
 import { siteConfig } from "@/lib/site"
+import { localizedPath, type Locale } from "@/lib/i18n/config"
+import { fmt } from "@/lib/i18n"
+import type { Dictionary } from "@/lib/i18n/dictionaries/en"
 import { GitHubIcon, MailIcon, RssIcon, XIcon } from "./Icons"
 
-export default function Footer() {
+export default function Footer({
+  locale = "en",
+  copy,
+}: {
+  locale?: Locale
+  copy?: Dictionary["footer"]
+}) {
   const year = new Date().getFullYear()
+  const link = (path: string) => localizedPath(locale, path)
 
   return (
     <footer className="border-t border-zinc-200/70 dark:border-zinc-800/70">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 px-6 py-10 sm:flex-row sm:justify-between">
         <div className="flex flex-col items-center gap-1 sm:items-start">
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
-            © {year} {siteConfig.name}. All rights reserved.
+            {copy
+              ? fmt(copy.rights, { year, name: siteConfig.name })
+              : `© ${year} ${siteConfig.name}. All rights reserved.`}
           </p>
           <p className="text-xs text-zinc-500 dark:text-zinc-500">
-            Built with Next.js · statically exported · hosted for free
+            {copy?.builtWith ?? "Built with Next.js · statically exported · hosted for free"}
           </p>
         </div>
 
-        <nav className="flex items-center gap-4" aria-label="Social links">
+        <nav className="flex items-center gap-4" aria-label={copy?.socialAria ?? "Social links"}>
           {siteConfig.links.github ? (
             <a
               href={siteConfig.links.github}
