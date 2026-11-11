@@ -27,17 +27,6 @@ jobs:
           node-version: 22
           cache: npm
 
-      # GitHub hosted runners ship without swap and npm ci installs a large
-      # dependency tree from scratch (no cache on the first run), which can
-      # OOM and crash npm with "Exit handler never called". Add swap as a
-      # safety net.
-      - name: Increase swap space
-        run: |
-          sudo fallocate -l 4G /swapfile
-          sudo chmod 600 /swapfile
-          sudo mkswap /swapfile
-          sudo swapon /swapfile
-
       # A custom domain (public/CNAME, e.g. dyzyzj.top) is always served from
       # the domain root — even for a project repo — so canonical URLs must use
       # it and basePath stays empty. Without a CNAME, fall back to GitHub Pages
@@ -59,9 +48,13 @@ jobs:
           fi
 
       - name: Install dependencies
-        # --no-audit/--no-fund avoid extra registry round-trips that frequently
-        # crash npm on CI; retries make transient network failures survivable.
-        run: npm ci --no-audit --no-fund --fetch-retries=5 --fetch-retry-maxtimeout=120000
+        # The first cold install (no npm cache yet) fetches ~254 packages incl.
+        # 28 platform-specific sharp binaries. Keep concurrency modest and cap
+        # each fetch so a stalled connection fails fast and retries instead of
+        # hanging npm until it crashes with "Exit handler never called".
+        # --no-audit/--no-fund drop extra registry round-trips; http logging
+        # makes any remaining stall visible in the CI log.
+        run: npm ci --no-audit --no-fund --loglevel=http --maxsockets=5 --fetch-retries=5 --fetch-retry-mintimeout=20000 --fetch-retry-maxtimeout=60000 --fetch-timeout=180000
 
       - name: Build
         run: npm run build
