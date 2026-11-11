@@ -9,9 +9,11 @@ import styles from "./density-map.module.css"
 // library at a vendored copy. This must run at module scope (before any map /
 // worker pool is created), otherwise MapLibre falls back to an empty worker
 // URL and the map renders nothing. NEXT_PUBLIC_BASE_PATH is inlined by Next.
+// Use a .js extension: some CDNs in front of a custom domain serve .mjs as
+// application/octet-stream, which module workers reject (strict MIME check).
 const base = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/+$/, "")
 if (typeof window !== "undefined") {
-  maplibregl.setWorkerUrl(`${base}/vendor/maplibre-gl-worker.mjs`)
+  maplibregl.setWorkerUrl(`${base}/vendor/maplibre-gl-worker.js`)
 }
 
 const BASEMAPS: Record<"light" | "dark", string> = {
