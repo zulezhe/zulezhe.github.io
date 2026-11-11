@@ -48,13 +48,7 @@ jobs:
           fi
 
       - name: Install dependencies
-        # The first cold install (no npm cache yet) fetches ~254 packages incl.
-        # 28 platform-specific sharp binaries. Keep concurrency modest and cap
-        # each fetch so a stalled connection fails fast and retries instead of
-        # hanging npm until it crashes with "Exit handler never called".
-        # --no-audit/--no-fund drop extra registry round-trips; http logging
-        # makes any remaining stall visible in the CI log.
-        run: npm ci --no-audit --no-fund --loglevel=http --maxsockets=5 --fetch-retries=5 --fetch-retry-mintimeout=20000 --fetch-retry-maxtimeout=60000 --fetch-timeout=180000
+        run: npm ci --no-audit --no-fund
 
       - name: Build
         run: npm run build
