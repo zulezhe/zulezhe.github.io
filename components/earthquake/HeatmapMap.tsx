@@ -52,7 +52,9 @@ const ENERGY_RAMP: DensityScheme = {
 const YEAR_COUNT = 10
 const PLAY_MS = 15_000
 
-/** Blend two per-frame weight arrays into one getter expression. */
+/** Blend two adjacent year-weight fields into one getter expression.
+ *  Each feature stores the weight of every year as its own property
+ *  (wy0, wy1, … wy9), so playback just interpolates between two `get`s. */
 function frameMetric(array: "wy" | "we" | "wyc" | "wec", frame: number): Expression {
   const k = Math.floor(frame)
   const frac = frame - k

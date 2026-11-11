@@ -258,6 +258,12 @@ const deepest = [...all].sort((a, b) => b.depth - a.depth).slice(0, 20).map(even
 
 const gridMaxCount = Math.max(...gridAcc.map(cell => cell.count))
 const gridMaxEnergy = Math.max(...gridAcc.map(cell => cell.energy))
+// Per-year maxima, used so playback normalises each year to its own busiest
+// cell. That keeps every year's active belt visible while the brightest kernel
+// (e.g. Anatolia in 2023, Samos in 2020, Jan Mayen in 2018) walks across the
+// map from year to year instead of everything sitting near saturation.
+const yearMaxCount = YEARS.map((_, k) => Math.max(...gridAcc.map(cell => cell.byYearCount[k])))
+const yearMaxEnergy = YEARS.map((_, k) => Math.max(...gridAcc.map(cell => cell.byYearEnergy[k])))
 const grid = { rows: GRID_ROWS, cols: GRID_COLS, ...GRID, cells: [] }
 for (let row = 0; row < GRID_ROWS; row++) {
   for (let col = 0; col < GRID_COLS; col++) {
@@ -315,19 +321,19 @@ for (const [row, col, count, logEnergy, dominant] of grid.cells) {
   const lon = GRID.lonMin + (col + 0.5) * GRID_CELL_DEG
   const lat = GRID.latMin + (row + 0.5) * GRID_CELL_DEG
 
-  const wy = []
-  const we = []
-  const wyc = []
-  const wec = []
+  const wy = {}
+  const we = {}
+  const wyc = {}
+  const wec = {}
   let cumCount = 0
   let cumEnergy = 0
   for (let k = 0; k < YEARS.length; k++) {
     cumCount += cell.byYearCount[k]
     cumEnergy += cell.byYearEnergy[k]
-    wy.push(r3(clamp01(cell.byYearCount[k] / gridMaxCount)))
-    we.push(r3(clamp01(Math.log10(Math.max(cell.byYearEnergy[k], 1)) / Math.log10(gridMaxEnergy))))
-    wyc.push(r3(clamp01(cumCount / gridMaxCount)))
-    wec.push(r3(clamp01(Math.log10(Math.max(cumEnergy, 1)) / Math.log10(gridMaxEnergy))))
+    wy[`${k}`] = r3(clamp01(cell.byYearCount[k] / yearMaxCount[k]))
+    we[`${k}`] = r3(clamp01(cell.byYearEnergy[k] / yearMaxEnergy[k]))
+    wyc[`${k}`] = r3(clamp01(cumCount / gridMaxCount))
+    wec[`${k}`] = r3(clamp01(Math.log10(Math.max(cumEnergy, 1)) / Math.log10(gridMaxEnergy)))
   }
 
   heatPointFeatures.push({
@@ -340,10 +346,10 @@ for (const [row, col, count, logEnergy, dominant] of grid.cells) {
       provIdx: dominant,
       fCount: Math.round((cell.count / gridMaxCount) * 1000) / 1000,
       fEnergy: Math.round((Math.log10(cell.energy) / Math.log10(gridMaxEnergy)) * 1000) / 1000,
-      wy,
-      we,
-      wyc,
-      wec,
+      ...Object.fromEntries(YEARS.map((_, k) => [`wy${k}`, wy[`${k}`]])),
+      ...Object.fromEntries(YEARS.map((_, k) => [`we${k}`, we[`${k}`]])),
+      ...Object.fromEntries(YEARS.map((_, k) => [`wyc${k}`, wyc[`${k}`]])),
+      ...Object.fromEntries(YEARS.map((_, k) => [`wec${k}`, wec[`${k}`]])),
     },
     geometry: { type: "Point", coordinates: [lon, lat] },
   })

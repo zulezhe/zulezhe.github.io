@@ -59,7 +59,10 @@ function heatColorExpression(ramp: DensityRamp): Expression {
   return ["interpolate", ["linear"], ["heatmap-density"], ...stops.flat()]
 }
 
-/** Constrain heatmap weight to 0..1 so a single stray cell can't blow out the ramp. */
+/** Constrain heatmap weight to 0..1 so a single stray cell can't blow out the ramp.
+ *  The year weights are linearly normalised to the decade max, so quiet years
+ *  sit low and the 2023 surge sits near 1 — this ramp keeps the quiet years
+ *  legible while still letting the surge stand out. */
 function heatWeightExpression(metric: Expression): Expression {
   return [
     "interpolate",
@@ -67,8 +70,12 @@ function heatWeightExpression(metric: Expression): Expression {
     metric,
     0,
     0,
-    0.5,
     0.1,
+    0.25,
+    0.3,
+    0.6,
+    0.6,
+    0.9,
     1,
     1,
   ] as Expression
