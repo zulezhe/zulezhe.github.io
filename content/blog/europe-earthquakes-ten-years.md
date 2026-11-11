@@ -1,79 +1,54 @@
 ---
-title: "Europe’s Seismic Pulse: Ten Years of Earthquakes in One Wall"
-description: "Explore 99,423 earthquakes across Europe and the Mediterranean from 2016–2025 as a day-by-zone pulse wall: rhythm, depth, and the 2023 rupture that released more energy than the other nine years combined."
+title: "Europe’s Seismic Pulse: Ten Years of Earthquakes, Read Through the Data"
+description: "99,423 European earthquakes, 2016–2025. A data-led read of where the continent trembles, why Romania shakes deep while Greece shakes shallow, and how one day in 2023 released more energy than the other nine years combined."
 date: "2026-11-10"
-tags: ["data-visualization", "earthquakes", "gis", "seismology"]
+tags: ["earthquakes", "gis", "seismology", "data-analysis"]
 featured: true
 interactive: "europe-earthquakes-ten-years"
 ---
 
-A dot map is very good at one thing: showing where earthquakes happen. It is very bad at showing how they happen. Plot ten years of European seismicity and the Mediterranean lights up in a smear of dots; Greece becomes a texture, Turkey becomes a blot, and the difference between a busy swarm and a single quiet rupture disappears.
+Europe is one of the most seismically active corners of the planet — and not because of a single fault. It sits at the slow-motion collision where Africa pushes north into Eurasia, the Atlantic ridge pulls Iceland apart, and the Mediterranean is the crumple zone between them. Over ten years that machinery produced **99,423 recorded earthquakes of magnitude 2.5 or larger**.
 
-This article turns the catalogue on its side. The main view uses **time and tectonic zone**: a wall of marks where every column is a day, every row is a seismic zone, and every mark is an event. Height shows the day’s largest magnitude; colour shows the mean depth. A heat-map tab at the top keeps the geography as a density field — every event binned into a quarter-degree cell and coloured by energy or count — so you get the map without the dot-splat problem.
-
-The dataset is the EMSC Euro-Mediterranean catalogue: **99,423 earthquakes of magnitude 2.5 or larger**, from **2016 through 2025**, between 34–72°N and 25°W–45°E. That box includes Turkey, the Caucasus, and the North African margin, so “Europe” here is shorthand for Europe and its Mediterranean neighbourhood.
+This article reads that decade through the catalogue itself. Below is an interactive that lets you walk through it: a **pulse wall** where every column is a day and every row is a seismic zone, a **depth panel** that separates shallow crustal ruptures from deep slab events, a **heat map** of where the energy landed, and an **energy ledger** that sums the decade. The data come from the EMSC Euro-Mediterranean catalogue, 2016–2025, boxed to 34–72°N and 25°W–45°E — which is why "Europe" here also takes in Turkey, the Caucasus, and the North African margin.
 
 <!-- interactive:europe-earthquakes-ten-years -->
 
-## Why not a dot map?
+## Where the continent trembles
 
-Ten years is long enough for patterns to emerge, but a map collapses all of that time into one frame. Two events a decade apart sit on top of each other. A magnitude 7.8 and a magnitude 2.5 are both just dots. Depth, which separates a shallow crustal rupture from a slab earthquake 130 kilometres down, is usually encoded as a colour nobody can read.
+The first thing the catalogue makes plain is how concentrated European seismicity is. **Greece and its Hellenic arc account for 33,220 events — about a third of the entire decade.** Add western Turkey (16,263) and the Anatolia–Caucasus belt (18,358) and roughly two-thirds of all recorded earthquakes sit in a thin arc running from the Ionian Sea to the Caspian.
 
-The pulse wall keeps those dimensions separate. The horizontal axis is continuous time, so sequences and quiet periods stay visible. The vertical axis groups events by zone, so you can compare Greece’s drumbeat with Iceland’s sparse ticks. Height is magnitude, which is already a logarithmic scale, and colour is depth.
+That arc is not arbitrary. It traces the boundary where the African plate dives beneath Eurasia. Greece rides the overriding edge; Turkey is being squeezed westward between that subduction and the Arabian push; and the result is a near-continuous drumbeat of small ruptures. In the wall, the Greek row looks like fabric — event after event, day after day — while the North European row, the Alps, and France are mostly thin, broken lines: a continent that is, for the most part, still.
 
-The trade-off is deliberate: the wall itself is not a locator map. If you need to place a zone, switch to the heat-map tab, which re-casts the same catalogue as a geographic density field (energy or event count per quarter-degree cell). The heat map can also replay the decade year by year — press play and watch Anatolia flare in 2023. You will not find your town on it, but you see exactly where the continent is speaking and how loud.
+The heat map makes the same point geographically. Switch to it and the Mediterranean rim glows while the continental interior stays black. The only bright spots away from the rim are Iberia's offshore boundary and a faint scatter over the mid-Atlantic — Iceland's ridge, three thousand kilometres from Athens.
 
-## Read the wall
+## Two kinds of deep earthquake
 
-The first thing the wall shows is inequality. **Greece accounts for 33,220 events, about one third of the entire catalogue.** Western Turkey adds 16,263 and Anatolia and the Caucasus add 18,358. Those three rows are where the catalogue is dense enough to look like a continuous fabric. Romania, France, the Alps, and the North European row are mostly thin, interrupted lines.
+Depth is the dimension that turns the charts from description into interpretation, because it separates fundamentally different tectonic machines. Most European earthquakes are shallow: the Aegean, the Italian Apennines, and the Anatolian faults all release stress in the upper crust. Of Greece's 33,220 events, only about 2% occur below 70 kilometres.
 
-The second thing it shows is rhythm. Greece is not one event followed by silence; it is a nearly continuous background with recurring bursts. Iceland is the opposite: long gaps, then a sharp cluster such as the M6.8 Jan Mayen event in November 2018. The 2020 M7.0 Samos earthquake appears as a single tall mark in the Greece row after a comparatively quiet stretch.
+Romania is the exception that proves the rule. Of its 2,059 events, **1,549 — roughly 75% — are deeper than 70 kilometres**, clustered tightly around 125–130 km. That is the Vrancea slab: a narrow body of intermediate-depth earthquakes wedged beneath the Carpathian bend, the remnant of old ocean floor that never quite finished subducting. No other part of Europe behaves like this. In the depth panel the Romanian row shows two clean bands — shallow crustal noise above, the slab below — where every other row is a single shallow smear.
 
-The interactive wall lets you test those impressions. Hover over a day to see the count, largest magnitude, and mean depth for that zone. Click to pin the day. Drag across a range to zoom, then use **10 years**, **Year**, or **Month** to move between scales. **Play the decade** sweeps a playhead across the current view. Click a zone chip, or a zone label, to isolate one row.
+Italy carries a smaller but genuine version of the same story. **654 of its events sit below 70 km, and 75 of those plunge deeper than 300 km under the Tyrrhenian Sea** — true slab earthquakes, not the shallow Apennine ruptures that make the headlines. A conventional map, where depth is just another colour, would have buried them.
 
-## The second population
+## The rhythm of the decade
 
-The depth panel is where the wall becomes an argument rather than a picture. Most European earthquakes are shallow: the Aegean, the Italian Apennines, and the Anatolian faults all release stress in the upper crust. Greece has 33,220 events but only about 2% below 70 kilometres.
+Strip away the geography and look only at time, and each zone reveals its own character. Greece is never silent: a steady background with recurring bursts. Iceland is the opposite — long quiet stretches broken by sharp clusters, such as the M6.8 Jan Mayen event of November 2018. And some years carry a single defining mark: the 2020 M7.0 Samos earthquake stands as one tall spike in the Greek row after a comparatively calm stretch.
 
-Romania is different. Of its 2,059 events, **1,549 — about 75% — are deeper than 70 kilometres**, with a clear second peak around 125–130 kilometres. That is the Vrancea slab: a narrow, dense body of intermediate-depth earthquakes under the Carpathian bend, separated from the shallow crustal events above it. In the depth panel, the Romanian row has two distinct dark bands instead of one.
-
-Italy has a smaller but still visible deep population: 654 events below 70 kilometres, including 75 deeper than 300 kilometres under the Tyrrhenian Sea. Those are slab earthquakes, not shallow fault ruptures. The same map colour would have hidden them.
+The wall lets you feel these rhythms directly. Drag across a range to zoom from a decade down to a single month; click a zone chip to isolate its row; press **Play the decade** and the whole catalogue sweeps past in real time. Hover any day to see that zone's count, largest magnitude, and mean depth.
 
 ## The year that shouted
 
-The energy ledger makes the decade’s imbalance explicit. Using the Gutenberg–Richter approximation, log₁₀E = 4.8 + 1.5M, the catalogue represents about **57.6 petajoules** of released energy. **2023 alone accounts for 44.6 PJ, roughly 3.4 times the other nine years combined.**
+For all the texture in the wall, the decade's single loudest signal is an imbalance. Using the Gutenberg–Richter relation (log₁₀E = 4.8 + 1.5M), the catalogue totals about **57.6 petajoules** of released energy — and **2023 alone accounts for 44.6 PJ, roughly 3.4 times the other nine years combined.**
 
-That is not a subtle statistical effect. The M7.8 and M7.5 ruptures in central Turkey on 6 February 2023, plus their aftershock sequence, dominate the year. The single busiest day in the catalogue is that day: 419 events of M2.5 or larger in the box, with the two largest at 01:17 and 10:24 UTC.
+That spike is the 6 February 2023 doublet: the M7.8 and M7.5 ruptures across central Turkey and their aftershock sequence. The busiest single day in the entire catalogue is that one — 419 events of M2.5 or larger in the box, the two largest at 01:17 and 10:24 UTC. The heat map, played year by year, shows Anatolia flare orange in 2023 while the rest of the decade stays comparatively dim.
 
-The ledger lets you remove 2023 from the scale and look at the remaining nine years. The bars for 2020 and 2018 become visible; 2024 becomes the quietest year by energy; the decade starts to look less like a steady trend and more like a sequence of occasional ruptures separated by ordinary background activity.
+Take 2023 away and the ledger looks different. The bars for 2018 and 2020 become visible; 2024 becomes the quietest year by energy. The decade stops looking like a trend and starts looking like what it is: a long stretch of ordinary background activity punctuated by one enormous release.
 
-Energy is not the same as impact. A shallow magnitude 6 near a city can matter more than a deeper magnitude 7 offshore. The ledger is a way to compare the catalogue’s physical output, not a ranking of disasters.
+Energy is not the same as impact, of course. A shallow M6 near a city can matter more than a deeper M7 offshore. The ledger compares the catalogue's physical output, not the scale of any disaster.
 
-## What the catalogue can and cannot say
+## What the data does and doesn't capture
 
-The wall is only as good as its catalogue, so a few limits belong next to the picture.
+A few honest limits belong next to these readings. EMSC's network is dense over Greece, Italy, Turkey, and the Balkans but sparse over the Atlantic and North Africa, so a quiet Azores row is as likely a coverage gap as real calm. Magnitude types are mixed — mostly ML, with smaller counts of mb, Mw, and others — which matters most near the M2.5 threshold. And the catalogue counts aftershocks individually, which is exactly why 2023 looms so large: those thousands of aftershocks are real events but answer a different question from summed energy.
 
-**Completeness is uneven.** EMSC’s Euro-Mediterranean network is dense over Greece, Italy, Turkey, and the Balkans, and much sparser over the Atlantic and North Africa. A blank stretch in the Azores row does not prove there were no earthquakes; it may mean no station recorded a small one. The M2.5 threshold is a compromise between coverage and volume.
+## Data and method
 
-**Magnitude types are mixed.** Most events here use ML (90,858), with smaller numbers of M, mb, Mw, and other types. Mixing magnitude scales adds uncertainty, especially near the threshold. The largest events are the least affected, but the small-event texture is not a homogeneous measurement.
-
-**Depth is uncertain.** A few records report 600–750 kilometres under Syria, central Turkey, and the Black Sea. Those are probably depth-phase or catalogue artefacts rather than real mantle earthquakes; they are grouped into the 300+ bin and do not drive the main reading. Vrancea’s 90–160 kilometre cluster is a much more robust feature.
-
-**Aftershocks are counted individually.** The 2023 bar is large partly because the catalogue contains thousands of aftershocks. Counting events and summing energy answer different questions: one measures how often the ground moved, the other how much energy was released.
-
-**“Europe” is a shorthand.** The box includes Turkey, the Caucasus, and the northern edge of Africa. Excluding Turkey would remove the decade’s largest rupture and make the wall look calmer than the region actually is. The scope is stated here rather than hidden in the axis.
-
-## Reproduce it
-
-The browser never downloads the 99,423 raw events. A build script fetches the EMSC catalogue in yearly chunks, normalises the region names, assigns each event to one of 13 zones, and writes four small aggregates: a day-by-zone matrix, a zone-by-depth histogram, a list of notable events, and metadata. The page loads the aggregates and renders the wall on a canvas.
-
-- Source catalogue: [EMSC Seismic Portal FDSN event service](https://www.seismicportal.eu/fdsnws/event/1/)
-- Scope: 2016-01-01 to 2026-01-01, M≥2.5, 34–72°N, 25°W–45°E
-- Events after cleaning: 99,423 (31 records without a usable magnitude or timestamp were dropped)
-- Zones: 13, assigned from EMSC’s `flynn_region` field with a nearest-centroid fallback
-- Energy: derived from magnitude, not measured radiated energy
-- Data generated: 2026-11-10
-
-EMSC data are open access; credit the European Mediterranean Seismological Centre. The aggregation scripts live in `scripts/fetch-earthquakes.mjs` and `scripts/build-earthquake-data.mjs` in the site repository.
-
-The point of the wall is not that it replaces maps. It is that a map is one projection of a catalogue, and sometimes the most useful projection is the one that keeps time, depth, and rhythm intact.
+The browser loads four aggregates rather than the 99,423 raw events: a day-by-zone matrix, a zone-by-depth histogram, notable events, and metadata. A build script fetches EMSC in yearly chunks, normalises region names, assigns each event to one of 13 zones via `flynn_region` with a nearest-centroid fallback, and writes the aggregates the page renders. 31 records without a usable magnitude or timestamp were dropped; energy is derived from magnitude, not measured radiated energy. Source: [EMSC Seismic Portal FDSN event service](https://www.seismicportal.eu/fdsnws/event/1/). Data generated 2026-11-10.

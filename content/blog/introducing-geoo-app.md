@@ -51,7 +51,7 @@ At its core it's a suite of 600+ tools organized around the jobs GIS data actual
 
 *The universal converter — drop a file, pick a target format, and it's processed on your machine. The format chips read like a GIS conference attendee list.*
 
-The whole thing is free: no sign-up, no watermarks, no daily limits, no "large files are a paid feature." The interface ships in 11 languages.
+The whole thing is free: no sign-up, no watermarks, no daily limits, no "large files are a paid feature." The interface ships in 9 languages.
 
 ## How it works: privacy as architecture
 
