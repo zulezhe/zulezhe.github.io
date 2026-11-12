@@ -55,3 +55,5 @@ interactive: "ev-charging-europe"
 - [世界銀行資料](https://data.worldbank.org/)
 
 原始來源署名全部保留，包括 CC BY 4.0、Licence Ouverte 2.0 / ODbL，以及各提供者的專屬條款。離線邊界資料來自公有領域的 Natural Earth；線上底圖感謝 OpenStreetMap 貢獻者與 CARTO。地圖使用 MapLibre GL JS 與 Apache ECharts。完整報告保留了它的來源註記與計算方法。
+
+延伸閱讀:同一個問題換了城市尺度會怎樣?看看[香港的公共充電網路——990 個可以插電的地方](/zh-TW/blog/hk-ev-charging/)。

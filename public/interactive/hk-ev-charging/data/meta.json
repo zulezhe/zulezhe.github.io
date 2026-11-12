@@ -1,0 +1,255 @@
+{
+  "generatedAt": "2026-11-12T03:35:47.342Z",
+  "source": {
+    "label": "環境保護署《供公眾使用的電動車充電器》(資料一線通 / CSDI)",
+    "labelEn": "EPD Electric Vehicle Chargers for Public Access (DATA.GOV.HK / CSDI)",
+    "url": "https://data.gov.hk/tc-data/dataset/hk-epd-evcpateam-evc-1",
+    "api": "https://portal.csdi.gov.hk/csdi-webpage/file-api?dataset_id=epd_rcd_1631080339740_69941&format=geojson&layer_name=geotagging"
+  },
+  "districts": [
+    {
+      "en": "Eastern",
+      "tc": "東區"
+    },
+    {
+      "en": "Sai Kung",
+      "tc": "西貢區"
+    },
+    {
+      "en": "Central & Western",
+      "tc": "中西區"
+    },
+    {
+      "en": "Tsuen Wan",
+      "tc": "荃灣區"
+    },
+    {
+      "en": "Sha Tin",
+      "tc": "沙田區"
+    },
+    {
+      "en": "Southern",
+      "tc": "南區"
+    },
+    {
+      "en": "Sham Shui Po",
+      "tc": "深水埗區"
+    },
+    {
+      "en": "North",
+      "tc": "北區"
+    },
+    {
+      "en": "Yuen Long",
+      "tc": "元朗區"
+    },
+    {
+      "en": "Kwun Tong",
+      "tc": "觀塘區"
+    },
+    {
+      "en": "Kwai Tsing",
+      "tc": "葵青區"
+    },
+    {
+      "en": "Tai Po",
+      "tc": "大埔區"
+    },
+    {
+      "en": "Wan Chai",
+      "tc": "灣仔區"
+    },
+    {
+      "en": "Kowloon City",
+      "tc": "九龍城區"
+    },
+    {
+      "en": "Tuen Mun",
+      "tc": "屯門區"
+    },
+    {
+      "en": "Yau Tsim Mong",
+      "tc": "油尖旺區"
+    },
+    {
+      "en": "Wong Tai Sin",
+      "tc": "黃大仙區"
+    },
+    {
+      "en": "Islands",
+      "tc": "離島區"
+    }
+  ],
+  "totals": {
+    "locations": 990,
+    "chargers": 18202,
+    "std": 2834,
+    "med": 11609,
+    "dc": 3759,
+    "dcLocations": 542
+  },
+  "perDistrict": [
+    {
+      "en": "Kowloon City",
+      "tc": "九龍城區",
+      "locations": 40,
+      "chargers": 2497,
+      "std": 1116,
+      "med": 1229,
+      "dc": 152
+    },
+    {
+      "en": "Kwun Tong",
+      "tc": "觀塘區",
+      "locations": 116,
+      "chargers": 2314,
+      "std": 505,
+      "med": 1445,
+      "dc": 364
+    },
+    {
+      "en": "Sha Tin",
+      "tc": "沙田區",
+      "locations": 86,
+      "chargers": 2036,
+      "std": 733,
+      "med": 874,
+      "dc": 429
+    },
+    {
+      "en": "Yau Tsim Mong",
+      "tc": "油尖旺區",
+      "locations": 52,
+      "chargers": 1100,
+      "std": 9,
+      "med": 733,
+      "dc": 358
+    },
+    {
+      "en": "Sai Kung",
+      "tc": "西貢區",
+      "locations": 61,
+      "chargers": 1077,
+      "std": 148,
+      "med": 666,
+      "dc": 263
+    },
+    {
+      "en": "North",
+      "tc": "北區",
+      "locations": 44,
+      "chargers": 1035,
+      "std": 72,
+      "med": 847,
+      "dc": 116
+    },
+    {
+      "en": "Yuen Long",
+      "tc": "元朗區",
+      "locations": 92,
+      "chargers": 992,
+      "std": 17,
+      "med": 670,
+      "dc": 305
+    },
+    {
+      "en": "Islands",
+      "tc": "離島區",
+      "locations": 37,
+      "chargers": 815,
+      "std": 32,
+      "med": 635,
+      "dc": 148
+    },
+    {
+      "en": "Eastern",
+      "tc": "東區",
+      "locations": 56,
+      "chargers": 783,
+      "std": 18,
+      "med": 592,
+      "dc": 173
+    },
+    {
+      "en": "Southern",
+      "tc": "南區",
+      "locations": 36,
+      "chargers": 783,
+      "std": 2,
+      "med": 643,
+      "dc": 138
+    },
+    {
+      "en": "Kwai Tsing",
+      "tc": "葵青區",
+      "locations": 55,
+      "chargers": 747,
+      "std": 64,
+      "med": 432,
+      "dc": 251
+    },
+    {
+      "en": "Wan Chai",
+      "tc": "灣仔區",
+      "locations": 42,
+      "chargers": 719,
+      "std": 45,
+      "med": 501,
+      "dc": 173
+    },
+    {
+      "en": "Wong Tai Sin",
+      "tc": "黃大仙區",
+      "locations": 44,
+      "chargers": 642,
+      "std": 13,
+      "med": 464,
+      "dc": 165
+    },
+    {
+      "en": "Central & Western",
+      "tc": "中西區",
+      "locations": 33,
+      "chargers": 639,
+      "std": 5,
+      "med": 451,
+      "dc": 183
+    },
+    {
+      "en": "Tsuen Wan",
+      "tc": "荃灣區",
+      "locations": 54,
+      "chargers": 616,
+      "std": 10,
+      "med": 444,
+      "dc": 162
+    },
+    {
+      "en": "Sham Shui Po",
+      "tc": "深水埗區",
+      "locations": 60,
+      "chargers": 593,
+      "std": 34,
+      "med": 413,
+      "dc": 146
+    },
+    {
+      "en": "Tuen Mun",
+      "tc": "屯門區",
+      "locations": 52,
+      "chargers": 457,
+      "std": 3,
+      "med": 309,
+      "dc": 145
+    },
+    {
+      "en": "Tai Po",
+      "tc": "大埔區",
+      "locations": 30,
+      "chargers": 357,
+      "std": 8,
+      "med": 261,
+      "dc": 88
+    }
+  ]
+}

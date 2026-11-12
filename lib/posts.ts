@@ -33,7 +33,7 @@ export interface Post {
   /** Slugs of the sibling translations, derived from the files on disk. */
   translations?: { en: string; "zh-TW": string }
   language?: string
-  interactive?: "ev-charging-europe" | "europe-earthquakes-ten-years"
+  interactive?: "ev-charging-europe" | "europe-earthquakes-ten-years" | "hk-ev-charging"
   /** Absolute URL of the canonical home when this post is a mirror (e.g. syndicated). */
   canonical?: string
   readingTime: number
@@ -98,10 +98,11 @@ function parseFile(fileName: string, dir: string, locale: Locale): Post {
     translationOf,
     translations,
     language: typeof data.language === "string" ? data.language : locale === "en" ? undefined : locale,
-    interactive:
-      data.interactive === "ev-charging-europe" || data.interactive === "europe-earthquakes-ten-years"
-        ? data.interactive
-        : undefined,
+    interactive: ["ev-charging-europe", "europe-earthquakes-ten-years", "hk-ev-charging"].includes(
+      data.interactive as string,
+    )
+      ? data.interactive
+      : undefined,
     canonical: typeof data.canonical === "string" ? data.canonical : undefined,
     readingTime: computeReadingTime(content),
   }

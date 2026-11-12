@@ -46,6 +46,7 @@ const zhTW = {
     postNavAria: "文章導覽",
     interactiveEarthquakeHeading: "十年歐洲地震，一面節奏牆",
     interactiveChargingHeading: "互動地圖與報告",
+    interactiveHkEvHeading: "香港公共充電地圖",
   },
   explorer: {
     searchLabel: "找點值得讀的東西",

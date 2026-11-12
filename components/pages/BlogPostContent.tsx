@@ -6,6 +6,7 @@ import { siteConfig, absUrl } from "@/lib/site"
 import { getDictionary, fmt, formatDate, localizedPath, type Locale } from "@/lib/i18n"
 import ChargingEurope from "@/components/ChargingEurope"
 import EarthquakePulse from "@/components/EarthquakePulse"
+import HkEvCharging from "@/components/HkEvCharging"
 import TableOfContents from "@/components/TableOfContents"
 import TagList from "@/components/TagList"
 import ReadingTools from "@/components/ReadingTools"
@@ -31,7 +32,9 @@ export default async function BlogPostContent({ locale, slug }: { locale: Locale
       ? { id: "explore-earthquakes", text: t.post.interactiveEarthquakeHeading }
       : interactiveSlug === "ev-charging-europe"
         ? { id: "explore-network", text: t.post.interactiveChargingHeading }
-        : null
+        : interactiveSlug === "hk-ev-charging"
+          ? { id: "explore-hk-charging", text: t.post.interactiveHkEvHeading }
+          : null
   const headings = [...introHeadings, ...(interactiveHeading ? [{ ...interactiveHeading, depth: 2 as const }] : []), ...afterHeadings]
   const { prev, next } = getAdjacentPosts(slug, locale)
   const postUrl = absUrl(localizedPath(locale, `/blog/${post.slug}/`))
@@ -168,6 +171,9 @@ export default async function BlogPostContent({ locale, slug }: { locale: Locale
               ) : null}
               {interactiveSlug === "europe-earthquakes-ten-years" ? (
                 <EarthquakePulse basePath={siteConfig.basePath} locale={locale} />
+              ) : null}
+              {interactiveSlug === "hk-ev-charging" ? (
+                <HkEvCharging basePath={siteConfig.basePath} locale={locale} />
               ) : null}
               {afterHtml && <div dangerouslySetInnerHTML={{ __html: afterHtml }} />}
             </div>

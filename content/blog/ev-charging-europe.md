@@ -55,3 +55,5 @@ The sources differ in registration rules and coverage. Sparse records cannot dir
 - [World Bank data](https://data.worldbank.org/)
 
 The original source attributions are retained, including CC BY 4.0, Licence Ouverte 2.0 / ODbL, and provider-specific terms. Offline boundaries come from public-domain Natural Earth data; online basemaps credit OpenStreetMap contributors and CARTO. The map uses MapLibre GL JS and Apache ECharts. The full report retains its source notes and calculation methods.
+
+Further reading: what does the same question look like at a city’s scale? See [Hong Kong’s Public Charging Network: 990 Places to Plug In](/blog/hk-ev-charging/).

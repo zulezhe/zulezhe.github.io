@@ -46,6 +46,7 @@ const en = {
     postNavAria: "Post navigation",
     interactiveEarthquakeHeading: "Europe’s seismic pulse, in one wall",
     interactiveChargingHeading: "Interactive map and report",
+    interactiveHkEvHeading: "Hong Kong’s public charging map",
   },
   explorer: {
     searchLabel: "Find something worth reading",
