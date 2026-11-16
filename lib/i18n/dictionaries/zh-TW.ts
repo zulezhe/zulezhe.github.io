@@ -31,6 +31,14 @@ const zhTW = {
       "關於網頁開發、Next.js、SEO、開發者工具與 side project 的指南、筆記與心得。",
     countLine: "{count} 篇關於網頁開發的文章 — 工程筆記、實用指南，偶爾夾雜一些個人觀點。",
     tagCountLine: "共 {count} 篇標記為「{tag}」的文章。",
+    tagIntro:
+      "所有標記為「{tag}」的文章，由新到舊排列。共 {count} 篇，寫的都是真正動手做過、交付過的東西。",
+    tagSingleIntro: "目前只有一篇文章談到「{tag}」，這個主題後續還會繼續寫。",
+    tagRelatedHeading: "相關主題",
+    tagMeta:
+      "部落格裡關於「{tag}」的 {count} 篇文章：{titles}。都是真正動手做過的筆記與實用指南。",
+    tagMetaSingle:
+      "部落格裡關於「{tag}」的一篇文章：「{title}」。一篇來自真實實作的實用詳解。",
     allPosts: "← 所有文章",
   },
   post: {

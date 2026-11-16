@@ -145,6 +145,26 @@ export function getPostsByTag(tag: string, locale: Locale = "en"): Post[] {
   return getAllPosts({ locale }).filter((p) => p.tags.includes(tag.toLowerCase()))
 }
 
+/**
+ * Tags that co-occur with `tag` across all posts, most frequent first.
+ * Used to give thin tag archives real internal links instead of a bare list.
+ */
+export function getRelatedTags(tag: string, locale: Locale = "en", limit = 8): string[] {
+  const target = tag.toLowerCase()
+  const counts = new Map<string, number>()
+  for (const post of getAllPosts({ locale })) {
+    if (!post.tags.includes(target)) continue
+    for (const other of post.tags) {
+      if (other === target) continue
+      counts.set(other, (counts.get(other) ?? 0) + 1)
+    }
+  }
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, limit)
+    .map(([name]) => name)
+}
+
 /** Previous (older) and next (newer) post around `slug`, for post navigation. */
 export function getAdjacentPosts(slug: string, locale: Locale = "en"): { prev?: Post; next?: Post } {
   const posts = getAllPosts({ locale })

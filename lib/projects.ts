@@ -69,3 +69,22 @@ export function getAllProjects(options?: { includeDrafts?: boolean }): Project[]
 export function getProjectBySlug(slug: string, includeDrafts = false): Project | undefined {
   return getAllProjects({ includeDrafts }).find((p) => p.slug === slug)
 }
+
+/**
+ * First paragraph of a project's body, used as its card summary.
+ * Keeps the projects index from being a bare list of titles and taglines.
+ */
+export function projectSummary(project: Project, maxLength = 220): string {
+  const text = project.content
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/^#{1,6}\s+.*$/gm, " ")
+    .replace(/^\s*[-*]\s+/gm, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+  if (text.length <= maxLength) return text
+  const cut = text.slice(0, maxLength)
+  const lastSpace = cut.lastIndexOf(" ")
+  return `${cut.slice(0, lastSpace > 80 ? lastSpace : maxLength).trimEnd()}…`
+}

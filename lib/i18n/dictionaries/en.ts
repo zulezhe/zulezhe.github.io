@@ -31,6 +31,15 @@ const en = {
     countLine:
       "{count} {count|article|articles} about building for the web — engineering notes, practical guides, and the occasional opinion.",
     tagCountLine: "{count} {count|article|articles} tagged with “{tag}”.",
+    tagIntro:
+      "Every post filed under this topic, newest first. {count} {count|article|articles} covering {tag} — written from things actually built and shipped.",
+    tagSingleIntro:
+      "One post covers {tag} so far. More on this topic is on the way.",
+    tagRelatedHeading: "Related topics",
+    tagMeta:
+      "{count} articles about {tag} on this blog: {titles}. Notes and practical guides from things actually built.",
+    tagMetaSingle:
+      "One article about {tag} on this blog: “{title}”. A practical walkthrough written from a real implementation.",
     allPosts: "← All posts",
   },
   post: {
