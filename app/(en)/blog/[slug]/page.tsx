@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     modifiedTime: post.updated ?? post.date,
     tags: post.tags,
     ogImage: {
-      url: absUrl(`/blog/${post.slug}/opengraph-image`),
+      url: absUrl(`/og/blog/${post.slug}.png`),
       alt: post.title,
     },
     ...(post.translations

@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     publishedTime: project.date,
     tags: project.tech,
     ogImage: {
-      url: absUrl(`/projects/${project.slug}/opengraph-image`),
+      url: absUrl(`/og/projects/${project.slug}.png`),
       alt: project.title,
     },
     languages: languageAlternates(`/projects/${project.slug}/`),

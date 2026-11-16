@@ -48,9 +48,14 @@ export const siteConfig = {
 
   /** Social / contact links. Empty strings hide the icon in the footer. */
   links: {
-    github: "https://github.com/oliver",
-    twitter: "https://x.com/oliver",
-    email: "mailto:hello@example.com",
+    // Real profiles only — placeholder links (github.com/oliver, x.com/oliver,
+    // hello@example.com) shipped to production and produced broken outbound
+    // links plus a crawlable /cdn-cgi/l/email-protection 404 (Cloudflare
+    // rewrites mailto: links, and that endpoint 404s on this host). Set these
+    // to real values to re-enable the icons; empty string hides the link.
+    github: "https://github.com/zulezhe",
+    twitter: "",
+    email: "",
   },
 
   /**
@@ -111,7 +116,7 @@ export function pageMetadata({
 }) {
   const canonical = absolutePageUrl(path)
   const image = ogImage ?? {
-    url: absUrl("/opengraph-image"),
+    url: absUrl("/og/default.png"),
     alt: `${siteConfig.name} — ${siteConfig.tagline}`,
   }
   // Locale follows the URL prefix so zh-TW pages never need to pass it explicitly.

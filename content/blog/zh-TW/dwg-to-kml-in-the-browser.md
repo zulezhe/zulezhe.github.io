@@ -3,7 +3,6 @@ title: "在瀏覽器裡把 DWG 轉成 KML：從 CAD 圖元到地理座標"
 description: "瀏覽器如何把 AutoCAD DWG 圖檔轉成 Google Earth KML——用 WebAssembly 解析圖元、決定哪些幾何能存活、處理座標系統、寫出匯出檔。附從 geoo.app 實作改編、可直接運行的 TypeScript。"
 date: "2026-10-23"
 tags: ["gis", "tutorial", "webassembly", "cad"]
-canonical: "https://geoo.app/blog/dwg-to-kml-in-browser/"
 faq:
   - q: "DWG 檔可以完全在瀏覽器裡轉成 KML 嗎？"
     a: "可以。LibreDWG 的 WebAssembly 版本在客戶端解析 DWG，proj4 負責重投影到 WGS84，KML 由 JavaScript 組裝——圖檔完全不必離開設備。"

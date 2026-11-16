@@ -32,4 +32,4 @@ featured: true
 
 ## 打個招呼
 
-聯絡我的最好方式是 email——或者追蹤我的 [X](https://x.com/oliver)，也可以訂閱 [RSS feed](/rss.xml)。無論如何，謝謝你讀完第一篇文章。後面還有很多。
+聯絡我的最好方式是透過 [GitHub](https://github.com/zulezhe)，也可以訂閱 [RSS feed](/rss.xml)。無論如何，謝謝你讀完第一篇文章。後面還有很多。

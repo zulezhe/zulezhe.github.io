@@ -137,5 +137,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.4,
     })),
+    // Interactive artifacts shipped as static HTML under /public (not routes).
+    // The map explorer is a real, linked landing page; the analysis report is
+    // deliberately noindex'd and stays out of the sitemap.
+    {
+      url: absUrl("/interactive/ev-charging-europe/en/"),
+      lastModified: postsLatest,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
   ]
 }

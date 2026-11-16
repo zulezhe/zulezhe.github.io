@@ -5,7 +5,7 @@ description: "A fully static personal blog and portfolio built with Next.js stat
 date: "2026-10-12"
 tech: ["Next.js", "TypeScript", "Tailwind CSS", "Shiki", "Markdown"]
 links:
-  repo: "https://github.com/oliver/blog"
+  repo: "https://github.com/zulezhe/zulezhe.github.io"
 featured: true
 order: 2
 ---

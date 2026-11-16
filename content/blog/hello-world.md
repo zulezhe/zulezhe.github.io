@@ -32,4 +32,4 @@ If you're curious how the pieces fit together, I wrote about [the full stack beh
 
 ## Say hi
 
-The best way to reach me is by email — or just follow along on [X](https://x.com/oliver) or through the [RSS feed](/rss.xml). Either way, thanks for reading the first post. There's more on the way.
+The best way to reach me is on [GitHub](https://github.com/zulezhe) — or just follow along through the [RSS feed](/rss.xml). Either way, thanks for reading the first post. There's more on the way.

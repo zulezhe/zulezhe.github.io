@@ -9,6 +9,11 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        // Paths that must never be crawled: /lib/ is a WASM-directory example
+        // mentioned in a tutorial code block (Google extracts it as a URL and
+        // hits a 404); /cdn-cgi/ is Cloudflare's own edge namespace (its email
+        // protection rewrite produces crawlable 404 links).
+        disallow: ["/lib/", "/cdn-cgi/"],
       },
     ],
     sitemap: absUrl("/sitemap.xml"),

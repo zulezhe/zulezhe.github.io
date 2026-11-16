@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/prepare-blog-readers.mjs && next build",
+    "build": "node scripts/prepare-blog-readers.mjs && next build && node scripts/finalize-export.mjs",
     "build:ev-data": "node scripts/build-ev-data.mjs",
     "preview": "npx serve out",
     "typecheck": "tsc --noEmit"
