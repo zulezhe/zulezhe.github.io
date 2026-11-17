@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    { "source": "/about", "destination": "/about/", "statusCode": 301 },
+    { "source": "/blog", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/blog/:slug", "destination": "/blog/:slug/", "statusCode": 301 },
+    { "source": "/blog/tag/:tag", "destination": "/blog/tag/:tag/", "statusCode": 301 },
+    { "source": "/projects", "destination": "/projects/", "statusCode": 301 },
+    { "source": "/projects/:slug", "destination": "/projects/:slug/", "statusCode": 301 },
+    { "source": "/zh-TW", "destination": "/zh-TW/", "statusCode": 301 },
+    { "source": "/zh-TW/about", "destination": "/zh-TW/about/", "statusCode": 301 },
+    { "source": "/zh-TW/blog", "destination": "/zh-TW/blog/", "statusCode": 301 },
+    { "source": "/zh-TW/blog/:slug", "destination": "/zh-TW/blog/:slug/", "statusCode": 301 },
+    { "source": "/zh-TW/blog/tag/:tag", "destination": "/zh-TW/blog/tag/:tag/", "statusCode": 301 },
+    { "source": "/zh-TW/projects", "destination": "/zh-TW/projects/", "statusCode": 301 },
+    { "source": "/zh-TW/projects/:slug", "destination": "/zh-TW/projects/:slug/", "statusCode": 301 },
+    { "source": "/interactive/ev-charging-europe", "destination": "/interactive/ev-charging-europe/", "statusCode": 301 },
+    { "source": "/interactive/ev-charging-europe/en", "destination": "/interactive/ev-charging-europe/en/", "statusCode": 301 }
+  ]
+}
