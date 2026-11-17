@@ -9,7 +9,7 @@
 import { ogLocales, type Locale } from "@/lib/i18n/config"
 
 export interface GiscusConfig {
-  /** e.g. "oliver/oliver.github.io" */
+  /** e.g. "zulezhe/zulezhe.github.io" */
   repo: `${string}/${string}`
   repoId: string
   category: string
