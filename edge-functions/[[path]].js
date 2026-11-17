@@ -1,17 +1,17 @@
 /**
  * EdgeOne Pages Edge Function — trailing-slash normalization.
  *
- * EdgeOne Pages serves `/blog` and `/blog/` with 200 (it resolves
+ * EdgeOne Pages serves `/blog` and `/blog/` both with 200 (it resolves
  * directory → index.html without redirecting). That makes every page
  * reachable under two URLs, which Search Console reported as
  * "alternate page with proper canonical" (28 URLs) and
  * "duplicate, Google chose a different canonical" (1 URL).
  *
- * This middleware returns a 301 for the slash-less form so only the
+ * This edge function returns a 301 for the slash-less form so only the
  * canonical URL is indexable.
  */
-export async function onRequest(context) {
-  const { request, next } = context;
+export default function onRequest(context) {
+  const { request } = context;
   const url = new URL(request.url);
   const path = url.pathname;
 
@@ -25,7 +25,7 @@ export async function onRequest(context) {
     path.startsWith('/og/') ||
     path.startsWith('/api/')
   ) {
-    return next();
+    return fetch(request);
   }
 
   // 301 → canonical trailing-slash form
