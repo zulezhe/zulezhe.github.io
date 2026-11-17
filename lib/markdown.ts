@@ -40,6 +40,32 @@ function collectHeadings(headings: Heading[]) {
   }
 }
 
+/**
+ * Normalize site-root-relative links inside post bodies to the canonical
+ * trailing-slash form.
+ *
+ * The CDN in front of this site serves `/blog/some-post` with 200 instead of
+ * redirecting to `/blog/some-post/`, so every slash-less link in a post body
+ * creates a second indexable URL for the same page. Authors write
+ * `[text](/blog/slug)` naturally, so the fix belongs here rather than in every
+ * markdown file.
+ */
+function normalizeInternalLinks() {
+  return (tree: Nodes) => {
+    visit(tree, "element", (node) => {
+      if (node.tagName !== "a") return
+      const href = node.properties?.href
+      if (typeof href !== "string") return
+      if (!href.startsWith("/") || href.startsWith("//")) return
+      // Leave file-like paths alone (they keep their extension and no slash).
+      if (/\.[a-z0-9]+$/i.test(href)) return
+      if (href === "/") return
+      if (href.endsWith("/")) return
+      node.properties.href = `${href}/`
+    })
+  }
+}
+
 /** Render markdown to HTML at build time. Returns HTML plus TOC headings. */
 export async function renderMarkdown(source: string): Promise<{ html: string; headings: Heading[] }> {
   const headings: Heading[] = []
@@ -49,6 +75,7 @@ export async function renderMarkdown(source: string): Promise<{ html: string; he
     .use(remarkRehype)
     .use(rehypeSlug)
     .use(collectHeadings(headings))
+    .use(normalizeInternalLinks)
     .use(rehypeAutolinkHeadings, {
       behavior: "append",
       properties: {

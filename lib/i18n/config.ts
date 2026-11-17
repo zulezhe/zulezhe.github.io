@@ -28,8 +28,14 @@ export function isLocale(value: string): value is Locale {
 /**
  * Prefix a site path with the locale segment. English keeps its existing,
  * prefix-less URLs so current search rankings are untouched.
+ *
+ * Page paths always end with a trailing slash. The CDN in front of this site
+ * resolves `/blog/post` to `blog/post/index.html` and serves it with 200
+ * instead of redirecting, so every slash-less URL is a second indexable copy
+ * of the same page. Emitting the slash form in all internal links keeps
+ * crawlers and link equity on the canonical URL.
  */
 export function localizedPath(locale: Locale, path: string): string {
   const clean = path === "/" ? "" : `/${path.replace(/^\/+|\/+$/g, "")}`
-  return locale === defaultLocale ? `${clean || "/"}` : `/zh-TW${clean || ""}/`
+  return locale === defaultLocale ? `${clean}/` : `/zh-TW${clean}/`
 }
