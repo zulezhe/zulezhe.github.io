@@ -1,13 +1,14 @@
 import { absUrl } from "@/lib/site"
 import { defaultLocale, isLocale, localePrefixes, localeTags, locales, localizedPath, type Locale } from "./config"
 import en, { type Dictionary } from "./dictionaries/en"
-import zh from "./dictionaries/zh"
+import de from "./dictionaries/de"
+import fr from "./dictionaries/fr"
 import zhTW from "./dictionaries/zh-TW"
 
 export { locales, defaultLocale, isLocale, localeTags, localePrefixes, localizedPath } from "./config"
 export type { Locale } from "./config"
 
-const dictionaries: Record<Locale, Dictionary> = { en, zh, "zh-TW": zhTW }
+const dictionaries: Record<Locale, Dictionary> = { en, de, fr, "zh-TW": zhTW }
 
 export function getDictionary(locale: Locale): Dictionary {
   return dictionaries[locale]

@@ -28,12 +28,12 @@ const COPY = {
   },
 } as const
 
-type ChargingLanguage = "en" | "zh" | "zh-TW"
+type ChargingLanguage = "en" | "zh-TW" | "de" | "fr"
 
 export default function ChargingEurope({ basePath, language = "en" }: { basePath: string; language?: ChargingLanguage }) {
   const dataRoot = `${basePath}/interactive/ev-charging-europe`
   const root = `${dataRoot}${language === "en" ? "/en" : ""}`
-  const copy: typeof COPY["en"] | typeof COPY["zh-TW"] = COPY[language as "zh-TW"] ?? COPY["zh-TW"]
+  const copy: typeof COPY["en"] | typeof COPY["zh-TW"] = COPY[language as "en" | "zh-TW"] ?? COPY["zh-TW"]
   const views = copy.views
   const [view, setView] = useState<"map" | "report">("map")
   const container = useRef<HTMLDivElement>(null)

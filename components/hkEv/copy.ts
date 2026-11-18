@@ -1,3 +1,4 @@
+import type { Locale } from "@/lib/i18n/config"
 export type HkEvCopy = {
   kicker: string
   heading: string
@@ -53,7 +54,7 @@ export type HkEvCopy = {
   errorHint: string
 }
 
-export const hkEvCopy: Partial<Record<"en" | "zh" | "zh-TW", HkEvCopy>> = {
+export const hkEvCopy: Partial<Record<Locale, HkEvCopy>> = {
   en: {
     kicker: "Hong Kong public charging",
     heading: "990 places to plug in, one compact city",
