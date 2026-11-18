@@ -39,8 +39,13 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
+      # The preview serves on the native GitHub Pages domain — set
+      # NEXT_PUBLIC_SITE_URL so canonical/hreflang/sitemap URLs point at the
+      # preview origin instead of the production dyzyzj.top domain.
       - name: Build
         run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://zulezhe.github.io
 
       # The custom-domain CNAME would redirect zulezhe.github.io →
       # dyzyzj.top, which defeats the whole point of a preview URL. Remove
