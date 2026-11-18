@@ -42,6 +42,12 @@ jobs:
       - name: Build
         run: npm run build
 
+      # The custom-domain CNAME would redirect zulezhe.github.io →
+      # dyzyzj.top, which defeats the whole point of a preview URL. Remove
+      # it so this deployment answers on the native GitHub Pages domain.
+      - name: Strip custom-domain CNAME for preview
+        run: rm -f out/CNAME
+
       # Structural validation of every translated post against its English
       # original — the same gate production translations must pass.
       - name: Validate translations
