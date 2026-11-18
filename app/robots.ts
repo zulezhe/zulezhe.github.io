@@ -17,14 +17,8 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: absUrl("/sitemap.xml"),
-    host: siteHost(),
-  }
-}
-
-function siteHost(): string | undefined {
-  try {
-    return new URL(`${absUrl("/")}`).host
-  } catch {
-    return undefined
+    // No `host:` directive: it is a Yandex-only extension that Googlebot
+    // ignores, and Search Console reports it as a warning
+    // ("Googlebot 忽略的规则 (line N)").
   }
 }
