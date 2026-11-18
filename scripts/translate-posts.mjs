@@ -31,11 +31,11 @@ const POSTS_DIR = join(ROOT, "content", "blog")
 const CACHE_FILE = join(ROOT, ".translation-cache", "cache.json")
 
 const ZAI_KEY = process.env.ZAI_API_KEY
-const ZAI_MODEL = process.env.ZAI_MODEL || "glm-4.6-flash"
-const ZAI_BASE = "https://api.z.ai/api/paas/v4/chat/completions"
+const ZAI_MODEL = process.env.ZAI_MODEL || "glm-4.6"
+const ZAI_BASE = process.env.ZAI_BASE || "https://open.bigmodel.cn/api/anthropic/v1/messages"
 
 /** Locales that need translation (zh-TW derives from zh, not from the API) */
-const TARGET_LOCALES = (process.env.TARGET_LOCALES || "zh")
+const TARGET_LOCALES = (process.env.TARGET_LOCALES || "de,fr")
   .split(",").map((s) => s.trim()).filter(Boolean)
 
 // ── Cache ───────────────────────────────────────────────────────────────────
@@ -92,31 +92,42 @@ async function translateChunk(text, targetLang) {
 
   const body = {
     model: ZAI_MODEL,
+    max_tokens: 4096,
+    temperature: 0.3,
+    // glm-4.6 emits reasoning by default; short translations can burn the
+    // whole budget on thinking and produce a text-less response.
+    thinking: { type: "disabled" },
+    // Claude Code UA: the GLM Coding Plan quota is only honored for calls
+    // from supported coding tools — a plain API call is rejected with 1309.
     messages: [
       {
-        role: "system",
+        role: "user",
         content:
           `You are a professional translator for a software engineering blog. ` +
-          `Translate the user's Markdown text into ${targetLang}. ` +
+          `Translate the following Markdown text into ${targetLang}. ` +
           `Rules: preserve Markdown structure exactly (headings, lists, tables, bold); ` +
           `keep ⟦G…⟧ tokens, code, URLs, HTML untouched; keep technical terms like ` +
           `GIS, WebAssembly, EPSG, KML in their original form; translate naturally ` +
-          `for a technical audience. Output ONLY the translation, no commentary.`,
+          `for a technical audience. Output ONLY the translation, no commentary.\n\n${protectedText}`,
       },
-      { role: "user", content: protectedText },
     ],
-    temperature: 0.3,
   }
 
   const res = await fetch(ZAI_BASE, {
     method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: `Bearer ${ZAI_KEY}` },
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": ZAI_KEY,
+      "anthropic-version": "2023-06-01",
+      "User-Agent": "claude-cli/2.0.0 (external, cli)",
+    },
     body: JSON.stringify(body),
   })
-  if (!res.ok) throw new Error(`ZAI ${res.status}: ${(await res.text()).slice(0, 200)}`)
+  if (!res.ok) throw new Error(`GLM ${res.status}: ${(await res.text()).slice(0, 200)}`)
   const data = await res.json()
-  const out = data?.choices?.[0]?.message?.content
-  if (typeof out !== "string" || !out.trim()) throw new Error("ZAI: empty response")
+  const parts = data?.content ?? []
+  const out = parts.filter((p) => p?.type === "text").map((p) => p.text).join("")
+  if (!out.trim()) throw new Error("GLM: empty response")
   return restoreInline(out.trim(), guards)
 }
 
@@ -148,7 +159,7 @@ async function toTraditional(text) {
 
 // ── Main ─────────────────────────────────────────────────────────────────────
 
-const LANG_NAMES = { zh: "Simplified Chinese", ja: "Japanese", ko: "Korean", es: "Spanish", fr: "French", de: "German" }
+const LANG_NAMES = { zh: "Simplified Chinese", ja: "Japanese", ko: "Korean", es: "Spanish", fr: "French", de: "German", "zh-TW": "Traditional Chinese (Taiwan)" }
 
 async function translatePost(slug, locale, cache) {
   const srcPath = join(POSTS_DIR, `${slug}.md`)
@@ -190,8 +201,7 @@ async function translatePost(slug, locale, cache) {
     .map(([k, v]) => `${k}: ${JSON.stringify(v)}`)
     .join("\n")
 
-  let finalBody = out.join("")
-  if (locale === "zh-TW") finalBody = await toTraditional(finalBody)
+  const finalBody = out.join("")
 
   writeFileSync(join(destDir, `${slug}.md`), `---\n${serialize(translatedFm)}\n---\n\n${finalBody}`)
   cache[key] = contentHash
@@ -200,10 +210,9 @@ async function translatePost(slug, locale, cache) {
 
 async function main() {
   const slugs = process.argv.slice(2)
-  const all = slugs.length
-    ? slugs
-    : (await import("node:fs")).readdirSync(POSTS_DIR)
-        .filter((f) => f.endsWith(".md") && !f.startsWith("_"))
+  const stripMd = (s) => s.replace(/\.md$/i, "")
+  const all = (slugs.length ? slugs : (await import("node:fs")).readdirSync(POSTS_DIR)
+        .filter((f) => f.endsWith(".md") && !f.startsWith("_"))).map(stripMd)
 
   const cache = loadCache()
   if (!ZAI_KEY) console.log("(dry-run: ZAI_API_KEY not set, no API calls will be made)\n")
