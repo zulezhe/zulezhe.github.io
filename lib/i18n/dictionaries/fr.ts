@@ -1,258 +1,251 @@
+import type { Dictionary } from "./en"
+
 /**
- * English UI strings — the source of truth for `Dictionary`.
- * Placeholders like `{count}` are replaced with `fmt()` from lib/i18n.
+ * French UI strings. satisfies Dictionary keeps locales structurally identical so a missing key is a type error.
  */
-const en = {
-  nav: {
-    blog: "Blog",
-    projects: "Projects",
-    about: "About",
-    ariaLabel: "Main navigation",
-    skipToContent: "Skip to content",
+const dict = {
+  "nav": {
+    "blog": "Blog",
+    "projects": "Projets",
+    "about": "À propos",
+    "ariaLabel": "Navigation principale",
+    "skipToContent": "Aller au contenu"
   },
-  home: {
-    kicker: "Hi, my name is",
-    heroNote:
-      "I write about web development, developer tooling, and building sites that both Google and AI assistants love to recommend.",
-    viewWork: "View my work",
-    readBlog: "Read the blog",
-    featuredProjects: "Featured projects",
-    featuredProjectsNote: "Things I've designed, built and shipped.",
-    allProjects: "All projects →",
-    latestWriting: "Latest writing",
-    latestWritingNote: "Notes, guides and lessons from building software.",
-    lastUpdated: "Last updated {date}",
-    allPosts: "All posts →",
+  "home": {
+    "kicker": "Bonjour, je m'appelle",
+    "heroNote": "J'écris sur le développement web, les outils pour développeurs et la création de sites que Google comme les assistants IA aiment recommander.",
+    "viewWork": "Voir mes travaux",
+    "readBlog": "Lire le blog",
+    "featuredProjects": "Projets en vedette",
+    "featuredProjectsNote": "Des choses que j'ai conçues, développées et livrées.",
+    "allProjects": "Tous les projets →",
+    "latestWriting": "Derniers articles",
+    "latestWritingNote": "Notes, guides et leçons tirés de la construction de logiciels.",
+    "lastUpdated": "Dernière mise à jour {date}",
+    "allPosts": "Tous les articles →"
   },
-  blog: {
-    title: "Blog",
-    metaDescription:
-      "Guides, notes and lessons on web development, Next.js, SEO, developer tooling and shipping side projects.",
-    countLine:
-      "{count} {count|article|articles} about building for the web — engineering notes, practical guides, and the occasional opinion.",
-    tagCountLine: "{count} {count|article|articles} tagged with “{tag}”.",
-    tagIntro:
-      "Every post filed under this topic, newest first. {count} {count|article|articles} covering {tag} — written from things actually built and shipped.",
-    tagSingleIntro:
-      "One post covers {tag} so far. More on this topic is on the way.",
-    tagRelatedHeading: "Related topics",
-    tagMeta:
-      "{count} articles about {tag} on this blog: {titles}. Notes and practical guides from things actually built.",
-    tagMetaSingle:
-      "One article about {tag} on this blog: “{title}”. A practical walkthrough written from a real implementation.",
-    allPosts: "← All posts",
+  "blog": {
+    "title": "Blog",
+    "metaDescription": "Guides, notes et leçons sur le développement web, Next.js, le SEO, les outils pour développeurs et la réalisation de projets personnels.",
+    "countLine": "{count} {count|article|articles} sur la construction pour le web — notes techniques, guides pratiques et quelques opinions de temps en temps.",
+    "tagCountLine": "{count} {count|article|articles} étiquetés « {tag} ».",
+    "tagIntro": "Tous les articles classés sous ce sujet, du plus récent au plus ancien. {count} {count|article|articles} sur {tag} — écrits à partir de choses réellement construites et livrées.",
+    "tagSingleIntro": "Un seul article traite de {tag} pour l'instant. D'autres sur ce sujet arrivent bientôt.",
+    "tagRelatedHeading": "Sujets liés",
+    "tagMeta": "{count} articles sur {tag} sur ce blog : {titles}. Notes et guides pratiques tirés de choses réellement construites.",
+    "tagMetaSingle": "Un article sur {tag} sur ce blog : « {title} ». Un guide pratique basé sur une véritable implémentation.",
+    "allPosts": "← Tous les articles"
   },
-  post: {
-    home: "Home",
-    blog: "Blog",
-    breadcrumbAria: "Breadcrumb",
-    languageAria: "Article language",
-    updated: "updated",
-    minRead: "{count} min read",
-    faqHeading: "Frequently asked questions",
-    older: "← Older",
-    newer: "Newer →",
-    postNavAria: "Post navigation",
-    interactiveEarthquakeHeading: "Europe’s seismic pulse, in one wall",
-    interactiveChargingHeading: "Interactive map and report",
-    interactiveHkEvHeading: "Hong Kong’s public charging map",
+  "post": {
+    "home": "Accueil",
+    "blog": "Blog",
+    "breadcrumbAria": "Fil d'Ariane",
+    "languageAria": "Langue de l'article",
+    "updated": "mis à jour",
+    "minRead": "{count} min de lecture",
+    "faqHeading": "Questions fréquentes",
+    "older": "← Plus anciens",
+    "newer": "Plus récents →",
+    "postNavAria": "Navigation entre les articles",
+    "interactiveEarthquakeHeading": "Le pouls sismique de l'Europe, sur un seul mur",
+    "interactiveChargingHeading": "Carte interactive et rapport",
+    "interactiveHkEvHeading": "La carte des bornes de recharge publiques de Hong Kong"
   },
-  explorer: {
-    searchLabel: "Find something worth reading",
-    searchPlaceholder: "Search articles, topics, or tools…",
-    sortAria: "Sort articles",
-    sortNewest: "Newest first",
-    sortOldest: "Oldest first",
-    sortShortest: "Quick reads first",
-    allTopics: "All topics",
-    filterByTopicAria: "Filter by topic",
-    filterByTagAria: "Filter by {tag}",
-    countLine: "{count} {count|article|articles}{inTag}",
-    clearFilters: "Clear filters",
-    noResultsTitle: "No articles found",
-    noResultsHint: "Try another keyword or choose a different topic.",
-    showAll: "Show all articles",
-    minRead: "{count} min read",
-    resultArrow: "→",
+  "explorer": {
+    "searchLabel": "Trouvez quelque chose à lire",
+    "searchPlaceholder": "Rechercher des articles, des sujets ou des outils…",
+    "sortAria": "Trier les articles",
+    "sortNewest": "Plus récents d'abord",
+    "sortOldest": "Plus anciens d'abord",
+    "sortShortest": "Lectures rapides d'abord",
+    "allTopics": "Tous les sujets",
+    "filterByTopicAria": "Filtrer par sujet",
+    "filterByTagAria": "Filtrer par {tag}",
+    "countLine": "{count} {count|article|articles}{inTag}",
+    "clearFilters": "Effacer les filtres",
+    "noResultsTitle": "Aucun article trouvé",
+    "noResultsHint": "Essayez un autre mot-clé ou choisissez un autre sujet.",
+    "showAll": "Afficher tous les articles",
+    "minRead": "{count} min de lecture",
+    "resultArrow": "→"
   },
-  projects: {
-    title: "Projects",
-    metaDescription:
-      "Selected projects and side builds by {name} — web apps, developer tools and open-source experiments, with live demos and source code.",
-    intro:
-      "A selection of things I've built — from small experiments to tools I use every day. Each project page has the full story, the tech stack, and links to try it yourself.",
-    allProjects: "← All projects",
-    liveDemo: "Live demo ↗",
-    sourceCode: "Source code ↗",
-    techStackAria: "Tech stack",
-    cardReadMore: "Read more →",
-    cardLiveDemo: "Live demo",
-    cardSource: "Source",
+  "projects": {
+    "title": "Projets",
+    "metaDescription": "Une sélection de projets et de réalisations perso de {name} — applications web, outils de développement et expériences open-source, avec démos en ligne et code source.",
+    "intro": "Une sélection de choses que j'ai construites — des petites expériences aux outils que j'utilise au quotidien. Chaque page de projet contient l'histoire complète, la stack technique et des liens pour l'essayer vous-même.",
+    "allProjects": "← Tous les projets",
+    "liveDemo": "Démo en ligne ↗",
+    "sourceCode": "Code source ↗",
+    "techStackAria": "Stack technique",
+    "cardReadMore": "En savoir plus →",
+    "cardLiveDemo": "Démo en ligne",
+    "cardSource": "Source"
   },
-  about: {
-    title: "About",
-    metaDescription:
-      "Who {name} is — a software engineer building for the web. Background, skills, and how to get in touch.",
-    heading: "About me",
-    intro: [
-      "Hi — I'm {name}, a software engineer who enjoys turning ideas into shipped products. Most of my time goes into web development: fast static sites, clean TypeScript, and tooling that makes developers happier.",
-      "Over the last few years I've worked on frontend and full-stack projects of all sizes — from marketing sites that need to load instantly anywhere in the world, to internal dashboards, to small open-source tools. I care a lot about the boring fundamentals: performance, accessibility, and being findable on search engines.",
-      "Away from the keyboard I like reading, coffee, and long walks that are suspiciously shaped like bug-fixing sessions.",
+  "about": {
+    "title": "À propos",
+    "metaDescription": "Qui est {name} — un ingénieur logiciel qui construit pour le web. Parcours, compétences et comment me contacter.",
+    "heading": "À propos de moi",
+    "intro": [
+      "Bonjour — je suis {name}, ingénieur logiciel passionné par la transformation d'idées en produits livrés. La majeure partie de mon temps se consacre au développement web : sites statiques rapides, TypeScript propre et outillage qui rend les développeurs plus heureux.",
+      "Au cours des dernières années, j'ai travaillé sur des projets frontend et full-stack de toutes tailles — des sites marketing devant se charger instantanément partout dans le monde, aux tableaux de bord internes, en passant par de petits outils open source. Je tiens beaucoup aux fondamentaux, moins glamoureux : la performance, l'accessibilité et le référencement sur les moteurs de recherche.",
+      "Loin du clavier, j'aime la lecture, le café et les longues promenades qui ressemblent suspectement à des sessions de débogage."
     ],
-    stackHeading: "What I work with",
-    stack: [
-      ["Frontend", " — TypeScript, React, Next.js, Tailwind CSS"],
-      ["Backend & tooling", " — Node.js, CI/CD, static site pipelines"],
-      ["Web quality", " — Core Web Vitals, SEO, structured data, AI-crawler friendliness (GEO)"],
-    ] as [string, string][],
-    siteHeading: "This site",
-    siteBody: [
-      "This website is a fully static build — no server, no database, no monthly bill. It's open about how it works: read",
+    "stackHeading": "Avec quoi je travaille",
+    "stack": [
+      [
+        "Frontend",
+        " — TypeScript, React, Next.js, Tailwind CSS"
+      ],
+      [
+        "Backend & outillage",
+        " — Node.js, CI/CD, pipelines de sites statiques"
+      ],
+      [
+        "Qualité web",
+        " — Core Web Vitals, SEO, données structurées, convivialité pour les crawlers IA (GEO)"
+      ]
     ],
-    siteBodyLink: "the blog posts about it",
-    siteBodyAfter: " if you want to build something similar.",
-    contactHeading: "Get in touch",
-    contactBody:
-      "The best way to reach me is email — I read everything and usually reply within a couple of days. If you just want to see what I'm up to, the links below have you covered.",
-    github: "GitHub",
-    twitter: "X / Twitter",
-    email: "Email me",
+    "siteHeading": "Ce site",
+    "siteBody": [
+      "Ce site web est une génération entièrement statique — pas de serveur, pas de base de données, pas de facture mensuelle. Il est transparent sur son fonctionnement : lisez"
+    ],
+    "siteBodyLink": "les articles de blog à ce sujet",
+    "siteBodyAfter": " si vous voulez construire quelque chose de similaire.",
+    "contactHeading": "Me contacter",
+    "contactBody": "La meilleure façon de me joindre est l'email — je lis tout et réponds généralement sous quelques jours. Si vous voulez simplement voir ce que je fais, les liens ci-dessous sont là pour ça.",
+    "github": "GitHub",
+    "twitter": "X / Twitter",
+    "email": "M'envoyer un email"
   },
-  notFound: {
-    code: "404",
-    title: "Page not found",
-    body: "The page you're looking for doesn't exist or has moved. It happens.",
-    backHome: "Back home",
-    readBlog: "Read the blog",
+  "notFound": {
+    "code": "404",
+    "title": "Page introuvable",
+    "body": "La page que vous cherchez n'existe pas ou a été déplacée. Ça arrive.",
+    "backHome": "Retour à l'accueil",
+    "readBlog": "Lire le blog"
   },
-  readingTools: {
-    progressAria: "Article reading progress",
-    comfort: "Make yourself comfortable",
-    largerText: "Larger text",
-    defaultText: "Default text",
-    copyLink: "Copy link",
-    linkCopied: "Link copied!",
-    copyFailed: "Couldn’t copy. Copy the URL from your address bar.",
-    backToTop: "Back to top",
+  "readingTools": {
+    "progressAria": "Progression de la lecture de l'article",
+    "comfort": "Installez-vous confortablement",
+    "largerText": "Texte plus grand",
+    "defaultText": "Texte par défaut",
+    "copyLink": "Copier le lien",
+    "linkCopied": "Lien copié !",
+    "copyFailed": "Impossible de copier. Copiez l'URL depuis votre barre d'adresse.",
+    "backToTop": "Retour en haut"
   },
-  toc: {
-    aria: "Table of contents",
-    heading: "On this page",
+  "toc": {
+    "aria": "Table des matières",
+    "heading": "Sur cette page"
   },
-  comments: {
-    aria: "Comments",
-    heading: "Comments",
+  "comments": {
+    "aria": "Commentaires",
+    "heading": "Commentaires"
   },
-  copyCode: {
-    copy: "Copy",
-    copied: "Copied!",
-    failed: "Failed",
+  "copyCode": {
+    "copy": "Copier",
+    "copied": "Copié !",
+    "failed": "Échec"
   },
-  footer: {
-    rights: "© {year} {name}. All rights reserved.",
-    builtWith: "Built with Next.js · statically exported · hosted for free",
-    socialAria: "Social links",
+  "footer": {
+    "rights": "© {year} {name}. Tous droits réservés.",
+    "builtWith": "Construit avec Next.js · exporté statiquement · hébergé gratuitement",
+    "socialAria": "Liens sociaux"
   },
-  themeToggle: {
-    toLight: "Switch to light mode",
-    toDark: "Switch to dark mode",
+  "themeToggle": {
+    "toLight": "Passer en mode clair",
+    "toDark": "Passer en mode sombre"
   },
-  localeSwitcher: {
-    aria: "Switch language",
+  "localeSwitcher": {
+    "aria": "Changer de langue"
   },
-  tags: {
-    aria: "Tags",
+  "tags": {
+    "aria": "Étiquettes"
   },
-  earthquake: {
-    loadingKicker: "Loading catalogue",
-    loadingTitle: "Weaving ten years of tremors…",
-    loadingNote: "99,423 EMSC events, pre-aggregated into a day-by-zone matrix.",
-    errorTitle: "The interactive earthquake data could not be loaded.",
-    errorHintBefore: "Try the",
-    errorDataLink: "data files directly",
-    errorHintAfter: ", or reload the page.",
-    kicker: "Interactive · 2016–2025",
-    heading: "Europe’s seismic pulse, in one wall",
-    intro:
-      "A dot map turns ten years of earthquakes into uniform noise. This wall keeps the rhythm: every column is a day, every row a seismic zone, and every mark an event. Play the decade, drag to zoom, or click a zone.",
-    statEvents: "M2.5+ events",
-    statEnergy: "estimated energy",
-    statRatio: "2023 vs. the other nine years",
-    statShare: "of events in {zone}",
-    viewTabsAria: "Interactive view",
-    tabWall: "Pulse wall",
-    tabMap: "Heat map",
-    mapTitle: "Seismic density, on the map",
-    mapSubtitleByEnergy: "Every event binned into a 0.25° cell and coloured by released energy. Click a zone below to light it up.",
-    mapSubtitleByCount: "Every event binned into a 0.25° cell and coloured by event count. Click a zone below to light it up.",
-    mapMeasureAria: "Map measure",
-    measureEnergy: "Energy",
-    measureEvents: "Events",
-    mapTimelineAria: "Year timeline",
-    mapTimelineModeAria: "Timeline mode",
-    mapByYear: "By year",
-    mapCumulative: "Cumulative",
-    mapDecadeReset: "Full decade",
-    mapPlayNote: "Weights are scaled to the decade maximum — watch Anatolia flare in 2023.",
-    mapNoteEnergy: "Low values fade into the background; the frame is the coastline of 38 European and neighbouring territories. Energy is the log₁₀E = 4.8 + 1.5M approximation.",
-    mapNoteCount: "Low values fade into the background; the frame is the coastline of 38 European and neighbouring territories. Counts are catalogue events at M2.5 or above.",
-    allZones: "All zones",
-    zoneChipTitle: "{zone}: {count} events",
-    depthTitle: "Where the shaking starts",
-    depthSubtitle: "Events by depth. The Romanian row has a second, deep population around 90–160 km.",
-    depthHint: "Click to focus this zone",
-    depthNote: "Colour intensity is logarithmic. Click a row to focus the pulse wall on that zone.",
-    ledgerTitle2023: "The 2023 anomaly",
-    ledgerTitleDefault: "A decade of energy",
-    ledgerSubtitleEnergy: "{energy} released in ten years. 2023 alone accounts for {energy2023}, about {ratio}× the other nine years combined.",
-    ledgerSubtitleCount: "{count} events in ten years. 2023 was the busiest year, but the gap is smaller than the energy gap.",
-    exclude2023: "Exclude 2023 from scale",
-    ledgerNoteExcluded: "Scale now excludes 2023 ({value}). Click any bar to zoom the wall to that year.",
-    ledgerMeasureAria: "Ledger measure",
-    ledgerBarsAria: "Earthquake totals by year",
-    ledgerBarAria: "{year}: {count} events, {energy}. Click to zoom the wall to this year.",
-    ledgerNoteEnergy: "Energy is the Gutenberg–Richter approximation log₁₀E = 4.8 + 1.5M, not a measured radiated energy.",
-    ledgerNoteCount: "Counts are EMSC catalogue events at M2.5 or above. Click any bar to zoom the wall to that year.",
-    wallAria:
-      "Europe earthquake pulse wall. Use left and right arrow keys to move by day, shift for a week, alt for a month. Press Enter to play the decade.",
-    play: "Play the decade",
-    pause: "Pause",
-    hoverEvents: "{count|event|events}",
-    readingSummary: "{count} {events} · largest M{mag}",
-    selectedSummary: "{count} events · largest M{mag} · deepest {depth} km",
-    wallHint:
-      "Drag left or right to zoom; double-click the wall to reset. {largest}",
-    wallLargest: "The largest event is M{mag} on {date}.",
-    sourceBefore: "Data: ",
-    sourceAfter:
-      ", Euro-Mediterranean catalogue, 2016–2025, M≥{minMag}, 34–72°N / 25°W–45°E. {events} events after dropping {rejected} records with an unusable magnitude or timestamp. Energy is derived, not measured. Built {built}.",
+  "earthquake": {
+    "loadingKicker": "Chargement du catalogue",
+    "loadingTitle": "Tissage de dix années de séismes…",
+    "loadingNote": "99 423 événements EMSC, pré-agrégés en une matrice par jour et par zone.",
+    "errorTitle": "Les données sismiques interactives n'ont pas pu être chargées.",
+    "errorHintBefore": "Essayez les",
+    "errorDataLink": "fichiers de données directement",
+    "errorHintAfter": ", ou rechargez la page.",
+    "kicker": "Interactif · 2016–2025",
+    "heading": "Le pouls sismique de l’Europe, en un seul mur",
+    "intro": "Une carte de points transforme dix ans de séismes en bruit uniforme. Ce mur conserve le rythme : chaque colonne est un jour, chaque ligne une zone sismique, et chaque marque un événement. Jouez la décennie, faites glisser pour zoomer, ou cliquez sur une zone.",
+    "statEvents": "événements M2,5+",
+    "statEnergy": "énergie estimée",
+    "statRatio": "2023 face aux neuf autres années",
+    "statShare": "des événements dans {zone}",
+    "viewTabsAria": "Vue interactive",
+    "tabWall": "Mur du pouls",
+    "tabMap": "Carte de chaleur",
+    "mapTitle": "Densité sismique, sur la carte",
+    "mapSubtitleByEnergy": "Chaque événement est regroupé dans une cellule de 0,25° et coloré selon l’énergie libérée. Cliquez sur une zone ci-dessous pour l’illuminer.",
+    "mapSubtitleByCount": "Chaque événement est regroupé dans une cellule de 0,25° et coloré selon le nombre d’événements. Cliquez sur une zone ci-dessous pour l’illuminer.",
+    "mapMeasureAria": "Mesure de la carte",
+    "measureEnergy": "Énergie",
+    "measureEvents": "Événements",
+    "mapTimelineAria": "Chronologie annuelle",
+    "mapTimelineModeAria": "Mode chronologie",
+    "mapByYear": "Par année",
+    "mapCumulative": "Cumulatif",
+    "mapDecadeReset": "Décennie entière",
+    "mapPlayNote": "Les poids sont calibrés sur le maximum de la décennie — regardez l’Anatolie s’embraser en 2023.",
+    "mapNoteEnergy": "Les valeurs faibles se fondent dans l’arrière-plan ; le cadre est le littoral de 38 territoires européens et voisins. L’énergie suit l’approximation log₁₀E = 4,8 + 1,5M.",
+    "mapNoteCount": "Les valeurs faibles se fondent dans l’arrière-plan ; le cadre est le littoral de 38 territoires européens et voisins. Les effectifs sont les événements du catalogue de magnitude 2,5 ou plus.",
+    "allZones": "Toutes les zones",
+    "zoneChipTitle": "{zone} : {count} événements",
+    "depthTitle": "Là où la secousse commence",
+    "depthSubtitle": "Événements par profondeur. La ligne roumaine présente une seconde population, profonde, autour de 90–160 km.",
+    "depthHint": "Cliquez pour cibler cette zone",
+    "depthNote": "L’intensité de la couleur est logarithmique. Cliquez sur une ligne pour concentrer le mur du pouls sur cette zone.",
+    "ledgerTitle2023": "L’anomalie de 2023",
+    "ledgerTitleDefault": "Une décennie d’énergie",
+    "ledgerSubtitleEnergy": "{energy} libérées en dix ans. 2023 représente à elle seule {energy2023}, soit environ {ratio}× les neuf autres années réunies.",
+    "ledgerSubtitleCount": "{count} événements en dix ans. 2023 a été l’année la plus chargée, mais l’écart est moindre que celui de l’énergie.",
+    "exclude2023": "Exclure 2023 de l’échelle",
+    "ledgerNoteExcluded": "L’échelle exclut désormais 2023 ({value}). Cliquez sur une barre pour zoomer le mur sur cette année.",
+    "ledgerMeasureAria": "Mesure du bilan",
+    "ledgerBarsAria": "Totaux de séismes par année",
+    "ledgerBarAria": "{year} : {count} événements, {energy}. Cliquez pour zoomer le mur sur cette année.",
+    "ledgerNoteEnergy": "L'énergie est l'approximation de Gutenberg–Richter log₁₀E = 4.8 + 1.5M, et non une énergie rayonnée mesurée.",
+    "ledgerNoteCount": "Les comptages sont les événements du catalogue EMSC de magnitude 2.5 ou plus. Cliquez sur une barre pour zoomer le mur sur cette année.",
+    "wallAria": "Mur pulsé des séismes en Europe. Utilisez les flèches gauche et droite pour avancer d'un jour, maj pour une semaine, alt pour un mois. Appuyez sur Entrée pour lire la décennie.",
+    "play": "Lire la décennie",
+    "pause": "Pause",
+    "hoverEvents": "{count|event|events}",
+    "readingSummary": "{count} {events} · plus grand M{mag}",
+    "selectedSummary": "{count} événements · plus grand M{mag} · plus profond {depth} km",
+    "wallHint": "Faites glisser à gauche ou à droite pour zoomer ; double-cliquez sur le mur pour réinitialiser. {largest}",
+    "wallLargest": "L'événement le plus important est M{mag} le {date}.",
+    "sourceBefore": "Données : ",
+    "sourceAfter": ", catalogue Euro-Méditerranée, 2016–2025, M≥{minMag}, 34–72°N / 25°O–45°E. {events} événements après suppression de {rejected} enregistrements avec une magnitude ou un horodatage inutilisable. L'énergie est dérivée, pas mesurée. Généré le {built}."
   },
-  charging: {
-    heading: "Explore Europe’s charging network",
-    description: "Map and report keep their filters when you switch views, so you can continue exploring.",
-    group: "Charging network views",
-    fullscreen: "Full screen",
-    open: "Open separately ↗",
-    unavailable: "Full screen is unavailable. Use Open separately instead.",
-    note: "Stations and analysis use fixed project snapshots. Online basemaps need a connection; the map can fall back to an offline country outline. The highest power-class label is corrected to >50 kW.",
-    tablistAria: "Charging network views",
-    views: [
+  "charging": {
+    "heading": "Explorer le réseau de recharge en Europe",
+    "description": "La carte et le rapport conservent leurs filtres lorsque vous changez de vue, pour continuer votre exploration.",
+    "group": "Vues du réseau de recharge",
+    "fullscreen": "Plein écran",
+    "open": "Ouvrir séparément ↗",
+    "unavailable": "Le plein écran n'est pas disponible. Utilisez plutôt « Ouvrir séparément ».",
+    "note": "Les stations et les analyses utilisent des instantanés fixes du projet. Les cartes de fond en ligne nécessitent une connexion ; la carte peut revenir à un contour de pays hors ligne. L'étiquette de la classe de puissance la plus élevée est corrigée en >50 kW.",
+    "tablistAria": "Vues du réseau de recharge",
+    "views": [
       {
-        id: "map" as const,
-        label: "Interactive map",
-        hint: "Filter by country, power, and operator. Click clusters or stations for details; summary figures and charts update with your filters.",
-        title: "European charging stations: interactive map and filters",
+        "id": "map",
+        "label": "Carte interactive",
+        "hint": "Filtrez par pays, puissance et opérateur. Cliquez sur les clusters ou les stations pour plus de détails ; les chiffres récapitulatifs et les graphiques se mettent à jour selon vos filtres.",
+        "title": "Bornes de recharge européennes : carte interactive et filtres"
       },
       {
-        id: "report" as const,
-        label: "Spatial analysis & report",
-        hint: "Switch hexagon metrics, drag Germany’s year slider, or expand the report’s detailed evidence gallery of 23 charts.",
-        title: "European charging network: spatial analysis and interactive report",
-      },
-    ],
-  },
-}
+        "id": "report",
+        "label": "Analyse spatiale & rapport",
+        "hint": "Changez les métriques des hexagones, faites glisser le curseur des années pour l'Allemagne, ou explorez la galerie détaillée de preuves du rapport avec 23 graphiques.",
+        "title": "Réseau de recharge européen : analyse spatiale et rapport interactif"
+      }
+    ]
+  }
+} satisfies Dictionary
 
-export default en
-
-export type Dictionary = typeof en
+export default dict
