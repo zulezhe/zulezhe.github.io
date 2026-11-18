@@ -42,5 +42,5 @@ export function tagPageMetadata({
 /** Canonical path of a tag archive for a locale. */
 export function tagPagePath(locale: Locale, tag: string): string {
   const enPath = `/blog/tag/${encodeURIComponent(tag)}/`
-  return locale === "en" ? enPath : localizedPath("zh-TW", enPath)
+  return locale === "en" ? enPath : localizedPath(locale, enPath)
 }

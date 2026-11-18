@@ -50,13 +50,24 @@ export function formatDate(locale: Locale, iso: string): string {
  * (managed in the blog page itself).
  */
 export function languageAlternates(path: string): Record<string, string> {
-  const clean = path === "/" ? "" : `/${path.replace(/^\/+|\/+$/g, "")}`
+  // Callers pass either a bare path (/blog/x/) or an already-localized one
+  // (/de/blog/x/). Strip any known locale prefix first so every alternate
+  // is derived from the same bare path — otherwise prefixes pile up
+  // (/zh-TW/zh-TW/... on localized tag pages).
+  let bare = path === "/" ? "/" : `/${path.replace(/^\/+|\/+$/g, "")}/`
+  for (const loc of locales) {
+    const prefix = localePrefixes[loc]
+    if (prefix && bare.startsWith(`${prefix}/`)) {
+      bare = bare.slice(prefix.length) || "/"
+      break
+    }
+  }
   const languages: Record<string, string> = {}
   // One entry per locale — adding a locale to `locales` extends hreflang
   // automatically everywhere this helper is used.
   for (const locale of locales) {
-    languages[locale] = locale === defaultLocale ? absUrl(path) : absUrl(localizedPath(locale, path))
+    languages[locale] = locale === defaultLocale ? absUrl(bare) : absUrl(localizedPath(locale, bare))
   }
-  languages["x-default"] = absUrl(path)
+  languages["x-default"] = absUrl(bare)
   return languages
 }
