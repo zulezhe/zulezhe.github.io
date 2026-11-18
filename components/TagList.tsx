@@ -1,3 +1,4 @@
+import { localizedPath, type Locale } from "@/lib/i18n/config"
 import Link from "next/link"
 
 export default function TagList({
@@ -6,12 +7,12 @@ export default function TagList({
   ariaLabel = "Tags",
 }: {
   tags: string[]
-  locale?: "en" | "zh-TW"
+  locale?: Locale
   ariaLabel?: string
 }) {
   if (tags.length === 0) return null
   const href = (tag: string) =>
-    locale === "en" ? `/blog/tag/${encodeURIComponent(tag)}` : `/zh-TW/blog/tag/${encodeURIComponent(tag)}/`
+    localizedPath(locale, `/blog/tag/${encodeURIComponent(tag)}`)
   return (
     <ul className="flex flex-wrap items-center gap-2" aria-label={ariaLabel}>
       {tags.map((tag) => (

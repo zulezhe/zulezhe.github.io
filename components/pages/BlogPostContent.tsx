@@ -4,6 +4,7 @@ import { getPostBySlug, getAdjacentPosts, wordCount } from "@/lib/posts"
 import { renderMarkdown } from "@/lib/markdown"
 import { siteConfig, absUrl } from "@/lib/site"
 import { getDictionary, fmt, formatDate, localizedPath, type Locale } from "@/lib/i18n"
+import { locales, localeNames } from "@/lib/i18n/config"
 import ChargingEurope from "@/components/ChargingEurope"
 import EarthquakePulse from "@/components/EarthquakePulse"
 import HkEvCharging from "@/components/HkEvCharging"
@@ -116,8 +117,22 @@ export default async function BlogPostContent({ locale, slug }: { locale: Locale
 
             <header>
               {post.translations && <nav aria-label={t.post.languageAria} className="mb-6 flex items-center gap-2 text-sm">
-                <Link href={localizedPath("en", `/blog/${post.translations.en}`)} hrefLang="en" lang="en" aria-current={locale !== "zh-TW" ? "page" : undefined} className={`language-choice ${locale !== "zh-TW" ? "is-current" : ""}`}>English</Link>
-                <Link href={localizedPath("zh-TW", `/blog/${post.translations["zh-TW"]}`)} hrefLang="zh-TW" lang="zh-TW" aria-current={locale === "zh-TW" ? "page" : undefined} className={`language-choice ${locale === "zh-TW" ? "is-current" : ""}`}>繁體中文</Link>
+                {locales.map((loc) => {
+                  const siblingSlug = post.translations?.[loc] ?? post.translations?.en ?? post.slug
+                  const name = localeNames[loc]
+                  return (
+                    <Link
+                      key={loc}
+                      href={localizedPath(loc, `/blog/${siblingSlug}`)}
+                      hrefLang={loc}
+                      lang={loc}
+                      aria-current={locale === loc ? "page" : undefined}
+                      className={`language-choice ${locale === loc ? "is-current" : ""}`}
+                    >
+                      {name}
+                    </Link>
+                  )
+                })}
               </nav>}
               <h1 className="text-3xl font-bold leading-tight tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
                 {post.title}

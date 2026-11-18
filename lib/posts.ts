@@ -1,12 +1,14 @@
 import fs from "node:fs"
 import path from "node:path"
 import matter from "gray-matter"
-import type { Locale } from "@/lib/i18n/config"
+import { locales, type Locale } from "@/lib/i18n/config"
 
 const POSTS_DIR = path.join(process.cwd(), "content", "blog")
-/** Sub-directory per non-English locale, e.g. content/blog/zh-TW/ */
-const LOCALE_DIRS: Record<Exclude<Locale, "en">, string> = {
-  "zh-TW": "zh-TW",
+/** Sub-directory per non-English locale, e.g. content/blog/zh-TW/. Adding a
+ *  locale to `locales` in lib/i18n/config.ts makes its directory resolvable
+ *  here (same name as the locale tag by default). */
+function localeDirName(locale: Locale): string {
+  return locale === "en" ? "." : locale
 }
 
 export interface FaqItem {
@@ -30,8 +32,8 @@ export interface Post {
   content: string
   /** Slug of the English original when this file is a translation. */
   translationOf?: string
-  /** Slugs of the sibling translations, derived from the files on disk. */
-  translations?: { en: string; "zh-TW": string }
+  /** Slugs of the sibling translations per locale, derived from files on disk. */
+  translations?: Partial<Record<Locale, string>>
   language?: string
   interactive?: "ev-charging-europe" | "europe-earthquakes-ten-years" | "hk-ev-charging"
   /** Absolute URL of the canonical home when this post is a mirror (e.g. syndicated). */
@@ -76,10 +78,24 @@ function parseFile(fileName: string, dir: string, locale: Locale): Post {
     : locale !== "en" ? slug : undefined
 
   const enSlug = translationOf ?? slug
-  const translations =
-    fs.existsSync(path.join(POSTS_DIR, `${enSlug}.md`)) &&
-    fs.existsSync(path.join(POSTS_DIR, "zh-TW", `${slug}.md`))
-      ? { en: enSlug, "zh-TW": slug }
+  // A translation pair exists when the English original is on disk and this
+  // file lives under a non-default locale directory. Generalized for any
+  // number of locales: siblings are discovered per locale directory.
+  const translations: Partial<Record<Locale, string>> | undefined =
+    locale === "en" && fs.existsSync(path.join(POSTS_DIR, `${enSlug}.md`))
+      ? (() => {
+          const map: Partial<Record<Locale, string>> = { en: enSlug }
+          let found = false
+          for (const loc of locales) {
+            if (loc === "en") continue
+            const sibling = path.join(POSTS_DIR, localeDirName(loc), `${enSlug}.md`)
+            if (fs.existsSync(sibling)) {
+              map[loc] = enSlug
+              found = true
+            }
+          }
+          return found ? map : undefined
+        })()
       : undefined
 
   return {
@@ -109,7 +125,7 @@ function parseFile(fileName: string, dir: string, locale: Locale): Post {
 }
 
 function postDir(locale: Locale): string {
-  return locale === "en" ? POSTS_DIR : path.join(POSTS_DIR, LOCALE_DIRS[locale])
+  return locale === "en" ? POSTS_DIR : path.join(POSTS_DIR, localeDirName(locale))
 }
 
 function readPosts(locale: Locale): Post[] {

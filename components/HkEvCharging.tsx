@@ -52,7 +52,7 @@ const MODES: { id: HkClassMode; copyKey: "classAll" | "classStd" | "classMed" | 
 const COMPACT_ROWS = 8
 
 export default function HkEvCharging({ basePath, locale = "en" }: Props) {
-  const copy = hkEvCopy[locale]
+  const copy = hkEvCopy[locale] ?? hkEvCopy["zh-TW"]!
   const localeTag = locale === "zh-TW" ? "zh-TW" : "en-US"
   const formatCount = (value: number) => value.toLocaleString(localeTag)
   const dataRoot = `${basePath}/interactive/hk-ev-charging/data`

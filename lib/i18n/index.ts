@@ -1,12 +1,13 @@
 import { absUrl } from "@/lib/site"
-import { defaultLocale, isLocale, localeTags, locales, type Locale } from "./config"
+import { defaultLocale, isLocale, localePrefixes, localeTags, locales, localizedPath, type Locale } from "./config"
 import en, { type Dictionary } from "./dictionaries/en"
+import zh from "./dictionaries/zh"
 import zhTW from "./dictionaries/zh-TW"
 
-export { locales, defaultLocale, isLocale, localeTags, localizedPath } from "./config"
+export { locales, defaultLocale, isLocale, localeTags, localePrefixes, localizedPath } from "./config"
 export type { Locale } from "./config"
 
-const dictionaries: Record<Locale, Dictionary> = { en, "zh-TW": zhTW }
+const dictionaries: Record<Locale, Dictionary> = { en, zh, "zh-TW": zhTW }
 
 export function getDictionary(locale: Locale): Dictionary {
   return dictionaries[locale]
@@ -48,11 +49,13 @@ export function formatDate(locale: Locale, iso: string): string {
  * (managed in the blog page itself).
  */
 export function languageAlternates(path: string): Record<string, string> {
-  const enUrl = absUrl(path)
   const clean = path === "/" ? "" : `/${path.replace(/^\/+|\/+$/g, "")}`
-  return {
-    en: enUrl,
-    "zh-TW": absUrl(`/zh-TW${clean || ""}/`),
-    "x-default": enUrl,
+  const languages: Record<string, string> = {}
+  // One entry per locale — adding a locale to `locales` extends hreflang
+  // automatically everywhere this helper is used.
+  for (const locale of locales) {
+    languages[locale] = locale === defaultLocale ? absUrl(path) : absUrl(localizedPath(locale, path))
   }
+  languages["x-default"] = absUrl(path)
+  return languages
 }

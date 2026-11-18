@@ -34,11 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     ...(post.translations
       ? {
-          languages: {
-            en: absUrl(`/blog/${post.translations.en}/`),
-            "zh-TW": absUrl(`/zh-TW/blog/${post.translations["zh-TW"]}/`),
-            "x-default": absUrl(`/blog/${post.translations.en}/`),
-          },
+          languages: languageAlternates(path),
         }
       : { languages: languageAlternates(path) }),
   })

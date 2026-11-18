@@ -2,11 +2,12 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { localeNames, locales, type Locale } from "@/lib/i18n/config"
+import { localeNames, localePrefixes, locales, defaultLocale, type Locale } from "@/lib/i18n/config"
 
 /**
  * Manual language switcher. Derives the counterpart URL from the current
- * pathname by adding/removing the /zh-TW prefix — no client i18n runtime.
+ * pathname by swapping the locale prefix — no client i18n runtime.
+ * Works for any number of locales via localePrefixes.
  */
 export default function LocaleSwitcher({
   locale,
@@ -17,11 +18,24 @@ export default function LocaleSwitcher({
 }) {
   const pathname = usePathname() || "/"
 
+  /** Strip any locale prefix, returning the bare path. */
+  const stripPrefix = (p: string): string => {
+    for (const loc of locales) {
+      const prefix = localePrefixes[loc]
+      if (prefix && p.startsWith(prefix)) {
+        const rest = p.slice(prefix.length)
+        return rest || "/"
+      }
+    }
+    return p
+  }
+
   const target = (target: Locale): string => {
-    const bare = locale === "zh-TW" ? pathname.replace(/^\/zh-TW(?=\/|$)/, "") || "/" : pathname
-    if (target === locale) return bare
-    if (target === "zh-TW") return bare === "/" ? "/zh-TW/" : `/zh-TW${bare}`
-    return bare
+    if (target === locale) return stripPrefix(pathname)
+    const bare = stripPrefix(pathname)
+    if (target === defaultLocale) return bare
+    const prefix = localePrefixes[target] || `/${target}`
+    return bare === "/" ? `${prefix}/` : `${prefix}${bare}`
   }
 
   return (

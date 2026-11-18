@@ -1,4 +1,4 @@
-export const locales = ["en", "zh-TW"] as const
+export const locales = ["en", "zh", "zh-TW"] as const
 
 export type Locale = (typeof locales)[number]
 
@@ -6,19 +6,32 @@ export const defaultLocale: Locale = "en"
 
 export const localeNames: Record<Locale, string> = {
   en: "English",
+  zh: "简体中文",
   "zh-TW": "繁體中文",
 }
 
 /** BCP47 tag used for <html lang>, og:locale and Intl. */
 export const localeTags: Record<Locale, string> = {
   en: "en",
+  zh: "zh",
   "zh-TW": "zh-TW",
 }
 
 /** Open Graph locale (underscore form). */
 export const ogLocales: Record<Locale, string> = {
   en: "en_US",
+  zh: "zh_CN",
   "zh-TW": "zh_TW",
+}
+
+/**
+ * URL prefix for each locale. English stays prefix-less so current search
+ * rankings are untouched; every other locale serves under /<prefix>/.
+ */
+export const localePrefixes: Record<Locale, string> = {
+  en: "",
+  zh: "/zh",
+  "zh-TW": "/zh-TW",
 }
 
 export function isLocale(value: string): value is Locale {
@@ -37,5 +50,6 @@ export function isLocale(value: string): value is Locale {
  */
 export function localizedPath(locale: Locale, path: string): string {
   const clean = path === "/" ? "" : `/${path.replace(/^\/+|\/+$/g, "")}`
-  return locale === defaultLocale ? `${clean}/` : `/zh-TW${clean}/`
+  const prefix = localePrefixes[locale] || `/${locale}`
+  return locale === defaultLocale ? `${clean}/` : `${prefix}${clean}/`
 }

@@ -53,7 +53,7 @@ export type HkEvCopy = {
   errorHint: string
 }
 
-export const hkEvCopy: Record<"en" | "zh-TW", HkEvCopy> = {
+export const hkEvCopy: Partial<Record<"en" | "zh" | "zh-TW", HkEvCopy>> = {
   en: {
     kicker: "Hong Kong public charging",
     heading: "990 places to plug in, one compact city",

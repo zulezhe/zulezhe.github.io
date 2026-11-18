@@ -1,0 +1,65 @@
+name: Preview (i18n branch → GitHub Pages)
+
+# Safe preview: every multi-language experiment lands on zulezhe.github.io
+# (the GitHub Pages native domain) BEFORE touching master. The production
+# chain (EdgeOne Pages → dyzyzj.top) only reacts to master merges, so this
+# workflow can never affect the live site.
+
+on:
+  push:
+    branches: [i18n]
+  workflow_dispatch:
+
+# Never race the production deploy for the GitHub Pages artifact slot.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      # Preview builds under the *native* GitHub Pages domain, so no CNAME
+      # and no basePath — this is a mirror of the deploy.yml logic minus the
+      # custom-domain branch.
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Build
+        run: npm run build
+
+      # Structural validation of every translated post against its English
+      # original — the same gate production translations must pass.
+      - name: Validate translations
+        run: |
+          node scripts/validate-all-translations.mjs
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
