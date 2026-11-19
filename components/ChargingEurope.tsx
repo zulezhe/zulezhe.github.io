@@ -26,6 +26,52 @@ const COPY = {
       { id: "report", label: "空間分析與報告", hint: "切換六邊形指標、拖動德國年份軸，或展開報告末尾的 23 張詳細證據圖表。", title: "歐洲充電網路空間分析與互動報告" },
     ],
   },
+  de: {
+    heading: "Europas Ladenetzwerk erkunden",
+    description: "Karte und Bericht behalten ihre Filter beim Wechsel der Ansichten, sodass Sie weiter erkunden können.",
+    group: "Ansichten des Ladenetzwerks",
+    fullscreen: "Vollbild",
+    open: "Separat öffnen ↗",
+    unavailable: "Vollbild ist nicht verfügbar. Verwenden Sie stattdessen Separat öffnen.",
+    note: "Stationen und Analysen verwenden feste Projekt-Snapshots. Online-Basiskarten benötigen eine Verbindung; die Karte kann auf eine Offline-Länderkontur zurückgreifen. Das Label der höchsten Leistungsklasse wird zu >50 kW korrigiert.",
+    views: [
+      {
+        id: "map",
+        label: "Interaktive Karte",
+        hint: "Filtern Sie nach Land, Leistung und Betreiber. Klicken Sie auf Cluster oder Stationen für Details; Zusammenfassungszahlen und Diagramme aktualisieren sich mit Ihren Filtern.",
+        title: "Europäische Ladestationen: interaktive Karte und Filter",
+      },
+      {
+        id: "report",
+        label: "Räumliche Analyse & Bericht",
+        hint: "Wechseln Sie die Hexagon-Metriken, ziehen Sie den Jahres-Schieberegler von Deutschland oder öffnen Sie den detaillierten Evidence-Bereich des Berichts mit 23 Diagrammen.",
+        title: "Europäisches Ladenetzwerk: räumliche Analyse und interaktiver Bericht",
+      },
+    ],
+  },
+  fr: {
+    heading: "Explorez le réseau de recharge en Europe",
+    description: "La carte et le rapport conservent leurs filtres lorsque vous changez de vue, pour vous permettre de continuer votre exploration.",
+    group: "Vues du réseau de recharge",
+    fullscreen: "Plein écran",
+    open: "Ouvrir séparément ↗",
+    unavailable: "Le plein écran n'est pas disponible. Utilisez plutôt Ouvrir séparément.",
+    note: "Les stations et les analyses utilisent des instantanés de projet fixes. Les fonds de carte en ligne nécessitent une connexion ; la carte peut revenir à un contour de pays hors ligne. Le libellé de la classe de puissance la plus élevée est corrigé en >50 kW.",
+    views: [
+      {
+        id: "map",
+        label: "Carte interactive",
+        hint: "Filtrez par pays, puissance et opérateur. Cliquez sur les groupes ou les stations pour plus de détails ; les chiffres récapitulatifs et les graphiques se mettent à jour selon vos filtres.",
+        title: "Bornes de recharge en Europe : carte interactive et filtres",
+      },
+      {
+        id: "report",
+        label: "Analyse spatiale & rapport",
+        hint: "Changez les métriques des hexagones, faites glisser le curseur des années de l'Allemagne, ou dépliez la galerie détaillée de preuves du rapport avec ses 23 graphiques.",
+        title: "Réseau de recharge européen : analyse spatiale et rapport interactif",
+      },
+    ],
+  },
 } as const
 
 type ChargingLanguage = "en" | "zh-TW" | "de" | "fr"
@@ -33,7 +79,9 @@ type ChargingLanguage = "en" | "zh-TW" | "de" | "fr"
 export default function ChargingEurope({ basePath, language = "en" }: { basePath: string; language?: ChargingLanguage }) {
   const dataRoot = `${basePath}/interactive/ev-charging-europe`
   const root = `${dataRoot}${language === "en" ? "/en" : ""}`
-  const copy: typeof COPY["en"] | typeof COPY["zh-TW"] = COPY[language as "en" | "zh-TW"] ?? COPY["zh-TW"]
+  // Every locale has its own copy table; the fallback only guards a missing
+  // entry (e.g. a locale added to config without a translation yet).
+  const copy = COPY[language] ?? COPY["zh-TW"]
   const views = copy.views
   const [view, setView] = useState<"map" | "report">("map")
   const container = useRef<HTMLDivElement>(null)
