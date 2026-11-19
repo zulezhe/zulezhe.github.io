@@ -7,6 +7,7 @@
     "build": "node scripts/prepare-blog-readers.mjs && next build && node scripts/finalize-export.mjs",
     "build:ev-data": "node scripts/build-ev-data.mjs",
     "preview": "npx serve out",
+    "sync:blogger": "node scripts/sync-to-blogger.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
