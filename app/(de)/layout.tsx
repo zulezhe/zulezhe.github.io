@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   creator: siteConfig.name,
   keywords: [
     siteConfig.name,
-    "軟體工程師",
-    "網頁開發",
-    "部落格",
+    "Softwareentwickler",
+    "Webentwicklung",
+    "Blog",
     "side project",
-    "繁體中文",
+    "Deutsch",
   ],
   alternates: {
     canonical: localizedPath("de", "/"),
