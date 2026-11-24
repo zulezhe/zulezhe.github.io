@@ -18,7 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(slug, "de")
   if (!post) notFound()
 
-  const path = localizedPath("de", `/blog/${post.slug}/`)
+  const path = post.canonical ?? localizedPath("de", `/blog/${post.slug}/`)
+  const isMirror = /^https?:\/\//i.test(path)
 
   return pageMetadata({
     title: post.title,
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: absUrl(`/og/blog/${post.slug}.png`),
       alt: post.title,
     },
-    languages: languageAlternates(`/blog/${post.slug}/`),
+    ...(isMirror ? {} : { languages: languageAlternates(`/blog/${post.slug}/`) }),
   })
 }
 

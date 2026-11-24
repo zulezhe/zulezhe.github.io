@@ -12,6 +12,7 @@ faq:
     a: "幾乎都是因為來源座標系統從未被確認過。CAD 圖裡的 XY 值，在真正的 CRS——或本地格網的配準參數——被應用之前沒有任何地理意義，寫出經緯度之前必須先處理。"
   - q: "本地處理是不是代表完全沒有網路流量？"
     a: "不是。應用的腳本和 WASM 執行環境仍然正常下載；留在本地的是圖檔本身。打開瀏覽器的 Network 面板即可確認檔案內容從未被傳輸。"
+canonical: "https://geoo.app/blog/dwg-to-kml-in-browser/"
 ---
 
 **TL;DR：** DWG 轉 KML 是四件工作——讀取 CAD 圖元、決定哪些幾何存活、把平面座標變成 WGS84 經緯度、寫出 KML。四件事都能在瀏覽器裡用 WebAssembly 和 proj4 完成，圖檔因此不必離開設備。本文演示可用的 TypeScript，改編自我在 [geoo.app](https://geoo.app) 上的實作。
@@ -51,7 +52,7 @@ pnpm add @mlightcad/libredwg-web@0.7.9 proj4
 pnpm add -D @types/geojson
 ```
 
-把對應套件的 WASM 執行資產複製到靜態目錄（例如 `public/lib/libredwg/`），檔名保持不變。把瀏覽器可存取的目錄傳給初始化器。部署後檢查 WASM 請求成功，且託管平台沒有回傳一個 HTML fallback 頁面取而代之。
+把對應套件的 WASM 執行資產複製到靜態目錄（例如 `public/wasm/libredwg/`），檔名保持不變。把瀏覽器可存取的目錄傳給初始化器。部署後檢查 WASM 請求成功，且託管平台沒有回傳一個 HTML fallback 頁面取而代之。
 
 ```ts
 import { LibreDwg } from '@mlightcad/libredwg-web';
@@ -59,7 +60,7 @@ import { LibreDwg } from '@mlightcad/libredwg-web';
 let enginePromise: ReturnType<typeof LibreDwg.create> | undefined;
 
 function getEngine() {
-  enginePromise ??= LibreDwg.create('/lib/libredwg').catch(error => {
+  enginePromise ??= LibreDwg.create('YOUR_WASM_DIRECTORY_URL').catch(error => {
     enginePromise = undefined;
     throw error;
   });

@@ -67,6 +67,14 @@ faq:
 | Free subdomain      | .pages.dev       | .github.io   | .vercel.app | .netlify.app|
 | Commercial use      | Allowed          | Allowed      | Hobby only  | Allowed     |
 
+## What the comparison tables miss
+
+Quotas make tidy tables but they rarely decide the outcome for a personal site. Three quieter factors matter more. The first is **redirect support**: if you ever move a page or a domain, you need server-side 301 rules, and not every free tier exposes them. Cloudflare and Netlify both do; GitHub Pages generally does not without a workaround. The second is **build reproducibility** — a site that only builds on one machine because of a pinned Node version or a missing environment variable is a site you will dread updating. Commit the lockfile and pin the runtime in your CI config regardless of host. The third is **egress behaviour for large files**. A map that ships a 20 MB CSV is fine on unlimited bandwidth but will quietly eat a 100 GB allowance if readers download it often.
+
+## How to decide in five minutes
+
+Ask yourself four questions. Do you need server-side redirects? If yes, shortlist Cloudflare or Netlify. Is your repo already on GitHub and do you want the absolute simplest path? GitHub Pages wins. Are you building a Next.js app that may later need functions or incremental regeneration? Start on Vercel. Do you value polished preview links for non-technical collaborators? Netlify. If the answers are ambiguous, pick Cloudflare Pages and move on — the migration cost between these platforms is a single build configuration, and agonising over a decision this reversible is not a good use of an afternoon.
+
 ## My recommendation
 
 1. **Default choice: Cloudflare Pages.** Unlimited bandwidth plus the widest edge network is hard to argue with for an international audience.

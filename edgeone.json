@@ -14,6 +14,26 @@
     { "source": "/zh-TW/projects", "destination": "/zh-TW/projects/", "statusCode": 301 },
     { "source": "/zh-TW/projects/:slug", "destination": "/zh-TW/projects/:slug/", "statusCode": 301 },
     { "source": "/interactive/ev-charging-europe", "destination": "/interactive/ev-charging-europe/", "statusCode": 301 },
-    { "source": "/interactive/ev-charging-europe/en", "destination": "/interactive/ev-charging-europe/en/", "statusCode": 301 }
+    { "source": "/interactive/ev-charging-europe/en", "destination": "/interactive/ev-charging-europe/en/", "statusCode": 301 },
+    { "source": "/de", "destination": "/de/", "statusCode": 301 },
+    { "source": "/de/about", "destination": "/de/about/", "statusCode": 301 },
+    { "source": "/de/blog", "destination": "/de/blog/", "statusCode": 301 },
+    { "source": "/de/blog/:slug", "destination": "/de/blog/:slug/", "statusCode": 301 },
+    { "source": "/de/blog/tag/:tag", "destination": "/de/blog/tag/:tag/", "statusCode": 301 },
+    { "source": "/de/projects", "destination": "/de/projects/", "statusCode": 301 },
+    { "source": "/de/projects/:slug", "destination": "/de/projects/:slug/", "statusCode": 301 },
+    { "source": "/fr", "destination": "/fr/", "statusCode": 301 },
+    { "source": "/fr/about", "destination": "/fr/about/", "statusCode": 301 },
+    { "source": "/fr/blog", "destination": "/fr/blog/", "statusCode": 301 },
+    { "source": "/fr/blog/:slug", "destination": "/fr/blog/:slug/", "statusCode": 301 },
+    { "source": "/fr/blog/tag/:tag", "destination": "/fr/blog/tag/:tag/", "statusCode": 301 },
+    { "source": "/fr/projects", "destination": "/fr/projects/", "statusCode": 301 },
+    { "source": "/fr/projects/:slug", "destination": "/fr/projects/:slug/", "statusCode": 301 },
+    { "source": "/embed/:slug", "destination": "/embed/:slug/", "statusCode": 301 },
+    { "source": "/data", "destination": "/interactive/ev-charging-europe/", "statusCode": 301 },
+    { "source": "/data/", "destination": "/interactive/ev-charging-europe/", "statusCode": 301 },
+    { "source": "/data/stations.csv", "destination": "/interactive/ev-charging-europe/data/stations.csv.gz", "statusCode": 301 },
+    { "source": "/data/summary.json", "destination": "/interactive/ev-charging-europe/data/summary.json", "statusCode": 301 },
+    { "source": "/lib/libredwg", "destination": "/blog/dwg-to-kml-in-the-browser/", "statusCode": 301 }
   ]
 }

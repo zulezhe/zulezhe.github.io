@@ -5,6 +5,7 @@ date: "2026-10-23"
 tags: ["gis","tutorial","webassembly","cad"]
 faq: [{"q":"Can a DWG file be converted to KML entirely in the browser?","a":"Yes. A WebAssembly build of LibreDWG parses the DWG on the client, proj4 handles reprojection to WGS84, and JavaScript assembles the KML — so the drawing never has to leave the device."},{"q":"Which CAD entities does this approach cover?","a":"The worked example handles 2D points, straight lines, and lightweight polylines without arc segments. Circles, arcs, and block references need their own adapters and are deliberately out of scope."},{"q":"Why does my converted drawing land in the wrong place?","a":"Almost always because the source coordinate system was never confirmed. XY values from a CAD drawing have no geographic meaning until the real CRS — or registration parameters for a local grid — is applied before writing longitude and latitude."},{"q":"Does local processing mean no network traffic at all?","a":"No. The application's scripts and WASM runtime still download normally; what stays local is the drawing itself. Inspect the browser's Network panel to confirm file contents are never transmitted."}]
 translationOf: "dwg-to-kml-in-the-browser"
+canonical: "https://geoo.app/blog/dwg-to-kml-in-browser/"
 ---
 
 **TL;DR:** Eine DWG-zu-KML-Konvertierung besteht aus vier Aufgaben — die CAD-Entitäten lesen, entscheiden, welche Geometrie übernommen wird, ebene Koordinaten in WGS84-Länge/Breite umwandeln und das KML schreiben. Alle vier können im Browser mit WebAssembly und proj4 laufen, sodass die Zeichnung das Gerät nie verlässt. Diese Anleitung zeigt den funktionierenden TypeScript-Code, angepasst an die Implementierung, die ich auf [geoo.app](https://geoo.app) verwende.
@@ -41,14 +42,14 @@ Installieren Sie zunächst die Abhängigkeiten. Diese Ausschnitte verwenden die 
 ```bash
 pnpm add @mlightcad/libredwg-web@0.7.9 proj4
 pnpm add -D @types/geojson
-```Kopieren Sie die WASM-Runtime-Assets des passenden Pakets in ein statisches Verzeichnis wie `public/lib/libredwg/` und behalten Sie dabei die Dateinamen bei. Übergeben Sie das über den Browser zugängliche Verzeichnis an den Initialisierer. Prüfen Sie nach dem Deployment, dass die WASM-Anfrage erfolgreich ist und dass die Hosting-Plattform keine HTML-Fallback-Seite stattdessen zurückgegeben hat.
+```Kopieren Sie die WASM-Runtime-Assets des passenden Pakets in ein statisches Verzeichnis wie `public/wasm/libredwg/` und behalten Sie dabei die Dateinamen bei. Übergeben Sie das über den Browser zugängliche Verzeichnis an den Initialisierer. Prüfen Sie nach dem Deployment, dass die WASM-Anfrage erfolgreich ist und dass die Hosting-Plattform keine HTML-Fallback-Seite stattdessen zurückgegeben hat.
 ```ts
 import { LibreDwg } from '@mlightcad/libredwg-web';
 
 let enginePromise: ReturnType<typeof LibreDwg.create> | undefined;
 
 function getEngine() {
-  enginePromise ??= LibreDwg.create('/lib/libredwg').catch(error => {
+  enginePromise ??= LibreDwg.create('YOUR_WASM_DIRECTORY_URL').catch(error => {
     enginePromise = undefined;
     throw error;
   });

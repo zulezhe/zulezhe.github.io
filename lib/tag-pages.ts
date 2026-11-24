@@ -3,6 +3,13 @@ import { pageMetadata } from "@/lib/site"
 import { fmt, getDictionary, languageAlternates, localizedPath, type Locale } from "@/lib/i18n"
 import { getPostsByTag } from "@/lib/posts"
 
+/** Tag archives with fewer posts than this are thin and should not be indexed. */
+const MIN_TAG_POSTS_FOR_INDEX = 2
+
+export function isTagIndexable(tag: string, locale: Locale = "en"): boolean {
+  return getPostsByTag(tag, locale).length >= MIN_TAG_POSTS_FOR_INDEX
+}
+
 /**
  * Metadata for a tag archive page.
  *
@@ -31,12 +38,17 @@ export function tagPageMetadata({
       ? fmt(t.blog.tagMetaSingle, { tag, title: posts[0].title })
       : fmt(t.blog.tagMeta, { count: posts.length, tag, titles })
 
-  return pageMetadata({
-    title: `#${tag}`,
-    description,
-    path,
-    languages: languageAlternates(path),
-  })
+  return {
+    ...pageMetadata({
+      title: `#${tag}`,
+      description,
+      path,
+      languages: languageAlternates(path),
+    }),
+    ...(isTagIndexable(tag, locale)
+      ? {}
+      : { robots: { index: false, follow: true } }),
+  }
 }
 
 /** Canonical path of a tag archive for a locale. */

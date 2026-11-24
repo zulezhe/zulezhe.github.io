@@ -4,6 +4,7 @@ import { languageAlternates, localizedPath } from "@/lib/i18n"
 import { locales, defaultLocale, type Locale } from "@/lib/i18n/config"
 import { getAllPosts, getAllTags } from "@/lib/posts"
 import { getAllProjects } from "@/lib/projects"
+import { isTagIndexable } from "@/lib/tag-pages"
 
 export const dynamic = "force-static"
 
@@ -32,7 +33,7 @@ function localizedEntries(
   meta: { lastModified?: string; changeFrequency?: MetadataRoute.Sitemap[number]["changeFrequency"]; priority: number },
 ): MetadataRoute.Sitemap {
   const posts = getAllPosts({ locale })
-  const tags = getAllTags(locale)
+  const tags = getAllTags(locale).filter((tag) => isTagIndexable(tag, locale))
   const postsLatest = latestDate(posts.flatMap((p) => [p.date, p.updated]))
   const projectsLatest = latestDate(getAllProjects().map((p) => p.date))
 
@@ -87,7 +88,7 @@ function localizedEntries(
 export default function sitemap(): MetadataRoute.Sitemap {
   const enPosts = getAllPosts({ locale: "en" })
   const projects = getAllProjects()
-  const tags = getAllTags()
+  const tags = getAllTags().filter((tag) => isTagIndexable(tag))
 
   const postsLatest = latestDate(enPosts.flatMap((p) => [p.date, p.updated]))
   const projectsLatest = latestDate(projects.map((p) => p.date))

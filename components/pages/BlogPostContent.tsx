@@ -38,7 +38,7 @@ export default async function BlogPostContent({ locale, slug }: { locale: Locale
           : null
   const headings = [...introHeadings, ...(interactiveHeading ? [{ ...interactiveHeading, depth: 2 as const }] : []), ...afterHeadings]
   const { prev, next } = getAdjacentPosts(slug, locale)
-  const postUrl = absUrl(localizedPath(locale, `/blog/${post.slug}/`))
+  const postUrl = post.canonical ?? absUrl(localizedPath(locale, `/blog/${post.slug}/`))
 
   const articleJsonLd = {
     "@context": "https://schema.org",

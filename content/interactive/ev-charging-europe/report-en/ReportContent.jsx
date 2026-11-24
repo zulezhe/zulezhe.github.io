@@ -16,7 +16,7 @@ export function ReportContent() {
     const all = 275402;
     return <article className="report-content ev-report" aria-label="European charging network report">
  <header className="report-hero">
- <nav className="ev-nav" aria-label="Report navigation"><a href="/">Return to charging map ↗</a><a href="#story-method">Data and methods ↓</a></nav>
+ <nav className="ev-nav" aria-label="Report navigation"><a href="/interactive/ev-charging-europe/en/">Return to charging map ↗</a><a href="#story-method">Data and methods ↓</a></nav>
  <h1 data-data-app-title contentEditable={canEdit && mode === 'edit'} suppressContentEditableWarning onBlur={e => setAppTitle(e.currentTarget.textContent.trim() || appTitle)}>{appTitle}</h1>
  <RichNarrative id="ev:deck" value="Explore hexagon density, fast-charger accessibility, and Germany’s commissioning replay to understand the distances behind dense station records." className="report-deck"/>
  </header>
@@ -60,7 +60,7 @@ export function ReportContent() {
  <DataComponent id="ev:country-table" queryId="countries" title="Country / territory detail · all 48 records" kind="table" sourceRows={countries} displayRows={countries}>
  <DataTable compactNumbers={false} rows={countries} caption="All countries and territories" columns={[{ key: 'name', label: "Countries / territories" }, { key: 'stations', label: "Stations" }, { key: 'points', label: "Charging points" }, { key: 'per_million', label: "Stations / million people" }, { key: 'source', label: "Source" }]}/>
  </DataComponent>
- <RichNarrative id="ev:sources" value={"### Sources and reproducibility\n\n" + snapshot.ev.sources.map(s => `- [${s.name}](${s.url}) \u00B7 Snapshot ${s.snapshot} · ${s.license}。`).join('\n') + "\n\nSource links support traceability; external data was not fetched again for this report. The local CSV confirms OCM coverage of 46 countries and territories, correcting the original summary\u2019s description of 38 in report metadata.\n\n[Download full station CSV](/data/stations.csv) \u00B7 [View original summary JSON](/data/summary.json) \u00B7 [Return to interactive map](/)"}/>
+ <RichNarrative id="ev:sources" value={"### Sources and reproducibility\n\n" + snapshot.ev.sources.map(s => `- [${s.name}](${s.url}) \u00B7 Snapshot ${s.snapshot} · ${s.license}。`).join('\n') + "\n\nSource links support traceability; external data was not fetched again for this report. The local CSV confirms OCM coverage of 46 countries and territories, correcting the original summary\u2019s description of 38 in report metadata.\n\n[Download full station CSV](/interactive/ev-charging-europe/data/stations.csv.gz) \u00B7 [View original summary JSON](/interactive/ev-charging-europe/data/summary.json) \u00B7 [Return to interactive map](/interactive/ev-charging-europe/en/)"}/>
  </section>
  </div>}
  </article>;

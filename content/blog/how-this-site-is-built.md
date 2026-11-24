@@ -59,6 +59,14 @@ faq:
 
 At build time a small pipeline (remark → rehype → Shiki) turns that into styled HTML with heading anchors, syntax-highlighted code blocks that support light *and* dark themes, and a table of contents extracted from the headings.
 
+### Why files beat a CMS here
+
+A content management system would solve problems I do not have. I am the only author, posts change rarely, and the "editor" I want is the one already open in my terminal. Plain Markdown gives me three things a database never will: a complete history of every edit through git, the ability to write offline, and a content folder I can copy to a new framework in an afternoon if Next.js falls out of favour. Frontmatter doubles as structured input — the FAQ blocks, tags and description fields are read directly by the metadata and JSON-LD generators, so there is no second place to keep in sync. The trade-off is real: there is no WYSIWYG preview, and a typo in YAML can break a build. For a one-person blog that is a fair price.
+
+### What a build actually does
+
+`npm run build` is less mysterious than it looks. It reads every `.md` file under `content/`, parses frontmatter, renders the body through the remark/rehype chain, generates static OG images, then writes an `out/` directory containing one `index.html` per route. A finalisation script walks that directory, emits `_redirects` for every trailing-slash variant, and copies the feeds and text indexes. The whole run finishes in well under a minute on a free CI tier. Because the output is just files, a rollback is a matter of pointing the CDN at the previous deployment — there is no migration to undo and no cache layer to invalidate by hand.
+
 ## SEO is mostly metadata hygiene
 
 Static HTML gets you 80% of the way to good SEO. The remaining 20% is discipline:
@@ -68,6 +76,10 @@ Static HTML gets you 80% of the way to good SEO. The remaining 20% is discipline
 - Open Graph and Twitter card images rendered **at build time** with `next/og` — no image service required.
 - `sitemap.xml`, `robots.txt`, and an RSS feed, all generated from the content list.
 - Structured data (JSON-LD) for `WebSite`, `Person`, `BlogPosting`, and breadcrumbs on every page.
+
+### The traps worth knowing about
+
+Three details caused me more trouble than the rest of the build combined. First, trailing slashes: a static host will happily serve the same page at `/post` and `/post/`, and unless you redirect one version Google may pick the wrong one as canonical. `trailingSlash: true` plus explicit 301 rules keeps a single answer. Second, tag archives: an archive with one post is thin content by any reasonable definition, so those pages now carry `noindex, follow` and are left out of the sitemap while still being useful for navigation. Third, redirects only work where the host actually reads them — a generated `_redirects` file is meaningless on a platform that expects a different config format. None of this is framework-specific; it is the kind of bookkeeping static sites trade for their speed.
 
 ## Optimizing for AI search on top
 

@@ -12,6 +12,7 @@ faq:
     a: "Almost always because the source coordinate system was never confirmed. XY values from a CAD drawing have no geographic meaning until the real CRS — or registration parameters for a local grid — is applied before writing longitude and latitude."
   - q: "Does local processing mean no network traffic at all?"
     a: "No. The application's scripts and WASM runtime still download normally; what stays local is the drawing itself. Inspect the browser's Network panel to confirm file contents are never transmitted."
+canonical: "https://geoo.app/blog/dwg-to-kml-in-browser/"
 ---
 
 **TL;DR:** A DWG-to-KML conversion is four jobs — read the CAD entities, decide which geometry survives, turn planar coordinates into WGS84 longitude/latitude, and write the KML. All four can run in the browser with WebAssembly and proj4, so the drawing never leaves the device. This walkthrough shows the working TypeScript, adapted from the implementation I use on [geoo.app](https://geoo.app).
@@ -51,7 +52,7 @@ pnpm add @mlightcad/libredwg-web@0.7.9 proj4
 pnpm add -D @types/geojson
 ```
 
-Copy the matching package's WASM runtime assets into a static directory such as `public/lib/libredwg/`, keeping their filenames intact. Pass the browser-accessible directory to the initializer. After deployment, check that the WASM request succeeds and that the hosting platform has not returned an HTML fallback page in its place.
+Copy the matching package's WASM runtime assets into a static directory such as `public/wasm/libredwg/`, keeping their filenames intact. Pass the browser-accessible directory to the initializer. After deployment, check that the WASM request succeeds and that the hosting platform has not returned an HTML fallback page in its place.
 
 ```ts
 import { LibreDwg } from '@mlightcad/libredwg-web';
@@ -59,7 +60,7 @@ import { LibreDwg } from '@mlightcad/libredwg-web';
 let enginePromise: ReturnType<typeof LibreDwg.create> | undefined;
 
 function getEngine() {
-  enginePromise ??= LibreDwg.create('/lib/libredwg').catch(error => {
+  enginePromise ??= LibreDwg.create('YOUR_WASM_DIRECTORY_URL').catch(error => {
     enginePromise = undefined;
     throw error;
   });
