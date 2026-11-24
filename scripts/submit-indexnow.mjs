@@ -7,13 +7,18 @@
  *   node scripts/submit-indexnow.mjs                 # reads ./out/sitemap.xml
  *   node scripts/submit-indexnow.mjs <sitemap-url>   # fetches a live sitemap
  *
- * The key file must be publicly reachable at https://<host>/<key>.txt and its
- * content must equal the key. See public/<key>.txt.
+ * The key is read from the single .txt file in public/ (e.g. public/<key>.txt),
+ * whose name and content are both the key. That file is copied to the site root
+ * at build time, satisfying IndexNow's key-location verification.
  */
-import { readFile } from "node:fs/promises"
+import { readFile, readdir } from "node:fs/promises"
 import { fileURLToPath } from "node:url"
 
-const KEY = "470addb5b7bd4ed19317d3620b26a989."
+const publicDir = fileURLToPath(new URL("../public/", import.meta.url))
+const keyFiles = (await readdir(publicDir)).filter((f) => /^[a-z0-9-]{8,128}\.txt$/.test(f))
+if (keyFiles.length !== 1) throw new Error(`Expected exactly one IndexNow key file in public/, found ${keyFiles.length}`)
+const KEY = keyFiles[0].replace(/\.txt$/, "")
+
 const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://dyzyzj.top").replace(/\/+$/, "")
 const HOST = new URL(SITE_URL).hostname
 const KEY_LOCATION = `${SITE_URL}/${KEY}.txt`
