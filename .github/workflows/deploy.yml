@@ -58,15 +58,6 @@ jobs:
         with:
           path: out
 
-      # Pass the freshly built sitemap to the indexnow job so it submits the
-      # exact URLs just deployed, without depending on CDN cache freshness.
-      - name: Upload sitemap for IndexNow
-        uses: actions/upload-artifact@v4
-        with:
-          name: sitemap
-          path: out/sitemap.xml
-          retention-days: 1
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -90,13 +81,10 @@ jobs:
         with:
           node-version: 22
 
-      - name: Download sitemap
-        uses: actions/download-artifact@v4
-        with:
-          name: sitemap
-          path: out
-
+      # Fetch the live sitemap (dyzyzj.top) rather than the build artifact: the
+      # CI build has no public/CNAME, so its URLs are github.io and IndexNow
+      # rejects URLs outside the key's verified domain.
       - name: Submit URLs to IndexNow
         env:
           NEXT_PUBLIC_SITE_URL: https://dyzyzj.top
-        run: node scripts/submit-indexnow.mjs
+        run: node scripts/submit-indexnow.mjs https://dyzyzj.top/sitemap.xml
