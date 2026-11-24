@@ -58,6 +58,15 @@ jobs:
         with:
           path: out
 
+      # Pass the freshly built sitemap to the indexnow job so it submits the
+      # exact URLs just deployed, without depending on CDN cache freshness.
+      - name: Upload sitemap for IndexNow
+        uses: actions/upload-artifact@v4
+        with:
+          name: sitemap
+          path: out/sitemap.xml
+          retention-days: 1
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -68,3 +77,26 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Download sitemap
+        uses: actions/download-artifact@v4
+        with:
+          name: sitemap
+          path: out
+
+      - name: Submit URLs to IndexNow
+        env:
+          NEXT_PUBLIC_SITE_URL: https://dyzyzj.top
+        run: node scripts/submit-indexnow.mjs
